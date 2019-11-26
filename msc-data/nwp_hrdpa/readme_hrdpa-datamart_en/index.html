@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Readme hrdpa datamart en - MSC Open Data / Données ouvertes du SMC</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">MSC Open Data / <br>Données ouvertes du SMC</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../readme_en/">Available data / <br>Données disponibles</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            </li>
+                            <li >
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#high-resolution-deterministic-precipitation-analysis-hrdpa-data-in-grib2-format">High Resolution Deterministic Precipitation Analysis (HRDPA) Data in GRIB2 Format</a></li>
+            <li><a href="#data-location">Data location</a></li>
+            <li><a href="#grid-specifications">Grid specifications</a></li>
+            <li><a href="#file-name-nomenclature">File name nomenclature</a></li>
+            <li><a href="#list-of-variables">List of variables</a></li>
+            <li><a href="#about-the-no-data-mask">About the No-data mask</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a href="../readme_hrdpa-datamart_fr/">En français</a></p>
+<p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
+<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_hrdpa_en/">HRDPA</a> &gt; HRDPA on MSC Datamart</p>
+<h1 id="high-resolution-deterministic-precipitation-analysis-hrdpa-data-in-grib2-format">High Resolution Deterministic Precipitation Analysis (HRDPA) Data in GRIB2 Format</h1>
+<p>This page describes the <a href="./">High Resolution Deterministic Precipitation Analysis</a> data available in GRIB2 format.</p>
+<h2 id="data-location">Data location</h2>
+<p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
+<p>The data is available using the HTTP protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable GRIB2 file. In practice, we recommend writing your own script to automate the downloading of the desired data (using wget or equivalent). If you are unsure of how to proceed, you might like to take a look at our brief wget usage guide.</p>
+<p>The data can be accessed at the following URLs :</p>
+<ul>
+<li><a href="https://dd.weather.gc.ca/analysis/precip/hrdpa/grib2/polar_stereographic">https://dd.weather.gc.ca/analysis/precip/hrdpa/grib2/polar_stereographic/{HH}</a></li>
+</ul>
+<p>where :</p>
+<ul>
+<li><strong>polar_stereographic</strong> :  Grid projection</li>
+<li><strong>HH</strong> :  Accumulation period in hours: 06 or 24 </li>
+</ul>
+<p>A history of 30 days is maintained in this directory.</p>
+<h2 id="grid-specifications">Grid specifications</h2>
+<p><img alt="HRDPA grid specification image" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_hrdpa/grille_hrdpa.png" /></p>
+<p>Table lists the values of parameters of the polar-stereographic grid.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ni</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>nj</td>
+<td>1222</td>
+</tr>
+<tr>
+<td>resolution at 60° N</td>
+<td>2.5 km</td>
+</tr>
+<tr>
+<td>coordinates of the first grid point</td>
+<td>42.2504° N  131.0928° W</td>
+</tr>
+<tr>
+<td>grid orientation (with respect to j axis)</td>
+<td>-115.0°</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-name-nomenclature">File name nomenclature</h2>
+<p>NOTE : ALL HOURS ARE IN UTC.</p>
+<p>The files have the following nomenclature:</p>
+<p>CMC_HRDPA_APCP-TotalPrecipAmount-HHMMcutoff_SFC_0_ps2.5km_YYYYMMDDHH_000.grib2</p>
+<p>where :</p>
+<ul>
+<li><strong>CMC</strong> : Data is produced by the Canadian Meteorological Centre (Constant string)</li>
+<li><strong>HRDPA</strong> : High Resolution Deterministic Precipitation Analysis (Constant string)</li>
+<li><strong>APCP</strong> : Analysis of Precipitation (Constant string)</li>
+<li><strong>TotalPrecipAmountPeriod</strong> : Total precipitation amount over a period of time in number of hours (006 or 024)</li>
+<li><strong>HHMMcutoff</strong> : Observation cuttoff time in number of hours and minutes after valid time. (0100cutoff or 0700cutoff)</li>
+<li><strong>SFC_0</strong> : Level type is Surface and level value is 0 (Constant string)</li>
+<li><strong>ps2.5km</strong> : Projection type is Polar-Stereographic and the resolution is 2.5 km (Constant string)</li>
+<li><strong>YYYYMMDDHH</strong> : Analysis valid time in UTC. YYYY=Year, MM=Month, DD=Day, HH=Hour (ex: 2018020912)</li>
+<li><strong>000</strong> : The projection time in number of hours. Always 000 for an analysis product (Constant string)</li>
+</ul>
+<p>Example :</p>
+<p>CMC_HRDPA_APCP-006-0100cutoff_SFC_0_ps2.5km_2018020912_000.grib2</p>
+<p>This file originates from the Canadian Meteorological Center (CMC) and contains data of the High Resolution Deterministic Precipitation Analysis (HRDPA). This is a precipitation analysis (APCP) of 6 hour amounts (006) where the accumulation period goes from 2018020906 to 2018020912. It is considered preliminary because observations have been collected up to 2018020913, which is 1 hour after valid time (0100cutoff). The data is on a polar-stereographic grid at a resolution of 2.5 km (ps2.5km). The valid time of the analysis is 2018020912_000 and the suffix _000 means that the projection time in the future is null, which is always the case for an analysis. The data is encoded in GRIB2 format (.grib2).</p>
+<p>Note that a second variable is also included in this file and it is the confidence index for the analysis (CFIA).</p>
+<h2 id="list-of-variables">List of variables</h2>
+<ul>
+<li><strong>APCP</strong> : Total precipitation amount analysis over a 6 or 24 hours period (mm)</li>
+<li><strong>CFIA</strong> : Confidence Index of the Analysis. Range of values from 0 to 1 (no unit)  </li>
+</ul>
+<h2 id="about-the-no-data-mask">About the No-data mask</h2>
+<p>A mask called "No-data" has been added to our GRIB2 encoding process in order to better represent the areas where data are unavailable. This mask only concerns a few grid points with no data, always the same ones, located at the edge of the domain. Note that this mask has no negative effect on the product quality.</p>
+<h2 id="support">Support</h2>
+<p>If you have any questions about these data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>
+<p>Announcements related to this dataset are available in the <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info list</a>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search / Rechercher</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter your search terms below.
+                    <br>
+                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search / Rechercher..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

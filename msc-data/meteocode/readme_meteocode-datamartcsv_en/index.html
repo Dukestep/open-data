@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Readme meteocode datamartcsv en - MSC Open Data / Données ouvertes du SMC</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">MSC Open Data / <br>Données ouvertes du SMC</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../readme_en/">Available data / <br>Données disponibles</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            </li>
+                            <li >
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#meteocode-forecast-data-in-csv-format">Meteocode forecast data in CSV format</a></li>
+            <li><a href="#data-address">Data address</a></li>
+            <li><a href="#file-name-nomenclature">File name nomenclature</a></li>
+            <li><a href="#file-content">File content</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a href="../readme_meteocode-datamartcsv_fr/">En français</a></p>
+<p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
+<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC Open Public Data</a> &gt; <a href="../readme_meteocode_en/">Meteocode forecast</a> &gt; Meteocode forecast data in CSV on MSC Datamart</p>
+<h1 id="meteocode-forecast-data-in-csv-format">Meteocode forecast data in CSV format</h1>
+<p>This document describes the content of the <a href="../readme_meteocode_en/">meteocode data</a> in CSV format.</p>
+<p>The files for meteocode data in CSV format are created from the CMML files using the <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/meteocode/cmml2csv.xsl">XSLT</a> technology. The CSV files does not contain more information than the CMML files, they are only in a different format. Moreover, each CMML files contains many regions while each CSV file contains only one region.</p>
+<h2 id="data-address">Data address</h2>
+<p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
+<p>The data is available via the HTTP protocol. It is possible to access it with a standard browser. In this case, we obtain a list of links giving access to a CSV file.</p>
+<p>The files are available at the following address :</p>
+<ul>
+<li><a href="https://dd.weather.gc.ca/meteocode/mtm/csv/">https://dd.weather.gc.ca/meteocode/mtm/csv/</a></li>
+<li><a href="https://dd.weather.gc.ca/meteocode/ont/csv/">https://dd.weather.gc.ca/meteocode/mtm/csv/</a></li>
+<li><a href="https://dd.weather.gc.ca/meteocode/pnr/csv/">https://dd.weather.gc.ca/meteocode/pnr/csv/</a></li>
+<li><a href="https://dd.weather.gc.ca/meteocode/pyr/csv/">https://dd.weather.gc.ca/meteocode/pyr/csv/</a></li>
+<li><a href="https://dd.weather.gc.ca/meteocode/que/csv/">https://dd.weather.gc.ca/meteocode/que/csv/</a></li>
+</ul>
+<p>An history of 24 hours is kept in these directories.</p>
+<h2 id="file-name-nomenclature">File name nomenclature</h2>
+<p>NOTE: ALL HOURS ARE IN UTC.</p>
+<p>The filenames of the meteocode CSV files have the following nomenclature :</p>
+<p>YYYY-MM-DDTHH-MM-SSZ_FPAANN_rRRRR_BB.csv</p>
+<p>where :</p>
+<ul>
+<li><strong>YYYY-MM-DDTHH-MM-SSZ</strong> : Time of emission for the forecast. Date is in ISO 8601 format. </li>
+<li><strong>P</strong> : Constant string meaning "Forecast Public".</li>
+<li><strong>ANN</strong> : See the section 'Filename' in the CMML README at <a href="https://dd.weather.gc.ca/meteocode/doc/cmml/README_CMML.txt">https://dd.weather.gc.ca/meteocode/doc/cmml/README_CMML.txt</a></li>
+<li><strong>r</strong> : Constant string indicating the beginning of the region code.</li>
+<li><strong>RRRR</strong> : Alphanumerical code indicating the region of the public forecast. Can be of an arbitrary length (ex: 3pe, 10zf, 71.14). The complete list of forecast region and their associated code can be found at the end of this file in the section "Region's code and name".</li>
+<li><strong>BB</strong> : String indicating the weather elements. Can be one of the following values: TA (Air Temperature), TD (Dew Point), PA (Precipitation accumulation), POP (Probability Of Precipitation), WS (Wind Speed and Direction), WG (Wind Gust), CC (Cloud Cover).</li>
+</ul>
+<p><strong>Note</strong>:</p>
+<p>The <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/meteocode/table_region_code_name.xlsx">region's code and name correspondence</a> is available.</p>
+<p>The codes are separated by the forecast offices because the same code can be used by more than one region, as:</p>
+<pre><code>bulletin code, region code, French name, English name
+</code></pre>
+<h2 id="file-content">File content</h2>
+<ul>
+<li>For each forecast region, 7 files are created. The content of each file is described below.</li>
+<li>The ''-9999.00'' value is for a missing or an invalid data for air temperature or dew point.</li>
+<li>If no wind gust is available for the forecast valid time in the CMML files, then the associated CSV file contains no data for this specific date.</li>
+<li>All dates are in ISO 8601 format.</li>
+</ul>
+<p><strong>1. Air Temperature (TA)</strong></p>
+<p>This file contains the air temperature.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Valid time ; Heure de validité</th>
+<th>Air temperature (° Celsius) ; Température de l'air (° Celsius)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The 2 other values describe the content of each column :
+    * Forecast valid time.
+    * Air temperature in degree Celsius.</p>
+<p><strong>2. Dew Point (TD)</strong></p>
+<p>This file contains dew point temperature.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Valid time ; Heure de validité</th>
+<th>Dew point (° Celsius) ; Point de rosée (° Celsius)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The 2 other values describe the content of each column :
+    * Forecast valid time.
+    * Dew point in degree Celsius.</p>
+<p><strong>3. Precipitation Accumulation (PA)</strong></p>
+<p>This file contains the precipitation accumulation and type.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Start ; Début</th>
+<th>End ; Fin</th>
+<th>Total accumulation min (mm) ; Accumulation totale min (mm)</th>
+<th>Total accumulation max (mm) ; Accumulation totale max (mm)</th>
+<th>Hourly accumulation min (mm) ; Accumulation horaire min (mm)</th>
+<th>Hourly accumulation max (mm) ; Accumulation horaire max (mm)</th>
+<th>Precipitation type ; Type de précipitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The other values describe the content of each column :
+    * Starting time of accumulation period.
+    * Ending time of accumulation period.
+    * Value of lower cumulative precipitation amount in mm.
+    * Value of upper cumulative precipitation amount in mm.
+    * Lower limit value of precipitation amount in mm.
+    * Upper limit value of precipitation amount in mm.
+    * Precipitation type. Can be amongst the following values :
+        * Rain
+        * Snow
+        * Ice pellet
+        * Freezing rain</p>
+<p><strong>4. Probability of precipitation (POP)</strong></p>
+<p>This file contains the probability of precipitation in percent.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Start ; Début</th>
+<th>End ; Fin</th>
+<th>Probability of precipitation (%) ; Probabilité de précipitation (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The other values describe the content of each column :
+    * Starting time of period for this probability of precipitation.
+    * Ending time of period for this probability of precipitation.
+    * Probability of precipitation, in percent.</p>
+<p><strong>5. Wind (WS)</strong></p>
+<p>This file contains the values of wind speed and direction.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Start ; Début</th>
+<th>End ; Fin</th>
+<th>Wind speed min (km/h) ; Vitesse du vent min (km/h)</th>
+<th>Wind speed max (km/h) ; Vitesse du vent max (km/h)</th>
+<th>Wind direction ; Direction du vent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The other values describe the content of each column :
+    * Starting time of period.
+    * Ending time of period.
+    * Lower value of wind speed, in km/h.
+    * Higher value of wind speed, in km/h.
+    * String for wind direction. Can be one of these values :
+        * east
+        * nil
+        * north
+        * northeast
+        * northwest
+        * west
+        * easterly
+        * northerly
+        * northeasterly
+        * northwesterly
+        * westerly
+        * southerly
+        * southeasterly
+        * southwesterly
+        * south
+        * southeast
+        * southwest
+        * variable </p>
+<p><strong>6. Wind Gust (WG)</strong></p>
+<p>This file contains the values of wind gust.</p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Start ; Début</th>
+<th>End ; Fin</th>
+<th>Wind gust min (km/h) ; Vitesse des rafales min (km/h)</th>
+<th>Wind gust max (km/h) ; Vitesse des rafales max (km/h)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The other values describe the content of each column :
+    * Starting time of period.
+    * Ending time of period.
+    * Lower value of wind gust, in km/h.
+    * Higher value of wind gust, in km/h.</p>
+<p><strong>7. Cloud Cover (CC)</strong></p>
+<p>The first line of these files contains :</p>
+<table>
+<thead>
+<tr>
+<th>Region_en ; Region_fr</th>
+<th>CMML : 'cmml_filename.xml'</th>
+<th>Valid time ; Heure de validité</th>
+<th>Cloud cover (tenth) ; Couverture nuageuse (dixième)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>where :
+* <strong>Region_en</strong> : English name of the forecast region.
+* <strong>Region_fr</strong> : French name of the forecast region.
+* <strong>CMML</strong> : Constant string.
+* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
+* The other values describe the content of each column :
+    * Valid time for this cloud cover.
+    * Cloud cover value, decimal.</p>
+<h2 id="support">Support</h2>
+<p>If you have any questions about these data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>
+<p>Announcements related to this dataset are available in the <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info list</a>.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search / Rechercher</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter your search terms below.
+                    <br>
+                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search / Rechercher..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
