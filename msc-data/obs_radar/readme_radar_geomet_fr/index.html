@@ -109,7 +109,13 @@
 <li><a href="../../../msc-geomet/web-services_fr/">Documentation technique sur les services web géospatiaux GeoMet du SMC</a></li>
 </ul>
 <p>Exemple de carte interactive présentant des couches WMS de la composite radar météo provenant de GeoMet du SMC :</p>
-<div id="map" style="height: 400px"></div>
+<div id="map" style="height: 400px;"></div>
+
+<div role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">
+  <button id="play" class="btn btn-primary btn-sm" type="button"><i class="fa fa-play" style="padding: 0rem 1rem"></i></button>
+  <button id="pause" class="btn btn-primary btn-sm" type="button"><i class="fa fa-pause" style="padding: 0rem 1rem"></i></button>
+  <span id="info" style="padding-left: 0.5rem;"></span>
+</div>
 
 <p>Les couches de la composite radar météo nord-américaine de GeoMet du SMC peuvent être vues en action dans MétéoCAN, <a href="https://www.canada.ca/fr/environnement-changement-climatique/services/conditions-meteorologiques-ressources-outils-generaux/meteocan.html">l'application mobile officielle d'ECCC</a>.</p>
 <h2 id="utilisation">Utilisation</h2>
@@ -157,34 +163,7 @@
 <p>Nous encourageons les usagers à s'abonner à la liste d'information <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> afin d'être informés des améliorations et changements aux services GeoMet du SMC.</p>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          }),
-          new ol.layer.Tile({
-            source: new ol.source.TileWMS({
-                format: 'image/png',
-                url: 'https://geo.weather.gc.ca/geomet/',
-                params: {'LAYERS': 'RADAR_1KM_RSNO', 'TILED': true},
-            })
-          }),
-          new ol.layer.Tile({
-            source: new ol.source.TileWMS({
-                format: 'image/png',
-                url: 'https://geo.weather.gc.ca/geomet/',
-                params: {'LAYERS': 'RADAR_COVERAGE_RSNO.INV', 'TILED': true},
-            })
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-97, 57]),
-          zoom: 3
-        })
-      });
-</script></p></div>
+<script src="../../../js/radar.js"></p></div>
         </div>
 
         <footer class="col-md-12">

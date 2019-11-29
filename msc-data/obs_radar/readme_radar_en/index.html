@@ -108,7 +108,13 @@
 <li><a href="../readme_radarimage-datamart_en/">GIF radar imagery</a> available on the MSC Datamart </li>
 </ul>
 <p>An <a href="../../../usage/readme_en/">overview and examples on how to access and use the Meteorological Service of Canada's open data</a> is available. Example of a web map configured to display weather radar composite Web Map Service (WMS) layers served by MSC GeoMet:</p>
-<div id="map" style="height: 400px"></div>
+<div id="map" style="height: 400px;"></div>
+
+<div role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">
+  <button id="play" class="btn btn-primary btn-sm" type="button"><i class="fa fa-play" style="padding: 0rem 1rem"></i></button>
+  <button id="pause" class="btn btn-primary btn-sm" type="button"><i class="fa fa-pause" style="padding: 0rem 1rem"></i></button>
+  <span id="info" style="padding-left: 0.5rem;"></span>
+</div>
 
 <h3 id="licence">Licence</h3>
 <p>The <a href="../../../licence/readme_en/">end-user licence for Environment and Climate Change Canada's data servers</a> specifies the conditions of use for this data.</p>
@@ -123,34 +129,7 @@
 </ul>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          }),
-          new ol.layer.Tile({
-            source: new ol.source.TileWMS({
-                format: 'image/png',
-                url: 'https://geo.weather.gc.ca/geomet/',
-                params: {'LAYERS': 'RADAR_1KM_RSNO', 'TILED': true},
-            })
-          }),
-          new ol.layer.Tile({
-            source: new ol.source.TileWMS({
-                format: 'image/png',
-                url: 'https://geo.weather.gc.ca/geomet/',
-                params: {'LAYERS': 'RADAR_COVERAGE_RSNO.INV', 'TILED': true},
-            })
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-97, 57]),
-          zoom: 3
-        })
-      });
-</script></p></div>
+<script src="../../../js/radar.js"></p></div>
         </div>
 
         <footer class="col-md-12">
