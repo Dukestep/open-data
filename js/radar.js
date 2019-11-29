@@ -1,27 +1,53 @@
+"use strict";
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-const parser = new DOMParser();
+var parser = new DOMParser();
 
 function getRadarStartEndTime() {
   return _getRadarStartEndTime.apply(this, arguments);
 }
 
 function _getRadarStartEndTime() {
-  _getRadarStartEndTime = _asyncToGenerator(function* () {
-    let response = yield fetch('https://geo.weather.gc.ca/geomet/?lang=en&service=WMS&request=GetCapabilities&version=1.3.0&LAYERS=RADAR_1KM_RSNO');
-    let data = yield response.text().then(data => parser.parseFromString(data, 'text/xml').getElementsByTagName('Dimension')[0].innerHTML.split('/'));
-    return [new Date(data[0]), new Date(data[1])];
-  });
+  _getRadarStartEndTime = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee() {
+    var response, data;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return fetch('https://geo.weather.gc.ca/geomet/?lang=en&service=WMS&request=GetCapabilities&version=1.3.0&LAYERS=RADAR_1KM_RSNO');
+
+          case 2:
+            response = _context.sent;
+            _context.next = 5;
+            return response.text().then(function (data) {
+              return parser.parseFromString(data, 'text/xml').getElementsByTagName('Dimension')[0].innerHTML.split('/');
+            });
+
+          case 5:
+            data = _context.sent;
+            return _context.abrupt("return", [new Date(data[0]), new Date(data[1])]);
+
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
   return _getRadarStartEndTime.apply(this, arguments);
 }
 
-let frameRate = 1.0; // frames per second
+var frameRate = 1.0; // frames per second
 
-let animationId = null;
-let current_time = null;
-let layers = [new ol.layer.Tile({
+var animationId = null;
+var current_time = null;
+var layers = [new ol.layer.Tile({
   source: new ol.source.OSM()
 }), new ol.layer.Image({
   source: new ol.source.ImageWMS({
@@ -42,7 +68,7 @@ let layers = [new ol.layer.Tile({
     }
   })
 })];
-let map = new ol.Map({
+var map = new ol.Map({
   target: 'map',
   layers: layers,
   view: new ol.View({
@@ -52,13 +78,13 @@ let map = new ol.Map({
 });
 
 function updateInfo(current_time) {
-  let el = document.getElementById('info');
-  el.innerHTML = `Time / Heure (UTC): ${current_time.toISOString()}`;
+  var el = document.getElementById('info');
+  el.innerHTML = "Time / Heure (UTC): ".concat(current_time.toISOString());
 }
 
 function setTime() {
   current_time = current_time;
-  getRadarStartEndTime().then(data => {
+  getRadarStartEndTime().then(function (data) {
     if (current_time === null) {
       current_time = data[0];
     } else if (current_time >= data[1]) {
@@ -76,19 +102,19 @@ function setTime() {
 
 setTime();
 
-let stop = function () {
+var stop = function stop() {
   if (animationId !== null) {
     window.clearInterval(animationId);
     animationId = null;
   }
 };
 
-let play = function () {
+var play = function play() {
   stop();
   animationId = window.setInterval(setTime, 1000 / frameRate);
 };
 
-let startButton = document.getElementById('play');
+var startButton = document.getElementById('play');
 startButton.addEventListener('click', play, false);
-let stopButton = document.getElementById('pause');
+var stopButton = document.getElementById('pause');
 stopButton.addEventListener('click', stop, false);
