@@ -8,11 +8,11 @@ async function getRadarStartEndTime() {
   return [new Date(data[0]), new Date(data[1])]
 }
 
-let frameRate = 1.0; // frames per second
-let animationId = null;
-let current_time = null;
+var frameRate = 1.0; // frames per second
+var animationId = null;
+var current_time = null;
 
-let layers = [
+var layers = [
     new ol.layer.Tile({
       source: new ol.source.OSM()
     }),
@@ -32,7 +32,7 @@ let layers = [
     })
   ]
 
-let map = new ol.Map({
+var map = new ol.Map({
   target: 'map',
   layers: layers,
   view: new ol.View({
@@ -62,20 +62,20 @@ function setTime() {
 }
 setTime();
 
-let stop = function() {
+var stop = function() {
   if (animationId !== null) {
     window.clearInterval(animationId);
     animationId = null;
   }
 };
 
-let play = function() {
+var play = function() {
   stop();
   animationId = window.setInterval(setTime, 1000 / frameRate);
 };
 
-let startButton = document.getElementById('play');
+var startButton = document.getElementById('play');
 startButton.addEventListener('click', play, false);
 
-let stopButton = document.getElementById('pause');
+var stopButton = document.getElementById('pause');
 stopButton.addEventListener('click', stop, false);
