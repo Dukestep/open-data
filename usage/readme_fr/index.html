@@ -183,9 +183,23 @@
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" />
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/polyfill/browser.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/babel" src="../../js/radar.js"></p></div>
+<script>
+function isIE() {
+  return window.navigator.userAgent.match(/(MSIE|Trident)/);
+}
+var head = document.getElementsByTagName('head')[0];
+var js = document.createElement("script");
+js.type = "text/javascript";
+if (isIE())
+{
+    js.src = "../../js/radar_ie.js";
+}
+else
+{
+    js.src = "../../js/radar.js";
+}
+head.appendChild(js);
+</script></p></div>
         </div>
 
         <footer class="col-md-12">
