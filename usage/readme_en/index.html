@@ -203,7 +203,7 @@
     if (isIE())
     {
         js.src = "../../js/radar_ie.js";
-        document.getElementById("controller").classList.add('d-none')
+        document.getElementById("controller").setAttribute("hidden", true);
     }
     else
     {
