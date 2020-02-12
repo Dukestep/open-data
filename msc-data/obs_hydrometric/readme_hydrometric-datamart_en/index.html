@@ -57,9 +57,19 @@
     <a href="../../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#">MSC GeoMet / <br>GeoMet du SMC</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../../../msc-geomet/readme_en/">Overview</a>
 </li>
+            
+<li >
+    <a href="../../../msc-geomet/web-services_en/">Technical Documentation</a>
+</li>
+    </ul>
+  </li>
                                     
 <li >
     <a href="../../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
@@ -136,20 +146,37 @@
 </ul>
 <p>A 30-day history is kept in this directory.</p>
 <h2 id="file-name-nomenclature">File name nomenclature</h2>
-<p>NOTE: ALL HOURS ARE IN UTC.</p>
-<p>The files have the following nomenclature:</p>
-<p>CMC-reps-srpe-EnsembleDataType_Variable_LevelType_Level_Resolution_YYYYMMDDHH_Phhh_FileContent.grib2</p>
-<p>where :</p>
+<p>Each real-time hydrometric data file has a static filename which follows this naming convention:</p>
+<p>[PROVTERR]<em>[ID]</em>[FREQUENCY]_hydrometric.csv </p>
+<p>where:</p>
 <ul>
-<li><strong>EnsembleDataType</strong> : Can be raw for individual members direct model output or prob for probabilistic products created from all members.</li>
-<li><strong>Variable</strong> : Variable name (ex: WIND) </li>
-<li><strong>LevelType</strong> : Level type (ex: TGL for above ground level)</li>
-<li><strong>Level</strong> : Level value (ex: 10m for 10 meters)</li>
-<li><strong>Resolution</strong> : Grid resolution (ex: ps15km)</li>
-<li><strong>YYYYMMDDHH</strong> : Date of the model run in UTC</li>
-<li><strong>Phhh</strong> : Forecast hour</li>
-<li><strong>FileContent</strong> : can be all-products or allmbrs, indicating that all the members or all the probabilistic products for this variable are contain in the file </li>
+<li>
+<p><strong>PROVTERR</strong> : 2-letter code for the province or territory</p>
+</li>
+<li>
+<p><strong>ID</strong> : station identifier</p>
+</li>
+<li>
+<p><strong>FREQUENCY</strong> : frequency of update, "hourly" or "daily"</p>
+</li>
 </ul>
+<p>Example: </p>
+<p>"AB_05AA004_hourly_hydrometric.csv" means the hydrometric observations updated hourly for the station "05AA004" in Alberta (AB) in CSV format.</p>
+<p><strong>Province File</strong></p>
+<p>A file containing all stations in a province is also provided for convenience.
+It has a static filename which follows this naming convention:</p>
+<p>[PROVTERR]_[FREQUENCY]_hydrometric.csv </p>
+<p>where:</p>
+<ul>
+<li>
+<p><strong>PROVTERR</strong> : 2-letter code for the province or territory</p>
+</li>
+<li>
+<p><strong>FREQUENCY</strong> : frequency of update, "hourly" or "daily"</p>
+</li>
+</ul>
+<p>Example:</p>
+<p>"ON_daily_hydrometric.csv" means the hydrometric observations updated daily for all stations in Ontario (ON) in CSV format.</p>
 <h2 id="data-description">Data description</h2>
 <h3 id="data-file">Data File</h3>
 <p>The real-time hydrometric data is provided in a CSV format for the distribution 

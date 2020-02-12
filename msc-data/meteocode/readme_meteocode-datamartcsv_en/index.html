@@ -57,9 +57,19 @@
     <a href="../../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#">MSC GeoMet / <br>GeoMet du SMC</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../../../msc-geomet/readme_en/">Overview</a>
 </li>
+            
+<li >
+    <a href="../../../msc-geomet/web-services_en/">Technical Documentation</a>
+</li>
+    </ul>
+  </li>
                                     
 <li >
     <a href="../../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
@@ -103,7 +113,7 @@
 <p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC Open Public Data</a> &gt; <a href="../readme_meteocode_en/">Meteocode forecast</a> &gt; Meteocode forecast data in CSV on MSC Datamart</p>
 <h1 id="meteocode-forecast-data-in-csv-format">Meteocode forecast data in CSV format</h1>
 <p>This document describes the content of the <a href="../readme_meteocode_en/">meteocode data</a> in CSV format.</p>
-<p>The files for meteocode data in CSV format are created from the CMML files using the <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/meteocode/cmml2csv.xsl">XSLT</a> technology. The CSV files does not contain more information than the CMML files, they are only in a different format. Moreover, each CMML files contains many regions while each CSV file contains only one region.</p>
+<p>The files for meteocode terrestrial data in CSV format are created from the CMML files using the <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/meteocode/cmml2csv.xsl">XSLT</a> technology. The CSV files does not contain more information than the CMML files, they are only in a different format. Moreover, each CMML files contains many regions while each CSV file contains only one region.</p>
 <h2 id="data-address">Data address</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data is available via the HTTP protocol. It is possible to access it with a standard browser. In this case, we obtain a list of links giving access to a CSV file.</p>
@@ -143,261 +153,145 @@
 </ul>
 <p><strong>1. Air Temperature (TA)</strong></p>
 <p>This file contains the air temperature.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Valid time ; Heure de validité</th>
-<th>Air temperature (° Celsius) ; Température de l'air (° Celsius)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The 2 other values describe the content of each column :
-    * Forecast valid time.
-    * Air temperature in degree Celsius.</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The 2 other values describe the content of each column :<ul>
+<li>Forecast valid time.</li>
+<li>Air temperature in degree Celsius.</li>
+</ul>
+</li>
+</ul>
 <p><strong>2. Dew Point (TD)</strong></p>
 <p>This file contains dew point temperature.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Valid time ; Heure de validité</th>
-<th>Dew point (° Celsius) ; Point de rosée (° Celsius)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The 2 other values describe the content of each column :
-    * Forecast valid time.
-    * Dew point in degree Celsius.</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The 2 other values describe the content of each column :<ul>
+<li>Forecast valid time.</li>
+<li>Dew point in degree Celsius.</li>
+</ul>
+</li>
+</ul>
 <p><strong>3. Precipitation Accumulation (PA)</strong></p>
 <p>This file contains the precipitation accumulation and type.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Start ; Début</th>
-<th>End ; Fin</th>
-<th>Total accumulation min (mm) ; Accumulation totale min (mm)</th>
-<th>Total accumulation max (mm) ; Accumulation totale max (mm)</th>
-<th>Hourly accumulation min (mm) ; Accumulation horaire min (mm)</th>
-<th>Hourly accumulation max (mm) ; Accumulation horaire max (mm)</th>
-<th>Precipitation type ; Type de précipitation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The other values describe the content of each column :
-    * Starting time of accumulation period.
-    * Ending time of accumulation period.
-    * Value of lower cumulative precipitation amount in mm.
-    * Value of upper cumulative precipitation amount in mm.
-    * Lower limit value of precipitation amount in mm.
-    * Upper limit value of precipitation amount in mm.
-    * Precipitation type. Can be amongst the following values :
-        * Rain
-        * Snow
-        * Ice pellet
-        * Freezing rain</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The other values describe the content of each column :<ul>
+<li>Starting time of accumulation period.</li>
+<li>Ending time of accumulation period.</li>
+<li>Value of lower cumulative precipitation amount in mm.</li>
+<li>Value of upper cumulative precipitation amount in mm.</li>
+<li>Lower limit value of precipitation amount in mm.</li>
+<li>Upper limit value of precipitation amount in mm.</li>
+<li>Precipitation type. Can be amongst the following values :<ul>
+<li>Rain</li>
+<li>Snow</li>
+<li>Ice pellet</li>
+<li>Freezing rain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p><strong>4. Probability of precipitation (POP)</strong></p>
 <p>This file contains the probability of precipitation in percent.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Start ; Début</th>
-<th>End ; Fin</th>
-<th>Probability of precipitation (%) ; Probabilité de précipitation (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The other values describe the content of each column :
-    * Starting time of period for this probability of precipitation.
-    * Ending time of period for this probability of precipitation.
-    * Probability of precipitation, in percent.</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The other values describe the content of each column :<ul>
+<li>Starting time of period for this probability of precipitation.</li>
+<li>Ending time of period for this probability of precipitation.</li>
+<li>Probability of precipitation, in percent.</li>
+</ul>
+</li>
+</ul>
 <p><strong>5. Wind (WS)</strong></p>
 <p>This file contains the values of wind speed and direction.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Start ; Début</th>
-<th>End ; Fin</th>
-<th>Wind speed min (km/h) ; Vitesse du vent min (km/h)</th>
-<th>Wind speed max (km/h) ; Vitesse du vent max (km/h)</th>
-<th>Wind direction ; Direction du vent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The other values describe the content of each column :
-    * Starting time of period.
-    * Ending time of period.
-    * Lower value of wind speed, in km/h.
-    * Higher value of wind speed, in km/h.
-    * String for wind direction. Can be one of these values :
-        * east
-        * nil
-        * north
-        * northeast
-        * northwest
-        * west
-        * easterly
-        * northerly
-        * northeasterly
-        * northwesterly
-        * westerly
-        * southerly
-        * southeasterly
-        * southwesterly
-        * south
-        * southeast
-        * southwest
-        * variable </p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The other values describe the content of each column :<ul>
+<li>Starting time of period.</li>
+<li>Ending time of period.</li>
+<li>Lower value of wind speed, in km/h.</li>
+<li>Higher value of wind speed, in km/h.</li>
+<li>String for wind direction. Can be one of these values :<ul>
+<li>east</li>
+<li>nil</li>
+<li>north</li>
+<li>northeast</li>
+<li>northwest</li>
+<li>west</li>
+<li>easterly</li>
+<li>northerly</li>
+<li>northeasterly</li>
+<li>northwesterly</li>
+<li>westerly</li>
+<li>southerly</li>
+<li>southeasterly</li>
+<li>southwesterly</li>
+<li>south</li>
+<li>southeast</li>
+<li>southwest</li>
+<li>variable </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p><strong>6. Wind Gust (WG)</strong></p>
 <p>This file contains the values of wind gust.</p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Start ; Début</th>
-<th>End ; Fin</th>
-<th>Wind gust min (km/h) ; Vitesse des rafales min (km/h)</th>
-<th>Wind gust max (km/h) ; Vitesse des rafales max (km/h)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The other values describe the content of each column :
-    * Starting time of period.
-    * Ending time of period.
-    * Lower value of wind gust, in km/h.
-    * Higher value of wind gust, in km/h.</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The other values describe the content of each column :<ul>
+<li>Starting time of period.</li>
+<li>Ending time of period.</li>
+<li>Lower value of wind gust, in km/h.</li>
+<li>Higher value of wind gust, in km/h.</li>
+</ul>
+</li>
+</ul>
 <p><strong>7. Cloud Cover (CC)</strong></p>
-<p>The first line of these files contains :</p>
-<table>
-<thead>
-<tr>
-<th>Region_en ; Region_fr</th>
-<th>CMML : 'cmml_filename.xml'</th>
-<th>Valid time ; Heure de validité</th>
-<th>Cloud cover (tenth) ; Couverture nuageuse (dixième)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>where :
-* <strong>Region_en</strong> : English name of the forecast region.
-* <strong>Region_fr</strong> : French name of the forecast region.
-* <strong>CMML</strong> : Constant string.
-* <strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.
-* The other values describe the content of each column :
-    * Valid time for this cloud cover.
-    * Cloud cover value, decimal.</p>
+<p>The first line of these files contains the parameters:</p>
+<p>where :</p>
+<ul>
+<li><strong>Region_en</strong> : English name of the forecast region.</li>
+<li><strong>Region_fr</strong> : French name of the forecast region.</li>
+<li><strong>CMML</strong> : Constant string.</li>
+<li><strong>cmml_filename.xml</strong> : Name of the CMML file from which this CSV file originates.</li>
+<li>The other values describe the content of each column :<ul>
+<li>Valid time for this cloud cover.</li>
+<li>Cloud cover value, decimal.</li>
+</ul>
+</li>
+</ul>
 <h2 id="support">Support</h2>
 <p>If you have any questions about these data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
 <h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>

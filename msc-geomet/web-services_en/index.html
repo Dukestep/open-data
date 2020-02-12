@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Web services en - MSC Open Data / Données ouvertes du SMC</title>
+        <title>Technical Documentation - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                             <li >
                                 <a href="../../msc-data/readme_en/">Available data / <br>Données disponibles</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -57,9 +57,19 @@
     <a href="../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#">MSC GeoMet / <br>GeoMet du SMC</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../readme_en/">Overview</a>
 </li>
+            
+<li class="active">
+    <a href="./">Technical Documentation</a>
+</li>
+    </ul>
+  </li>
                                     
 <li >
     <a href="../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
@@ -80,6 +90,16 @@
                                 <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../readme_en/">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../cost-recovered/readme_en/">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -88,16 +108,16 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#geospatial-web-services">Geospatial Web Services</a></li>
+        <li class="main active"><a href="#table-of-contents">Table of contents</a></li>
+        <li class="main "><a href="#geospatial-web-services">Geospatial web services</a></li>
             <li><a href="#web-map-service-wms">Web Map Service (WMS)</a></li>
             <li><a href="#web-coverage-service-wcs">Web Coverage Service (WCS)</a></li>
             <li><a href="#usage-example">Usage example</a></li>
         <li class="main "><a href="#ogc-api-features">OGC API - Features</a></li>
-            <li><a href="#service-endpoints">Service Endpoints</a></li>
-            <li><a href="#feature-collections">Feature Collections</a></li>
-            <li><a href="#feature-collection">Feature Collection</a></li>
-            <li><a href="#inspecting-feature-collection-schema">Inspecting Feature Collection Schema</a></li>
+            <li><a href="#service-endpoints">Service endpoints</a></li>
+            <li><a href="#feature-collections">Feature collections</a></li>
+            <li><a href="#feature-collection">Feature collection</a></li>
+            <li><a href="#inspecting-feature-collection-schema">Inspecting feature collection schema</a></li>
             <li><a href="#querying">Querying</a></li>
             <li><a href="#access-by-identifier">Access by Identifier</a></li>
     </ul>
@@ -107,7 +127,7 @@
 <p><a href="../web-services_fr/">En français</a></p>
 <p><img alt="ECCC logo" src="../../img_eccc-logo.png" /></p>
 <p><a href="../../readme_en/">TOC</a> &gt; <a href="../readme_en/">MSC GeoMet</a> &gt; Technical documentation</p>
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="table-of-contents">Table of contents</h1>
 <ul>
 <li><a href="#web-map-service-wms">Web Map Service (WMS)</a><ul>
 <li><a href="#wms-getcapabilities">WMS GetCapabilities</a></li>
@@ -128,7 +148,7 @@
 </li>
 <li><a href="#ogc-api-features">OGC API - Features (WFS 3)</a></li>
 </ul>
-<h1 id="geospatial-web-services">Geospatial Web Services</h1>
+<h1 id="geospatial-web-services">Geospatial web services</h1>
 <p>Web services are protocols designed to support machine to machine interaction over a network, and are typically utilized in a client/server computing environment made available through programmatic access, associated tools and applications.</p>
 <p>The MSC GeoMet web services adhere to open standards ratified by the <a href="https://www.opengeospatial.org/">Open Geospatial Consortium (OGC)</a>, and the <a href="https://www.isotc211.org/">International Organization for Standardization (ISO)</a> which enable interoperability and thus make data easy to discover, access, visualize and integrate. OGC and ISO standards play an important role in <a href="https://www.wmo.int/pages/prog/www/WIS/documents/MOAWMO_OGC.pdf">World Meteorological Organization interoperability</a> as part of the <a href="https://www.wmo.int/pages/prog/www/WIS/">WMO Information System</a> and are supported by numerous off the shelf open source or commercial tools.</p>
 <p>The following OGC web services are supported by MSC GeoMet:</p>
@@ -143,7 +163,6 @@
 <h3 id="wms-getcapabilities">WMS GetCapabilities</h3>
 <p>A WMS GetCapabilities request allows the client to retrieve an XML document that contains metadata describing the service. This document contains information relating to the supported request types, supported coordinate reference systems, and most importantly, the list of available layers (data). </p>
 <p>A WMS GetCapabilities request is comprised of the following parameters:</p>
-<p><br></p>
 <table>
 <thead>
 <tr>
@@ -189,7 +208,6 @@
 <p>Each layer defined in the WMS GetCapabilities XML document has information relating to the layer's name and title, geographic extent, time extent, and available styles.</p>
 <h3 id="wms-getmap">WMS GetMap</h3>
 <p>A WMS GetMap request allows the client to retrieve a map image (JPEG, PNG, etc.) for a given layer within a defined area. A GetMap request is composed of several parameters whose value determine the layer requested, its style, coordinate reference system, the timestep, in addition to the properties of the returned image. The <a href="#getcapabilities">WMS GetCapabilities request</a> can assist the client in determining the values for several of these parameters.</p>
-<p><br></p>
 <table>
 <thead>
 <tr>
@@ -267,7 +285,6 @@
 <p><img alt="Global Deterministic Prediction System (GDPS) surface temperature" src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180&amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png" /> </p>
 <h3 id="wms-getfeatureinfo">WMS GetFeatureInfo</h3>
 <p>A WMS GetFeatureInfo request retrieves raw data for a given geographic location. The GetFeatureInfo request parameters resemble those of a GetMap request but also include three new required parameters: <code>I</code>, <code>J</code> and <code>QUERY_LAYERS</code>. These parameters represent the horizontal and vertical placement of the pixel to query in the map image and the name of the layers to query.</p>
-<p><br></p>
 <table>
 <thead>
 <tr>
@@ -361,8 +378,6 @@
 <p>A WMS GetLegendGraphic request returns an image of the legend in the style requested by the user. The simplest way to access a layer's legend for a given style is to consult the WMS GetCapabilities document for the layer in question. All available layer styles are listed within the layer definition and the <code>&lt;OnlineResource&gt;</code> tag will contain a WMS GetLegendGraphic URL. </p>
 <p>For example, the GDPS air temperature layer (GPDS.ETA_TT) has several styles defined in the WMS GetCapabilties document. Requesting the <code>TEMPERATURE-LINEAR</code> style using the GetLegendGraphic request contained in the <code>&lt;OnlineResource&gt;</code> tag returns the legend for this style:</p>
 <p><img alt="TEMPERATURE-LINEAR GetLegendGraphic Example" src="https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GDPS.ETA_TT&amp;format=image/png&amp;STYLE=TEMPERATURE-LINEAR" /></p>
-<p><br></p>
-<p><br></p>
 <table>
 <thead>
 <tr>
@@ -430,7 +445,7 @@
 
 <p>And returns:</p>
 <p><img alt="GDWPS Wind Arrow Style Example" src="https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=GDWPS.UU.1h&amp;format=image/png&amp;STYLE=WINDARROW" /></p>
-<h3 id="handling-time">Handling Time</h3>
+<h3 id="handling-time">Handling time</h3>
 <p>Given the importance of temporal dimension for weather data, it is important for users to understand how MSC GeoMet handles time in WMS requests. By default, if no <code>TIME</code> or <code>DIM_REFERENCE_TIME</code> parameters are passed in the request, MSC GeoMet will return the closest time interval available for the nearest past model run.</p>
 <p>If the client desires to make a request for another date and time, the <code>TIME</code> or <code>DIM_REFERENCE_TIME</code> can be used in both GetMap and GetFeatureInfo requests. Date and times must adhere to the ISO8601 standard and are always in UTC (Coordinate Universal Time).</p>
 <p>To make a request for a specific time and/or model run, a client must first determine the available model runs and time intervals. This information is available in the layer's <code>&lt;Dimension&gt;</code> tags in the WMS GetCapabilities document.</p>
@@ -462,10 +477,7 @@ multipleValues=&quot;1&quot; nearestValue=&quot;0&quot;&gt;2019-06-11T00:00:00Z/
 <h3 id="handling-styles">Handling Styles</h3>
 <p>The graphical representation of information and data can have a significant impact on the way data is interpreted by an end-user. MSC GeoMet often provides several different graphical representations for a single layer. The client can choose to display the data using the style most appropriate for their use case.</p>
 <p>Using the <code>STYLE</code> parameter in both WMS GetMap and WMS GetFeatureInfo requests, a client can specify the style they choose to apply to the underlying data. Available styles for any given layer are described in the WMS GetCapabilities document.</p>
-<p>Below are two examples of GetMap requests for the Regional Deterministic 
-Precipitation Analysis' quantity of precipitation layer (RDPA.24F_PR)
-that each specify a different <code>STYLE</code> parameter value to render the 
-returned map.</p>
+<p>Below are two examples of GetMap requests for the Regional Deterministic Precipitation Analysis' quantity of precipitation layer (RDPA.24F_PR) that each specify a different <code>STYLE</code> parameter value to render the returned map.</p>
 <p>RDPA.24F_PR with CAPA24-LINEAR style:</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;LAYERS=RDPA.24F_PR
 &amp;STYLES=CAPA24-LINEAR&amp;CRS=EPSG:4326&amp;BBOX=35,-150,85,-45&amp;WIDTH=600&amp;HEIGHT=400&amp;FORMAT=image/png
@@ -479,8 +491,7 @@ returned map.</p>
 
 <p><img alt="RDPA.24F_PR with CAPA24-LINEAR style" src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;LAYERS=RDPA.24F_PR&amp;STYLES=RDPA-WXO&amp;CRS=EPSG:4326&amp;BBOX=35,-150,85,-45&amp;WIDTH=600&amp;HEIGHT=400&amp;FORMAT=image/png" /></p>
 <p>Users can also choose to apply their own styles either by pointing to
-an external style using a <a href="https://www.opengeospatial.org/standards/sld">OGC Styled Layer Descriptor (SLD)</a> document in the <code>SLD</code> parameter 
-or by entering the SLD document directly into the <code>SLD_BODY</code> parameter. Note that the <code>SLD_BODY</code> definition must be encoded using the URL encoding.</p>
+an external style using a <a href="https://www.opengeospatial.org/standards/sld">OGC Styled Layer Descriptor (SLD)</a> document in the <code>SLD</code> parameter or by entering the SLD document directly into the <code>SLD_BODY</code> parameter. Note that the <code>SLD_BODY</code> definition must be encoded using the URL encoding.</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;LAYERS=GDPS.ETA_NT
 &amp;STYLES=&amp;CRS=EPSG:4326&amp;BBOX=35,-150,85,-45&amp;WIDTH=1800&amp;HEIGHT=1200&amp;FORMAT=image/png
 &amp;SLD_BODY=%3C%3Fxml+version%3D%221.0%22+encoding%3D%22UTF-8%22%3F%3E+%3C
@@ -505,13 +516,8 @@ Rule%3E+%3C%2Fse%3AFeatureTypeStyle%3E+%3C%2FUserStyle%3E+%3C%2FNamedLayer%3E+%3
 <p>The <a href="https://www.opengeospatial.org/standards/wcs">OGC Web Coverage Service</a> requests enable a client to retrieve coverage information from a geospatial data for a given area of interest. WCS requests are made over the internet (HTTP) and give the user more flexibility when requesting information about the coverage of a layer compared with the more traditional way of downloading of flat files. The Web Coverage Service allows for several different types of requests, each of which are described in further detail below.</p>
 <p>Note that only the WCS 2.0.1 version is currently supported by the GeoMet services. We invite users to use exclusively version 2.0.1 of the WCS standard.</p>
 <h3 id="wcs-getcapabilities">WCS GetCapabilities</h3>
-<p>A WCS GetCapabilities request allows the client to retrieve an XML
-document that contains metadata describing the service. This document
-contains information relating to the supported request types, supported
-coordinate reference systems, and most importantly, the layers (data)
-for which clients can request raw data.</p>
-<p>A GetCapabilities request is comprised of the following parameters:
-<br></p>
+<p>A WCS GetCapabilities request allows the client to retrieve an XML document that contains metadata describing the service. This document contains information relating to the supported request types, supported coordinate reference systems, and most importantly, the layers (data) for which clients can request raw data.</p>
+<p>A GetCapabilities request is comprised of the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -667,14 +673,9 @@ like this:</p>
 <p>A WCS GetCoverage request to MSC GeoMet for the GDPS.ETA_TT layer could then be constructed
 like this: 
 <a href="https://geo.weather.gc.ca/geomet?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage&amp;COVERAGEID=GDPS.ETA_TT&amp;SUBSETTINGCRS=EPSG:4326&amp;SUBSET=x(-120,-85)&amp;SUBSET=y(48,66)&amp;RESOLUTION=x(0.24)&amp;RESOLUTION=y(0.24)&amp;FORMAT=image/tiff">https://geo.weather.gc.ca/geomet?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage&amp;COVERAGEID=GDPS.ETA_TT&amp;SUBSETTINGCRS=EPSG:4326&amp;SUBSET=x(-120,-85)&amp;SUBSET=y(48,66)&amp;RESOLUTION=x(0.24)&amp;RESOLUTION=y(0.24)&amp;FORMAT=image/tiff</a></p>
-<h3 id="handling-time_1"><a name="wcstime"></a>Handling Time</h3>
-<p>Given the important temporal dimension of weather data, it is important
-for users to understand how MSC GeoMet handles time in WCS requests. By
-default, if no <code>TIME</code> or <code>DIM_REFERENCE_TIME</code> parameters are passed in
-the request, MSC GeoMet will, by default, return the closest
-time interval available for the latest model run.</p>
-<p>If the user wants to make a request for another date and time, the
-<code>TIME</code> or <code>DIM_REFERENCE_TIME</code> can be used in a WCS GetCoverage request. Date and times must adhere to the ISO8601 standard and are always in UTC (Coordinate Universal Time).</p>
+<h3 id="handling-time_1"><a name="wcstime"></a>Handling time</h3>
+<p>Given the important temporal dimension of weather data, it is important for users to understand how MSC GeoMet handles time in WCS requests. By default, if no <code>TIME</code> or <code>DIM_REFERENCE_TIME</code> parameters are passed in the request, MSC GeoMet will, by default, return the closest time interval available for the latest model run.</p>
+<p>If the user wants to make a request for another date and time, the <code>TIME</code> or <code>DIM_REFERENCE_TIME</code> can be used in a WCS GetCoverage request. Date and times must adhere to the ISO8601 standard and are always in UTC (Coordinate Universal Time).</p>
 <h4 id="geomet-climate">GeoMet-Climate</h4>
 <p>GeoMet-Climate's WCS service does not support request with <code>TIME</code> or <code>DIM_REFERENCE_TIME</code>. Instead, the WCS time information is stored in different bands, each one representing a particular timestamp. This means that a user will need the <code>RANGESUBSET</code> parameter to access the desired time coverage.</p>
 <p>The name of the different bands can be retrieved from the DescribeCoverage request. Here is an example using a GeoMet-Climate layer (DCS.TM.RCP26.YEAR.ANO_PCTL50):</p>
@@ -711,39 +712,36 @@ time interval available for the latest model run.</p>
 ...
 </code></pre>
 
-<p>In this example, the <code>field</code> keys give the user the available band names.
-In GeoMet-Climate, the bands will always use the same nomenclature which is: <code>B</code> followed by one of the two 
-ISO8601 time format supported: <code>YYYY</code> for annual time interval and <code>YYYY-MM</code> for monthly time interval.</p>
-<p>In GeoMet-Climate one can either request coverage for a single time step or for a time range:
-* Single time step: <code>RANGESUBSET=B20015</code>
-* Time range: <code>RANGESUBSET=B2015:B2019</code></p>
+<p>In this example, the <code>field</code> keys give the user the available band names. In GeoMet-Climate, the bands will always use the same nomenclature which is: <code>B</code> followed by one of the two ISO8601 time format supported: <code>YYYY</code> for annual time interval and <code>YYYY-MM</code> for monthly time interval.</p>
+<p>In GeoMet-Climate one can either request coverage for a single time step or for a time range:</p>
+<ul>
+<li>Single time step: <code>RANGESUBSET=B20015</code></li>
+<li>Time range: <code>RANGESUBSET=B2015:B2019</code></li>
+</ul>
 <p>Note that a user cannot, in a single GetCoverage request, ask for more than 256 bands.</p>
 <h4 id="geomet-weather">GeoMet-Weather</h4>
 <p>Please refer to the previous <a href="#handling-time">WMS Handling Time</a> section, as for GeoMet-Weather,
 the <code>TIME</code> and <code>DIM_REFERENCE_TIME</code> usage is the same.</p>
-<p>Note that the layers time metadata are not available in the WCS GetCapabilities or the WCS DescribeCoverage. 
-The time metadata can only be access through the WMS GetCapabilities.</p>
+<p>Note that the layers time metadata are not available in the WCS GetCapabilities or the WCS DescribeCoverage. The time metadata can only be access through the WMS GetCapabilities.</p>
 <h3 id="usage-example">Usage example</h3>
-<p>GeoMet-Climate and GeoMet-Weather WCS are used through the <a href="https://climate-change.canada.ca/climate-data/#/">Climate data extraction tool</a> of the
-<a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/canadian-centre-climate-services.html">Canadian Centre for Climate Services portal</a></p>
-<p>One can select a variable, region of interest, temporal information and output format on the extraction tool
-to retrieve the raw coverage information.</p>
+<p>GeoMet-Climate and GeoMet-Weather WCS are used through the <a href="https://climate-change.canada.ca/climate-data/#/">Climate data extraction tool</a> of the <a href="https://www.canada.ca/en/environment-climate-change/services/climate-change/canadian-centre-climate-services.html">Canadian Centre for Climate Services portal</a>.</p>
+<p>One can select a variable, region of interest, temporal information and output format on the extraction tool to retrieve the raw coverage information.</p>
 <h2 id="ogc-api-features">OGC API - Features</h2>
 <p>The <a href="https://github.com/opengeospatial/WFS_FES">OGC API - Features</a> (WFS 3) provides a specification to querying geospatial data on the web.</p>
 <p>The service operates over HTTP and requests are made via HTTP GET requests. No HTTP authentication is required. Responses are JSON/<a href="https://geojson.org/">GeoJSON</a> by default, but can be set to html using <code>f=html</code>.</p>
 <p>The first parameter in a query is specified with <code>?</code> and subsequent parameters with <code>&amp;</code>.</p>
-<h3 id="service-endpoints">Service Endpoints</h3>
+<h3 id="service-endpoints">Service endpoints</h3>
 <p><a href="https://geo.weather.gc.ca/geomet/features">https://geo.weather.gc.ca/geomet/features</a></p>
-<h4 id="openapi-30-document">OpenAPI 3.0 Document</h4>
+<h4 id="openapi-30-document">OpenAPI 3.0 document</h4>
 <p><a href="https://geo.weather.gc.ca/geomet/features/api">https://geo.weather.gc.ca/geomet/features/api</a></p>
-<h3 id="feature-collections">Feature Collections</h3>
+<h3 id="feature-collections">Feature collections</h3>
 <p>List all feature collections available:</p>
 <p><a href="https://geo.weather.gc.ca/geomet/features/collections">https://geo.weather.gc.ca/geomet/features/collections</a></p>
 <p>The response provides a list of feature collections with associated metadata (title, description, links, extent, CRS).</p>
-<h3 id="feature-collection">Feature Collection</h3>
+<h3 id="feature-collection">Feature collection</h3>
 <p>List a single feature collection:</p>
 <p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-stations">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-stations</a></p>
-<h3 id="inspecting-feature-collection-schema">Inspecting Feature Collection Schema</h3>
+<h3 id="inspecting-feature-collection-schema">Inspecting feature collection schema</h3>
 <p>Issue a query returning a single feature to inspect geometry and properties:</p>
 <p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?limit=1">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?limit=1</a></p>
 <h3 id="querying">Querying</h3>
@@ -786,7 +784,7 @@ in returning only the number of features found (without the actual features retu
 <p>Another strategy that can be used is to query for all data without returning any records:</p>
 <p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?STATION_NUMBER=01AP004&amp;limit=0">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?STATION_NUMBER=01AP004&amp;limit=0</a></p>
 <p>...and then inspecting the response (see <code>numberMatched</code>) to assess the size of the entire record.  The client can then decide how or whether to page accordingly.</p>
-<h4 id="combining-filter-parameters">Combining Filter Parameters</h4>
+<h4 id="combining-filter-parameters">Combining filter parameters</h4>
 <p>Query all daily mean data from a single station between 2001 and 2010:</p>
 <p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?STATION_NUMBER=10CD001&amp;time=2001-01-01/2010-12-31">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?STATION_NUMBER=10CD001&amp;time=2001-01-01/2010-12-31</a></p>
 <h4 id="exporting-to-csv-format">Exporting to CSV format</h4>
