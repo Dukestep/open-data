@@ -49,19 +49,19 @@ function updateInfo(current_time) {
 
 function setTime() {
   current_time = current_time
-  getRadarStartEndTime().then(data => {
     if (current_time === null) {
-      current_time = data[0];
-    } else if (current_time >= data[1]) {
-      current_time = data[0]
+      current_time = startTime;
+    } else if (current_time >= endTime) {
+      current_time = startTime
     } else {
       current_time = new Date(current_time.setMinutes(current_time.getMinutes() + 10));
     }
     layers[1].getSource().updateParams({'TIME': current_time.toISOString().split('.')[0]+"Z"});
     layers[2].getSource().updateParams({'TIME': current_time.toISOString().split('.')[0]+"Z"});
     updateInfo(current_time)
-  })
 }
+
+const [startTime, endTime] = await getRadarStartEndTime()
 setTime();
 
 let stop = function() {
