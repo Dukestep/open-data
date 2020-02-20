@@ -61,7 +61,13 @@ function setTime() {
     updateInfo(current_time)
 }
 
-const [startTime, endTime] = await getRadarStartEndTime()
+let startTime = null
+let endTime = null
+getRadarStartEndTime().then(data => {
+    startTime = data[0]
+    endTime = data[1]
+})
+
 setTime();
 
 let stop = function() {
