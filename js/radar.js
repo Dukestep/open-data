@@ -28,6 +28,7 @@ let layers = [
         format: 'image/png',
         url: 'https://geo.weather.gc.ca/geomet/',
         params: {'LAYERS': 'RADAR_COVERAGE_RSNO.INV', 'TILED': true},
+        transition: 0
       })
     })
   ]
