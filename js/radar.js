@@ -23,8 +23,8 @@ let layers = [
         params: {'LAYERS': 'RADAR_1KM_RSNO', 'TILED': true},
       })
     }),
-    new ol.layer.Tile({
-      source: new ol.source.TileWMS({
+    new ol.layer.Image({
+      source: new ol.source.ImageWMS({
         format: 'image/png',
         url: 'https://geo.weather.gc.ca/geomet/',
         params: {'LAYERS': 'RADAR_COVERAGE_RSNO.INV', 'TILED': true},
