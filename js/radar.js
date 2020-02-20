@@ -10,7 +10,10 @@ async function getRadarStartEndTime() {
 
 let frameRate = 1.0; // frames per second
 let animationId = null;
+let startTime = null
+let endTime = null
 let current_time = null;
+
 
 let layers = [
     new ol.layer.Tile({
@@ -61,14 +64,12 @@ function setTime() {
     updateInfo(current_time)
 }
 
-let startTime = null
-let endTime = null
 getRadarStartEndTime().then(data => {
     startTime = data[0]
     endTime = data[1]
+    setTime();
 })
 
-setTime();
 
 let stop = function() {
   if (animationId !== null) {
