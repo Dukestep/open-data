@@ -57,19 +57,9 @@
     <a href="../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
 </li>
                                     
-  <li class="dropdown-submenu">
-    <a href="#">MSC GeoMet / <br>GeoMet du SMC</a>
-    <ul class="dropdown-menu">
-            
 <li >
-    <a href="../readme_en/">Overview</a>
+    <a href="../readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
 </li>
-            
-<li >
-    <a href="../web-services_en/">Technical Documentation</a>
-</li>
-    </ul>
-  </li>
                                     
 <li >
     <a href="../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
@@ -102,15 +92,7 @@
         <li class="main "><a href="#services-web-geospatiaux">Services web géospatiaux</a></li>
             <li><a href="#web-map-service-wms">Web Map Service (WMS)</a></li>
             <li><a href="#web-coverage-service-wcs">Web Coverage Service (WCS)</a></li>
-            <li><a href="#exemple-dutilisation">Exemple d'utilisation</a></li>
-        <li class="main "><a href="#ogc-api-features">OGC API - Features</a></li>
-            <li><a href="#points-de-service">Points de service</a></li>
-            <li><a href="#documentation-openapi-30">Documentation OpenAPI 3.0</a></li>
-            <li><a href="#collections-dentites">Collections d'entités</a></li>
-            <li><a href="#collection-dentites">Collection d'entités</a></li>
-            <li><a href="#inspection-du-schema-de-collection-dentites">Inspection du schéma de collection d'entités</a></li>
-            <li><a href="#requete">Requête</a></li>
-            <li><a href="#acces-par-identifiant">Accès par identifiant</a></li>
+            <li><a href="#ogc-api-features">OGC API - Features</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -362,7 +344,7 @@
 </table>
 <p>Une requête GetFeatureInfo pour la même image que l'exemple WMS GetMap ci-dessus :</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetFeatureInfo&amp;BBOX=45,-75,45.5,-74.5
-&amp;CRS=EPSG:4326&amp;WIDTH=10&amp;HEIGHT=10&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png&amp;QUERY_LAYERS=GDPS.ETA_TT&amp;I=5&amp;J=5
+&amp;CRS=EPSG:4326&amp;WIDTH=10&amp;HEIGHT=10&amp;LAYERS=GDPS.ETA_TT&amp;INFO_FORMAT=text/plain&amp;QUERY_LAYERS=GDPS.ETA_TT&amp;I=5&amp;J=5
 </code></pre>
 
 <h3 id="wms-getlegendgraphic">WMS GetLegendGraphic</h3>
