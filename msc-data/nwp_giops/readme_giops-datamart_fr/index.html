@@ -107,7 +107,6 @@
 <p>Les fichiers des données sont en format NetCDF (NetCDF-4 modèle classique), conformes aux conventions CF liées au climat et aux prévisions (Climate and Forecast Conventions).  Un fichier NetCDF se décrit lui-même à l'aide des métadonnées décrivant les données contenues.  Les fichiers contiennent des moyennes temporelles des champs de prévision de l'état de la glace marine et de l'océan.  La période de calcul de la moyenne a une longueur de 3 heures pour les champs bidimensionnels et de 24 heures pour les champs tridimensionnels, les deux périodes finissant au temps de validité des champs respectifs. À 00Z, pour l'heure de prévision 0, les fichiers contiennent des champs analyses, considérés valides à 00Z. Le temps dans le fichier est encodé comme le temps en secondes écoulé depuis le 1er Janvier 1950 à 0h00 UTC.</p>
 <h2 id="adresse-des-donnees">Adresse des données</h2>
 <p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le Protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
-<p>Les données sont disponibles via le protocole HTTP. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier netCDF. Nous vous recommandons d’automatiser le téléchargement en le scriptant avec wget (lien externe, anglais) ou un programme équivalent. Pour plus d’information sur wget, consultez les notes d’utilisation.</p>
 <p>Les données sont accessibles à l'adresses suivante :</p>
 <ul>
 <li><a href="https://dd.meteo.gc.ca/model_giops/netcdf">https://dd.meteo.gc.ca/model_giops/netcdf</a>                  </li>
@@ -116,7 +115,7 @@
 <ul>
 <li>Les fichiers contenant les données sur la grille latlon0.2x0.2 se trouvent à l'adresse suivante :</li>
 </ul>
-<p>https://dd.meteo.gc.ca/model_giops/netcdf/lat_lon/{nd}/{HH}/{hhh}/  </p>
+<p><a href="https://dd.weather.gc.ca/model_giops/netcdf/lat_lon/">https://dd.meteo.gc.ca/model_giops/netcdf/lat_lon/{nd}/{HH}/{hhh}/</a></p>
 <ul>
 <li>Les fichiers contenant les données sur la grille ps5km60N se trouvent à l'adresse suivante :</li>
 </ul>
@@ -169,30 +168,44 @@ prévision [003, 006, ..., 240]. Pour l'échéance 0-heure à 00Z, TypeDeFichier
 <p>Une partie des variables représentent des quantités au premier niveau du modèle, tandis que les autres sont définies à la surface de l'océan (ex. variables de la glace marine).</p>
 <p>La visualisation des champs contenus dans les fichiers NetCDF produits par SGPOG a été testée avec succès avec les outils suivants : Panoply (version 4.2.2) et IDV (version 5.2).</p>
 <h2 id="liste-des-variables">Liste des variables</h2>
-<p>Liste des variables (champs de prévision) disponibles dans les fichiers contenant des champs 2D :</p>
+<p>Liste des variables (champs de prévision au delà de 00h) disponibles dans les fichiers contenant des champs 2D :</p>
 <ul>
-<li><strong>votemper</strong> : Température potentielle de l'eau de mer au premier niveau du modèle.</li>
-<li><strong>vosaline</strong> : Salinité de l'eau de mer au premier niveau du modèle.</li>
-<li><strong>vozocrtx</strong> : Composante X de la vitesse de l'eau au premier niveau du modèle.</li>
-<li><strong>vomecrty</strong> : Composante Y de la vitesse de l'eau au premier niveau du modèle.</li>
-<li><strong>sossheig</strong> : Hauteur de la surface de la mer par rapport au géoïde.</li>
-<li><strong>somixhgt</strong> : Profondeur de la turbocline.</li>
-<li><strong>sokaraml</strong> : Profondeur de la couche de mélange d'après le critère de densité.</li>
-<li><strong>iiceconc</strong> : Fraction de la glace de mer.</li>
-<li><strong>iicevol</strong> : Volume de glace de mer par unité de surface de cellule de grille.</li>
-<li><strong>itzocrtx</strong> : Composante X de la vitesse de la glace de mer.</li>
-<li><strong>itmecrty</strong> : Composante Y de la vitesse de la glace de mer.</li>
-<li><strong>isnowvol</strong> : Volume de neige sur la glace de mer par unité de surface de cellule de grille.</li>
-<li><strong>iicesurftemp</strong> : Température de la surface de la neige/glace de mer.</li>
-<li><strong>iicepressure</strong> : Pression interne de la glace, intégrée verticalement.</li>
-<li><strong>iicestrength</strong> : Résistance à la compression de la glace, intégrée verticalement.</li>
+<li><strong>votemper</strong> : Température potentielle de l'eau de mer au premier niveau du modèle</li>
+<li><strong>vosaline</strong> : Salinité de l'eau de mer au premier niveau du modèle</li>
+<li><strong>vozocrtx</strong> : Composante X de la vitesse de l'eau au premier niveau du modèle</li>
+<li><strong>vomecrty</strong> : Composante Y de la vitesse de l'eau au premier niveau du modèle</li>
+<li><strong>sossheig</strong> : Hauteur de la surface de la mer par rapport au géoïde</li>
+<li><strong>somixhgt</strong> : Profondeur de la turbocline</li>
+<li><strong>sokaraml</strong> : Profondeur de la couche de mélange d'après le critère de densité</li>
+<li><strong>iiceconc</strong> : Fraction de la glace de mer</li>
+<li><strong>iicevol</strong> : Volume de glace de mer par unité de surface de cellule de grille</li>
+<li><strong>itzocrtx</strong> : Composante X de la vitesse de la glace de mer</li>
+<li><strong>itmecrty</strong> : Composante Y de la vitesse de la glace de mer</li>
+<li><strong>isnowvol</strong> : Volume de neige sur la glace de mer par unité de surface de cellule de grille</li>
+<li><strong>iicesurftemp</strong> : Température de la surface de la neige/glace de mer</li>
+<li><strong>iicepressure</strong> : Pression interne de la glace, intégrée verticalement</li>
+<li><strong>iicestrength</strong> : Résistance à la compression de la glace, intégrée verticalement</li>
+<li><strong>iicedivergence</strong> : Divergence de la glace de mer</li>
+<li><strong>iiceshear</strong> : Taux de déformation dû au cisaillement dans la glace de mer </li>
 </ul>
-<p>Liste des variables (champs de prévision) disponibles dans les fichiers contenant des champs 3D :</p>
+<p>Liste des variables (champs de prévision au delà de 00h) disponibles dans les fichiers contenant des champs 3D :</p>
 <ul>
 <li><strong>votemper</strong> : Température potentielle de l'eau de mer</li>
 <li><strong>vosaline</strong> : Salinité de l'eau de mer</li>
 <li><strong>vozocrtx</strong> : Composante X de la vitesse de l'eau</li>
 <li><strong>vomecrty</strong> : Composante Y de la vitesse de l'eau</li>
+</ul>
+<p>Liste des variables (champs d'analyse pour l'heure de prévision 00h) disponibles dans les fichiers contenant des champs 2D :</p>
+<ul>
+<li><strong>sossheig</strong> : Hauteur de la surface de la mer par rapport au géoïde</li>
+<li><strong>iiceconc</strong> : Fraction de la glace de mer</li>
+</ul>
+<p>Liste des variables (champs d'analyse pour l'heure de prévision 00h) disponibles dans les fichiers contenant des champs 3D :</p>
+<ul>
+<li><strong>votemper</strong> : Température potentielle de l'eau de mer au 1er niveau du modèle</li>
+<li><strong>vosaline</strong> : Salinité de l'eau de mer au 1er niveau du modèle</li>
+<li><strong>vozocrtx</strong> : Composante X de la vitesse de l'eau au 1er niveau du modèle</li>
+<li><strong>vomecrty</strong> : Composante Y de la vitesse de l'eau au 1er niveau du modèle</li>
 </ul>
 <p>Notez que puisque les champs à l'heure de prévision 0 ne sont pas moyennés dans le temps, on peut simplement extraire le niveau de surface des champs votemper, vosaline, vozocrtx et vomecrty des champs 3D pour obtenir les champs 2D correspondants. </p>
 <h2 id="support">Support</h2>

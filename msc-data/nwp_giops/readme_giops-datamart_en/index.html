@@ -106,7 +106,6 @@
 <p>The data files are in NetCDF format (NetCDF-4 classic model) and comply with the Climate and Forecast (CF) Conventions. Being self-described, the NetCDF files contain both data and sufficient information in their metadata describing the data.  For forecast hours greater than 0, the files contain time-mean sea ice and ocean forecast fields, where the length of the averaging period is 3 hours for two-dimensional fields and 24 hours for three-dimensional fields (both periods ending at the validity time of the respective fields).  For forecast hour 0 at 00Z, the files contain analysed fields, nominally valid at 00Z. The time in the file is encoded as the time in units of seconds elapsed since January 1st, 1950, 0h00 UTC.</p>
 <h2 id="data-location">Data location</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
-<p>The data is available using the HTTP protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable netCDF file. In practice, we recommend writing your own script to automate the downloading of the desired data (using wget or equivalent). If you are unsure of how to proceed, you might like to take a look at our brief wget usage guide.</p>
 <p>The data can be accessed at the following URLs:</p>
 <ul>
 <li><a href="https://dd.weather.gc.ca/model_giops/netcdf">https://dd.weather.gc.ca/model_giops/netcdf</a></li>
@@ -115,12 +114,12 @@
 <ul>
 <li>Files containing data on the latlon0.2x0.2 grid can be found at the following address:</li>
 </ul>
-<p>https://dd.weather.gc.ca/model_giops/netcdf/lat_lon/{nd}/{HH}/{hhh}/</p>
+<p><a href="https://dd.weather.gc.ca/model_giops/netcdf/lat_lon/">https://dd.weather.gc.ca/model_giops/netcdf/lat_lon/{nd}/{HH}/{hhh}/</a></p>
 <ul>
 <li>Files containing data on the ps5km60N grid can be found at the following address:</li>
 </ul>
 <p><a href="https://dd.weather.gc.ca/model_giops/netcdf/polar_stereographic">https://dd.weather.gc.ca/model_giops/netcdf/polar_stereographic/{nd}/{HH}/{hhh}/</a></p>
-<p>where :</p>
+<p>where:</p>
 <ul>
 <li><strong>nd</strong> : Number of spatial dimensions of the forecast fields [2d or 3d].</li>
 <li><strong>HH</strong> : Start hour of model run in UTC [00,12].</li>
@@ -175,6 +174,8 @@ CMC_giops_votemper_depth_0.5_latlon0.2x0.2_3h-mean_2016020800_P036.nc</p>
 <li><strong>iicesurftemp</strong> : Surface temperature of sea ice/snow.</li>
 <li><strong>iicepressure</strong> : Vertically integrated ice internal pressure.</li>
 <li><strong>iicestrength</strong> : Vertically integrated compressive ice strength.</li>
+<li><strong>iicedivergence</strong> : Sea ice divergence</li>
+<li><strong>iiceshear</strong> : Sea ice shear strain rate</li>
 </ul>
 <p>List of variables (forecast fields for forecast hours greater than 0) available in the 3D files:</p>
 <ul>

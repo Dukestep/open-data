@@ -14,7 +14,6 @@ let startTime = null
 let endTime = null
 let current_time = null;
 
-
 let layers = [
     new ol.layer.Tile({
       source: new ol.source.OSM()
