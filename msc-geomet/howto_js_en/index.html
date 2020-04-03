@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Howto js en - MSC Open Data / Données ouvertes du SMC</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">MSC Open Data / <br>Données ouvertes du SMC</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../msc-data/readme_en/">Available data / <br>Données disponibles</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+</li>
+                                    
+<li >
+    <a href="../../cost-recovered/readme_en/">Cost-recovered services /<br>Services à recouvrement de coûts</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            </li>
+                            <li >
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#geomet-and-javascript-web-mapping-libraries">GeoMet and Javascript web-mapping libraries</a></li>
+            <li><a href="#geomet-with-openlayers">GeoMet with OpenLayers</a></li>
+            <li><a href="#displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</a></li>
+            <li><a href="#creating-an-animated-map-with-openlayers">Creating an animated map with OpenLayers</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a href="../readme_fr/">En français</a></p>
+<p><img alt="ECCC logo" src="../../img_eccc-logo.png" /></p>
+<p><a href="../../readme_en/">TOC</a> &gt; MSC GeoMet</p>
+<h1 id="geomet-and-javascript-web-mapping-libraries">GeoMet and Javascript web-mapping libraries</h1>
+<p>GeoMet-Weather and GeoMet-Climate serve OGC Open Web Services (OWS) and can
+therefore easily be integrated into web mapping libraries such as OpenLayers
+and Leaflet. This section will show you how to work with a Web Map Service 
+(WMS) using both libraries. By the end of it, you will be able to display any
+GeoMet layer on an interactive map, query the WMS for data, and even animated
+a time-enabled GeoMet layer. Since Openlayers and Leaflet do things slightly 
+differently, each will be covered in its own section. Simply navigate to
+the web-mapping library of your choice and follow along! A basic knowledge of 
+HTML and Javascript is recommended.</p>
+<ul>
+<li>GeoMet with OpenLayers</li>
+<li>GeoMet with Leaflet</li>
+</ul>
+<h2 id="geomet-with-openlayers">GeoMet with OpenLayers</h2>
+<h3 id="displaying-a-geomet-wms-layer-with-openlayers">Displaying a GeoMet WMS layer with OpenLayers</h3>
+<p>The following steps will show you how to create a simple web map with
+OpenLayers. Our end result will be a map that displays the Global Deterministic
+Prediction System's air surface temperature data (<code>GPDS.ETA_TT</code>) over an
+OpenStreetMap basemap.We will start things off simply and create the HTML 
+required to house our map.</p>
+<pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;style&gt;
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  &lt;/style&gt;
+
+  &lt;title&gt;GeoMet OpenLayers Example&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;GeoMet OpenLayers Example&quot;&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;CCMEP&quot;&gt;
+
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/css/ol.css&quot; type=&quot;text/css&quot;&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/build/ol.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;map&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>There are a two important things to note. </p>
+<p>First, in order to use OpenLayers, we must import the required JS and CSS 
+tag in the body of our HTML document
+and assign an <code>id</code> attribute to this tag. The <code>id</code> value will be referred to
+in our Javascript code in order to specify where to render our interactive map
+in the HTML document.</p>
+<p>With the HTML code now complete, we can turn our attention to writing the
+JavaScript code required to create our web map.</p>
+<pre><code class="javascript">let layers_to_add = [
+    new ol.layer.Tile({
+      source: new ol.source.OSM()
+    }),
+    new ol.layer.Tile({
+      opacity: 0.4,
+      source: new ol.source.TileWMS({
+        url: 'https://geo.weather.gc.ca/geomet/',
+        params: {'LAYERS': 'GDPS.ETA_TT', 'TILED': true},
+        transition: 0
+      })
+    })
+  ];
+
+let map = new ol.Map({
+  target: 'map',
+  layers: layers,
+  view: new ol.View({
+    center: ol.proj.fromLonLat([-97, 57]),
+    zoom: 0
+  })
+});
+
+</code></pre>
+
+<p>As with the HTML code there are two important parts to the Javascript code
+above. </p>
+<p>First, to keep things a little tidy, we create an array (<code>layers_to_add</code>) 
+that contains a list of layers we want to add to our map. Each item is a layer 
+that is linked to a source. In our case we are using two sources, the 
+OpenStreetMap source for our basemap and the GeoMet-Weather WMS for our
+the GDPS air surface temperature layer. The GDPS air surface temperature
+source also has some additional properties:</p>
+<ul>
+<li><code>url</code>: WMS service URL.</li>
+<li><code>params</code>: WMS request parameters. The <code>LAYERS</code> parameter is required.</li>
+<li><code>transition</code>: Duration of the opacity transition for rendering. We disable
+ this here since we are setting an opacity and want it to be applied
+ prior to displaying each tile.</li>
+</ul>
+<p>Second, we create a new variable called <code>map</code> and use the <code>ol.Map</code> constructor
+to define the actual map that will be rendered in our HTML document. In the 
+object passed to the constructor, we define a <code>target</code> for our map (e.g
+the <code>id</code> value of the HTML container, in this case <code>map</code>). We then pass
+our <code>layers_to_add</code> array to the <code>layers</code> property and use the <code>ol.View</code>
+constructor to define the initial view of our map. In our case, we set the 
+initial zoom level and center the view on a specific lon/lat coordinate.</p>
+<p>That's it!</p>
+<p>Below is a an live example of the code above. Try modifying
+the Javascript code to display another layer, changing the opacity, and the 
+initial zoom and centre coordinates of the map.</p>
+<iframe height="287" style="width: 100%;" scrolling="no" title="PoqvpPW" src="https://codepen.io/dukestep/embed/PoqvpPW?height=287&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/dukestep/pen/PoqvpPW'>PoqvpPW</a> by Dukestep
+  (<a href='https://codepen.io/dukestep'>@dukestep</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<h2 id="displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</h2>
+<h2 id="creating-an-animated-map-with-openlayers">Creating an animated map with OpenLayers</h2></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search / Rechercher</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter your search terms below.
+                    <br>
+                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search / Rechercher..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
