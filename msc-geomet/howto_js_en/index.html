@@ -395,24 +395,26 @@ when the anchor tag is clicked.</p>
 <p>Finally, our map will take advantage of the
 <a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html#on"><code>ol.Map.on()</code></a>
 method to listen for <code>singleclick</code> events on the map. The callback function
-that is triggered by the event does the following:
-* Fetches the coordinates of the clicked map point, then reprojects the
+that is triggered by the event does the following:</p>
+<ul>
+<li>Fetches the coordinates of the clicked map point, then reprojects the
 coordinates to EPSG:4326 (WSG 84). The <code>ol.coordinate.toStringXY</code> method 
-transforms the coordinates into a comma delimited string.
-* Retrieves the resolution of the map view.
-* Retrieves the source of the <code>GDPS.ETA_TT</code> layer.
-* Uses the <code>ol.source.TileWMS.getFeatureInfoUrl()</code> method to create
+transforms the coordinates into a comma delimited string.</li>
+<li>Retrieves the resolution of the map view.</li>
+<li>Retrieves the source of the <code>GDPS.ETA_TT</code> layer.</li>
+<li>Uses the <code>ol.source.TileWMS.getFeatureInfoUrl()</code> method to create
 a WMS GetFeatureInfo request. Passed as arguments are the click event
 coordinates, the coordinates coordinate reference system, and an object
 containing any GetFeatureInfo parameters (<code>INFO_FORMAT</code> should at least be 
-provided).
-* If the GetFeatureInfo URL is properly constructed, submits the 
+provided).</li>
+<li>If the GetFeatureInfo URL is properly constructed, submits the 
 GetFeatureInfo request using the Javascript API. Upon receiving
 a response, the JSON is retrieved and the popup content is updated with
 additional HTML that includes the coordinates and the value property
- of the first GeoJSON feature retrieved by the GetFeatureInfo request.
-* Sets the overlay position to the coordinates of the initial
-click event.</p>
+ of the first GeoJSON feature retrieved by the GetFeatureInfo request.</li>
+<li>Sets the overlay position to the coordinates of the initial
+click event.</li>
+</ul>
 <p>See the live example below:</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="GeoMet GetFeatureInfo OpenLayers" src="https://codepen.io/dukestep/embed/PoqvpPW?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/dukestep/pen/PoqvpPW'>GeoMet GetFeatureInfo OpenLayers</a> by Dukestep
