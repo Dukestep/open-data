@@ -146,14 +146,14 @@ required to display our map in the browser.</p>
 
 <p>There are a two important things to note. </p>
 <p>First, in order to use OpenLayers, we must import the required JS and CSS
-libraries. Add a  <code>&lt;div&gt;</code> element in the body of our HTML document
-and assign an <code>id</code> attribute with a value of <code>map</code> to this element. 
-The <code>id</code> value will be referred to in our Javascript code in order to
-specify where to render our interactive map in the HTML document.</p>
-<p>We also add a small amount of CSS in the <code>&lt;head&gt;</code> tag in order to define the
-width and height of our map container.</p>
+libraries. A  <code>&lt;div&gt;</code> element is added in the body of our HTML document
+and assigned an <code>id</code> attribute with a value of <code>map</code>.
+The <code>id</code> value will be referred to in the Javascript code in order to
+specify where to render the interactive map in the HTML document.</p>
+<p>A small amount of CSS is also added in the <code>&lt;head&gt;</code> tag in order to define the
+width and height of the map container.</p>
 <h4 id="javascript">Javascript</h4>
-<p>With the HTML code now complete, we can turn our attention to writing the
+<p>With the HTML code now complete, let's turn our attention to writing the
 JavaScript code required to create our web map.</p>
 <pre><code class="javascript">let layers_to_add = [
     new ol.layer.Tile({
@@ -180,14 +180,13 @@ let map = new ol.Map({
 
 </code></pre>
 
-<p>As with the HTML code there are two important parts to the Javascript code
-above. </p>
-<p>First, to keep things a little tidy, we create an array (<code>layers_to_add</code>) 
+<p>There are two important parts to the Javascript code above. </p>
+<p>First, to keep things a little tidy, we create an <code>layers_to_add</code> array
 that contains a list of layers we want to add to our map. Each item is a layer 
-that is linked to a source. In our case we are using two sources, the 
-OpenStreetMap source for our basemap and the GeoMet-Weather WMS for our
-the GDPS air surface temperature layer. The GDPS air surface temperature
-source also has some additional properties:</p>
+that is linked to a source. In this case two layers are added to the map:
+(1) the OpenStreetMap layer for our basemap and (2) the GeoMet-Weather WMS
+for the Global Deterministic Prediction System's air surface temperature layer.
+The GDPS air surface temperature source also has some additional properties:</p>
 <ul>
 <li><code>url</code>: WMS service URL.</li>
 <li><code>params</code>: WMS request parameters. The <code>LAYERS</code> parameter is required.</li>
@@ -196,12 +195,12 @@ source also has some additional properties:</p>
  prior to displaying each tile.</li>
 </ul>
 <p>Second, we create a new variable called <code>map</code> and use the <code>ol.Map</code> constructor
-to define the actual map that will be rendered in our HTML document. In the 
-object passed to the constructor, we define a <code>target</code> for our map (e.g
-the <code>id</code> value of the HTML container, in this case <code>map</code>). We then pass
-our <code>layers_to_add</code> array to the <code>layers</code> property and use the <code>ol.View</code>
-constructor to define the initial view of our map. In our case, we set the 
-initial zoom level and center the view on a specific lon/lat coordinate.</p>
+to define the map that will be rendered in our HTML document. In the
+object passed to the constructor, define a <code>target</code> for our map (e.g
+the <code>id</code> value of the HTML container, in this case <code>map</code>). The
+<code>layers_to_add</code> array is then passed to the <code>layers</code> property and the <code>ol.View</code>
+constructor is used to define the initial view of our map. In our case, we set
+the  initial zoom level and center the view on a specific lon/lat coordinate.</p>
 <p>That's it!</p>
 <p>Below is a a live example of the above code. Try modifying
 the Javascript code to display another layer, changing the opacity, and the 
@@ -214,7 +213,7 @@ initial zoom and centre coordinates of the map.</p>
 <h3 id="displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</h3>
 <p>Now that the GDPS air surface temperature layer is properly displayed on an
 interactive map, let's try adding some additional functionality to the map.
-Web Map Services (WMS) allow a user to make a GetFeatureInfo request
+Web Map Services (WMS) allow a user to make a <a href="/msc-geomet/web-services_en.md#wms-getfeatureinfo">GetFeatureInfo request</a>
 to extract data associated to a coordinate on the map. Using the OpenLayers
 API, we will create a popup when a user clicks on the map that will display
 the coordinates of the clicked point and the corresponding air surface
@@ -610,7 +609,8 @@ map state.</p>
 <p>Finally, <code>stop</code> and <code>play</code> functions are defined. The <code>stop()</code> function will
 clear the <code>window.setInterval()</code> method used to call the <code>setTime</code> function
 at a pre-defined interval. These functions are then added as the callback
-function for their respective button as defined in the HTML.</p>
+function for click event listeners for their respective button as defined in
+the HTML.</p>
 <p>See the live example below:
 <iframe height="275" style="width: 100%;" scrolling="no" title="GeoMet WMS Time Openlayers Example" src="https://codepen.io/dukestep/embed/abvoKye?height=275&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/dukestep/pen/abvoKye'>GeoMet WMS Time Openlayers Example</a> by Dukestep
