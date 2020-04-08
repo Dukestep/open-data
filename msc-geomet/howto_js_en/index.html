@@ -90,8 +90,6 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#geomet-and-javascript-web-mapping-libraries">GeoMet and Javascript web-mapping libraries</a></li>
             <li><a href="#geomet-with-openlayers">GeoMet with OpenLayers</a></li>
-            <li><a href="#displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</a></li>
-            <li><a href="#creating-an-animated-map-with-openlayers">Creating an animated map with OpenLayers</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -115,11 +113,11 @@ HTML and Javascript is recommended.</p>
 </ul>
 <h2 id="geomet-with-openlayers">GeoMet with OpenLayers</h2>
 <h3 id="displaying-a-geomet-wms-layer-with-openlayers">Displaying a GeoMet WMS layer with OpenLayers</h3>
-<p>The following steps will show you how to create a simple web map with
-OpenLayers. Our end result will be a map that displays the Global Deterministic
+<p>The following steps will show how to create a simple web map with
+OpenLayers. The map will display the Global Deterministic
 Prediction System's air surface temperature data (<code>GPDS.ETA_TT</code>) over an
-OpenStreetMap basemap.We will start things off simply and create the HTML
-required to house our map.</p>
+OpenStreetMap basemap. We will start things off simply and create the HTML
+required to display our map in the browser.</p>
 <h4 id="html">HTML</h4>
 <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -147,11 +145,11 @@ required to house our map.</p>
 </code></pre>
 
 <p>There are a two important things to note. </p>
-<p>First, in order to use OpenLayers, we must import the required JS and CSS 
-tag in the body of our HTML document
-and assign an <code>id</code> attribute to this tag. The <code>id</code> value will be referred to
-in our Javascript code in order to specify where to render our interactive map
-in the HTML document.</p>
+<p>First, in order to use OpenLayers, we must import the required JS and CSS
+libraries. Add a  <code>&lt;div&gt;</code> element in the body of our HTML document
+and assign an <code>id</code> attribute with a value of <code>map</code> to this element. 
+The <code>id</code> value will be referred to in our Javascript code in order to
+specify where to render our interactive map in the HTML document.</p>
 <p>We also add a small amount of CSS in the <code>&lt;head&gt;</code> tag in order to define the
 width and height of our map container.</p>
 <h4 id="javascript">Javascript</h4>
@@ -208,15 +206,15 @@ initial zoom level and center the view on a specific lon/lat coordinate.</p>
 <p>Below is a a live example of the above code. Try modifying
 the Javascript code to display another layer, changing the opacity, and the 
 initial zoom and centre coordinates of the map.</p>
-<iframe height="265" style="width: 100%;" scrolling="no" title="GeoMet Simple WMS  OpenLayers" src="https://codepen.io/dukestep/embed/ZEGgBLN?height=265&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="275" style="width: 100%;" scrolling="no" title="GeoMet Simple WMS  OpenLayers" src="https://codepen.io/dukestep/embed/ZEGgBLN?height=275&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/dukestep/pen/ZEGgBLN'>GeoMet Simple WMS  OpenLayers</a> by Dukestep
   (<a href='https://codepen.io/dukestep'>@dukestep</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-<h2 id="displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</h2>
+<h3 id="displaying-underlying-data-with-openlayers">Displaying underlying data with OpenLayers</h3>
 <p>Now that the GDPS air surface temperature layer is properly displayed on an
 interactive map, let's try adding some additional functionality to the map.
-Web Map Services (WMS allows a user to make a GetFeatureInfo request
+Web Map Services (WMS) allow a user to make a GetFeatureInfo request
 to extract data associated to a coordinate on the map. Using the OpenLayers
 API, we will create a popup when a user clicks on the map that will display
 the coordinates of the clicked point and the corresponding air surface
@@ -374,24 +372,25 @@ map.on('singleclick', function(evt) {
     fetch(url)
       .then(function (response) { return response.json(); })
       .then(function (json) {
-      overlay.setPosition(coordinate);
       content.innerHTML = `&lt;b&gt;Coordinates (Lon/Lat): &lt;/b&gt; &lt;code&gt;${xy_coordinates}&lt;/code&gt;&lt;br&gt;&lt;b&gt; Temperature: &lt;/b&gt;&lt;code&gt;${Math.round(json.features[0].properties.value)} °C&lt;/code&gt;`;
+      overlay.setPosition(coordinate);
       });
     }
 });
 </code></pre>
 
-<p>There are three main additions to the Javascript code.</p>
+<p>There are four main additions to the Javascript code.</p>
 <p>First, we create references to the three HTML elements that are used by the 
 popup( <code>container</code>, <code>content</code>, and <code>closer</code>). </p>
-<p>Second, the <code>ol.Overlay</code> constructor is used to create a new overlay which will 
-be used to anchor the popup to the map. Note that <code>container</code> (i.e. our popup)
-is associated to the <code>element</code> property of the object passed to the Overlay
-constructor. The <code>overlay</code> variable is then passed as an array item to the
-<code>overlays</code> property when constructing the map. An inline <code>onclick</code> event is then 
-added to the <code>closer</code> (i.e the <code>&lt;a&gt;</code> tag in the popup), 
-that sets the overlay position to <code>undefined</code>, effectively hiding the overlay 
-when the anchor tag is clicked.</p>
+<p>The <a href="https://openlayers.org/en/latest/apidoc/module-ol_Overlay-Overlay.html"><code>ol.Overlay()</code></a>
+constructor is then used to create a new overlay which will be used to anchor
+the popup to the map. Note that <code>container</code> (i.e. our popup) is associated to
+the <code>element</code> property of the object passed to the Overlay
+constructor. The overlay is then passed as an array item to the
+<code>overlays</code> property when constructing the map.</p>
+<p>An inline <code>onclick</code> event is then added to the <code>closer</code> (i.e the <code>&lt;a&gt;</code> tag in
+the popup), that sets the overlay position to <code>undefined</code>, effectively
+hiding the overlay when the anchor tag contained in the popup is clicked.</p>
 <p>Finally, our map will take advantage of the
 <a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html#on"><code>ol.Map.on()</code></a>
 method to listen for <code>singleclick</code> events on the map. The callback function
@@ -404,7 +403,7 @@ transforms the coordinates into a comma delimited string.</li>
 <li>Retrieves the source of the <code>GDPS.ETA_TT</code> layer.</li>
 <li>Uses the <code>ol.source.TileWMS.getFeatureInfoUrl()</code> method to create
 a WMS GetFeatureInfo request. Passed as arguments are the click event
-coordinates, the coordinates coordinate reference system, and an object
+coordinates, view resolution, map projection, and an object
 containing any GetFeatureInfo parameters (<code>INFO_FORMAT</code> should at least be 
 provided).</li>
 <li>If the GetFeatureInfo URL is properly constructed, submits the 
@@ -416,12 +415,207 @@ additional HTML that includes the coordinates and the value property
 click event.</li>
 </ul>
 <p>See the live example below:</p>
-<iframe height="265" style="width: 100%;" scrolling="no" title="GeoMet GetFeatureInfo OpenLayers" src="https://codepen.io/dukestep/embed/PoqvpPW?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="275" style="width: 100%;" scrolling="no" title="GeoMet GetFeatureInfo OpenLayers" src="https://codepen.io/dukestep/embed/PoqvpPW?height=275&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/dukestep/pen/PoqvpPW'>GeoMet GetFeatureInfo OpenLayers</a> by Dukestep
   (<a href='https://codepen.io/dukestep'>@dukestep</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-<h2 id="creating-an-animated-map-with-openlayers">Creating an animated map with OpenLayers</h2></div>
+<h3 id="creating-an-animated-map-with-openlayers">Creating an animated map with OpenLayers</h3>
+<p>A significant amount of data served by GeoMet has one or more temporal
+dimensions. The following section will dive into how OpenLayers can help
+us visualize and animate the various time slices of such layers,
+in this case weather radar data, served as a WMS via GeoMet-Weather. This
+example is inspired by the <a href="https://openlayers.org/en/latest/examples/wms-time.html">WMS Time example</a>
+provided by OpenLayers.</p>
+<p>Two GeoMet-Weather layers are used to create this animation: <code>RADAR_1KM_RRAI</code>
+and <code>RADAR_COVERAGE_RRAI.INV</code>. These layers are available over a moving
+3-hour window, every 10 minutes.</p>
+<h4 id="html_2">HTML</h4>
+<pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;style&gt;
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+    #controller {
+      background: #ececec;
+      padding: 0.5rem;
+    }
+    #play,#pause {
+      padding: 0rem 1rem;
+    }
+    #info {
+      padding-left: 0.5 rem;
+    }
+  &lt;/style&gt;
+  &lt;title&gt;GeoMet Animated WMS Time OpenLayers Example&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;GeoMet OpenLayers Example&quot;&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;CCMEP&quot;&gt;
+
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/css/ol.css&quot; type=&quot;text/css&quot;&gt;
+  &lt;link href=&quot;https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/build/ol.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;map&quot;&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;controller&quot; role=&quot;group&quot; aria-label=&quot;Animation controls&quot; style=&quot;background: #ececec; padding: 0.5rem;&quot;&gt;
+    &lt;button id=&quot;play&quot; class=&quot;btn btn-primary btn-sm&quot; type=&quot;button&quot;&gt;
+            &lt;i class=&quot;fa fa-play&quot; style=&quot;padding: 0rem 1rem&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button id=&quot;pause&quot; class=&quot;btn btn-primary btn-sm&quot; type=&quot;button&quot;&gt;
+      &lt;i class=&quot;fa fa-pause&quot; style=&quot;padding: 0rem 1rem&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;span id=&quot;info&quot; style=&quot;padding-left: 0.5rem;&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Much like the other examples, the above HTML loads the OpenLayers Javacscript
+and CSS libraries, as well as the Bootstrap and Font Awesome CSS used to
+display the play/pause buttons in the animation controller. An additional
+<code>#controller</code> container is created below the map and contains the play/pause
+bottons and a <code>span</code> element used to display the currently displayed time step.</p>
+<h4 id="javascript_2">Javascript</h4>
+<pre><code class="javascript">const parser = new DOMParser();
+
+/* Async function used to retrieve start and end time from RADAR_1KM_RRAI layer GetCapabilities document */
+async function getRadarStartEndTime() {
+  let response = await fetch(
+    &quot;https://geo.weather.gc.ca/geomet/?lang=en&amp;service=WMS&amp;request=GetCapabilities&amp;version=1.3.0&amp;LAYERS=RADAR_1KM_RRAI&quot;
+  );
+  let data = await response
+    .text()
+    .then((data) =&gt;
+      parser
+        .parseFromString(data, &quot;text/xml&quot;)
+        .getElementsByTagName(&quot;Dimension&quot;)[0]
+        .innerHTML.split(&quot;/&quot;)
+    );
+  return [new Date(data[0]), new Date(data[1])];
+}
+
+let frameRate = 1.0; // frames per second
+let animationId = null;
+let startTime = null;
+let endTime = null;
+let current_time = null;
+
+let layers = [
+  new ol.layer.Tile({
+    source: new ol.source.OSM()
+  }),
+  new ol.layer.Image({
+    source: new ol.source.ImageWMS({
+      format: &quot;image/png&quot;,
+      url: &quot;https://geo.weather.gc.ca/geomet/&quot;,
+      params: { LAYERS: &quot;RADAR_1KM_RRAI&quot;},
+      transition: 0
+    })
+  }),
+  new ol.layer.Image({
+    source: new ol.source.ImageWMS({
+      format: &quot;image/png&quot;,
+      url: &quot;https://geo.weather.gc.ca/geomet/&quot;,
+      params: { LAYERS: &quot;RADAR_COVERAGE_RRAI.INV&quot;},
+      transition: 0
+    })
+  })
+];
+
+let map = new ol.Map({
+  target: &quot;map&quot;,
+  layers: layers,
+  view: new ol.View({
+    center: ol.proj.fromLonLat([-97, 57]),
+    zoom: 3
+  })
+});
+
+function updateInfo(current_time) {
+  let el = document.getElementById(&quot;info&quot;);
+  el.innerHTML = `Time / Heure (UTC): ${current_time.toISOString()}`;
+}
+
+function setTime() {
+  current_time = current_time;
+  if (current_time === null) {
+    current_time = startTime;
+  } else if (current_time &gt;= endTime) {
+    current_time = startTime;
+  } else {
+    current_time = new Date(
+      current_time.setMinutes(current_time.getMinutes() + 10)
+    );
+  }
+  layers[1]
+    .getSource()
+    .updateParams({ TIME: current_time.toISOString().split(&quot;.&quot;)[0] + &quot;Z&quot; });
+  layers[2]
+    .getSource()
+    .updateParams({ TIME: current_time.toISOString().split(&quot;.&quot;)[0] + &quot;Z&quot; });
+  updateInfo(current_time);
+}
+
+getRadarStartEndTime().then((data) =&gt; {
+  startTime = data[0];
+  endTime = data[1];
+  setTime();
+});
+
+let stop = function () {
+  if (animationId !== null) {
+    window.clearInterval(animationId);
+    animationId = null;
+  }
+};
+
+let play = function () {
+  stop();
+  animationId = window.setInterval(setTime, 1000 / frameRate);
+};
+
+let startButton = document.getElementById(&quot;play&quot;);
+startButton.addEventListener(&quot;click&quot;, play, false);
+
+let stopButton = document.getElementById(&quot;pause&quot;);
+stopButton.addEventListener(&quot;click&quot;, stop, false);
+</code></pre>
+
+<p>In the Javscript code, an async function is created to retrieve the start
+and end time currently available for the weather radar data (<code>RADAR_1KM_RRAI</code>).
+When a response is received, the <code>DOMParser()</code> is used to retrieve the content
+of the GetCapabilties <code>&lt;Dimension&gt;</code> tag and returns an array containing
+two datetime objects representing the start and end time of the available
+weather radar data.</p>
+<p>Much like the other OpenLayers above, an array of layers is defined and passed
+to the <code>ol.Map</code> constructor.</p>
+<p>The <code>SetTime()</code> function is used to retrieved the current displayed datetime
+and sets the time step to be displayed. If no time is set, the map is set to
+display the retrieved start time. If the current displayed is greater or equal
+to the retrieved end time, the time is reset to the retrieved start time,
+enabling looping of the animation. Otherwise, the current time is retrieved
+and 10 minutes are added to it, in order to retrieve the next available
+timestep. The <code>RADAR_1KM_RRAI</code> and <code>RADAR_COVERAGE_RRAI</code> then get their
+<code>TIME</code> parameter updated and OpenLayers automatically creates new requests
+for these updated images.</p>
+<p>The <code>getRadarStartEndTime()</code> function is called once to set the <code>startTime</code>
+and <code>EndTime</code> variables and calls the <code>setTime()</code> method to set the initial
+map state.</p>
+<p>Finally, <code>stop</code> and <code>play</code> functions are defined. The <code>stop()</code> function will
+clear the <code>window.setInterval()</code> method used to call the <code>setTime</code> function
+at a pre-defined interval. These functions are then added as the callback
+function for their respective button as defined in the HTML.</p>
+<p>See the live example below:
+<iframe height="275" style="width: 100%;" scrolling="no" title="GeoMet WMS Time Openlayers Example" src="https://codepen.io/dukestep/embed/abvoKye?height=275&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/dukestep/pen/abvoKye'>GeoMet WMS Time Openlayers Example</a> by Dukestep
+  (<a href='https://codepen.io/dukestep'>@dukestep</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe></p></div>
         </div>
 
         <footer class="col-md-12">
