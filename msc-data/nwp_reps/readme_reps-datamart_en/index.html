@@ -47,18 +47,18 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../readme_en/">Available data / <br>Données disponibles</a>
+                                <a href="../../readme_en/">Available data /<br>Données disponibles</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access /<br>Accès aux données <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+    <a href="../../../msc-datamart/readme_en/">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li >
-    <a href="../../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../../../msc-geomet/readme_en/">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li >
@@ -66,11 +66,37 @@
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage and tutorials / br>Utilisation et tutoriels <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../usage/readme_en/">Usage overview /<br>Aperçu de l'utilisation</a>
+</li>
+                                    
+<li >
+    <a href="../../../usage/tutorial_web-maps_en/">Create interactive web maps /<br>Créer des cartes web interactives</a>
+</li>
+                                    
+<li >
+    <a href="../../../usage/tutorial_WMS_QGIS_en/">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../../usage/tutorial_raw-data_QGIS_en/">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../../usage/tutorial_OAFeat_QGIS_en/">Use OGC API Features in QGIS /<br>Utiliser OGC API Features dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../../msc-geomet/web-services_en/">API technical doc /<br>Doc technique de l'API</a>
+</li>
+                                </ul>
                             </li>
                             <li >
-                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us /<br>Contactez-nous</a>
                             </li>
                         </ul>
 
@@ -107,7 +133,7 @@
 <p>This page describes the <a href="../readme_reps_en/">Regional Ensemble Prediction System</a> data available in GRIB2 format.</p>
 <h2 id="data-location">Data location</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
-<p>The data is available using the HTTP protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable GRIB2 file. In practice, we recommend writing your own script to automate the downloading of the desired data (using wget or equivalent). If you are unsure of how to proceed, you might like to take a look at our brief wget usage guide.</p>
+<p>The data is available using the HTTP protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable GRIB2 file. </p>
 <p>The data can be accessed at the following URLs:</p>
 <ul>
 <li><a href="https://dd.weather.gc.ca/ensemble/reps/15km/grib2">https://dd.weather.gc.ca/ensemble/reps/15km/grib2/{EnsembleDataType}/{HH}/{hhh}</a></li>

@@ -47,18 +47,18 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../msc-data/readme_en/">Available data / <br>Données disponibles</a>
+                                <a href="../../msc-data/readme_en/">Available data /<br>Données disponibles</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access /<br>Accès aux données <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+    <a href="../readme_en/">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li >
-    <a href="../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../../msc-geomet/readme_en/">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li >
@@ -66,11 +66,37 @@
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage and tutorials / br>Utilisation et tutoriels <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/readme_en/">Usage overview /<br>Aperçu de l'utilisation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_web-maps_en/">Create interactive web maps /<br>Créer des cartes web interactives</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_WMS_QGIS_en/">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_raw-data_QGIS_en/">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_OAFeat_QGIS_en/">Use OGC API Features in QGIS /<br>Utiliser OGC API Features dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../msc-geomet/web-services_en/">API technical doc /<br>Doc technique de l'API</a>
+</li>
+                                </ul>
                             </li>
                             <li >
-                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us /<br>Contactez-nous</a>
                             </li>
                         </ul>
 
@@ -90,8 +116,8 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#le-datamart-du-smc">Le Datamart du SMC</a></li>
             <li><a href="#acces">Accès</a></li>
+            <li><a href="#utilisation-et-tutoriels">Utilisation et tutoriels</a></li>
             <li><a href="#formats-de-donnees">Formats de données</a></li>
-            <li><a href="#utilisation">Utilisation</a></li>
             <li><a href="#gestion-du-changement">Gestion du changement</a></li>
             <li><a href="#liste-de-diffusion-des-annonces">Liste de diffusion des annonces</a></li>
             <li><a href="#soutien">Soutien</a></li>
@@ -121,6 +147,18 @@
 <p>Une conséquence directe de cette hiérarchie par date, concerne la période de rétention des données qui devient identique pour tous les jeux de données et fonction de l'espace disque disponible.</p>
 <p>L'accès aux données via le protocole AMQP est évidemment fortement conseillé.</p>
 <p>Finalement, il est important de noter que contrairement au Datamart du SMC, il n'y a pas de redondance 24/7 du lien internet (support "/best effort/"). Dans le cas peu probable où le lien venait à briser, le Datamart du SMC deviendrait alors la source unique d'accès aux données. Ainsi, il est conseillé aux usagers désirant tester ce serveur alternatif de développer la capacité de retourner rapidement sur le serveur <a href="https://dd.meteo.gc.ca">https://dd.meteo.gc.ca</a>, en cas de problèmes.</p>
+<h2 id="utilisation-et-tutoriels">Utilisation et tutoriels</h2>
+<p>Aperçu, exemples et tutoriels pour accéder aux données ouvertes du Datamart du SMC :</p>
+<ul>
+<li><a href="../../usage/readme_fr/">Aperçu de l'utilisation</a></li>
+<li>Tutoriels :<ul>
+<li>Utiliser les données dans le logiciel de bureau QGIS :<ul>
+<li><a href="../../usage/tutorial_raw-data_QGIS_fr/">Ajouter des données brutes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="formats-de-donnees">Formats de données</h2>
 <p>Les données du Datamart du SMC sont disponibles en formats ouverts. Parmi ceux-ci :</p>
 <ul>
@@ -131,8 +169,6 @@
 <li>CSV</li>
 <li>XML</li>
 </ul>
-<h2 id="utilisation">Utilisation</h2>
-<p>Des informations sur l'utilisation de ces services et des exemples sont disponibles sur la <a href="../../usage/readme_fr/">page d'aperçu de l'utilisation</a>.</p>
 <h2 id="gestion-du-changement">Gestion du changement</h2>
 <p>Le SMC doit faire preuve de souplesse dans la façon dont il offre des données spécialisées aux utilisateurs intéressés. Par conséquent, nous devons être en mesure de mettre à jour ou de modifier les formats ou les offres de données en temps opportun, car la technologie, les normes et les innovations changent continuellement. Cependant, nous ferons de notre mieux pour informer nos utilisateurs à l'avance des changements à venir. </p>
 <p>Ainsi, aussi souvent que possible, nous utiliserons le <strong>serveur DD-Alpha, le site Web d'essai de données du Datamart du SMC</strong>, pour déposer des échantillons des nouvelles données modifiées afin d'aider nos utilisateurs à adapter leurs applications. </p>

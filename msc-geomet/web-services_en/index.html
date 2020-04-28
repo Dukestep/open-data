@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Web services en - MSC Open Data / Données ouvertes du SMC</title>
+        <title>API technical doc /Doc technique de l'API - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,18 +47,18 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../msc-data/readme_en/">Available data / <br>Données disponibles</a>
+                                <a href="../../msc-data/readme_en/">Available data /<br>Données disponibles</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access /<br>Accès aux données <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../msc-datamart/readme_en/">MSC Datamart / <br>Datamart du SMC</a>
+    <a href="../../msc-datamart/readme_en/">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li >
-    <a href="../readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../readme_en/">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li >
@@ -66,11 +66,37 @@
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage and tutorials / br>Utilisation et tutoriels <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/readme_en/">Usage overview /<br>Aperçu de l'utilisation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_web-maps_en/">Create interactive web maps /<br>Créer des cartes web interactives</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_WMS_QGIS_en/">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_raw-data_QGIS_en/">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_OAFeat_QGIS_en/">Use OGC API Features in QGIS /<br>Utiliser OGC API Features dans QGIS</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">API technical doc /<br>Doc technique de l'API</a>
+</li>
+                                </ul>
                             </li>
                             <li >
-                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us /<br>Contactez-nous</a>
                             </li>
                         </ul>
 
@@ -80,6 +106,16 @@
                                 <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../../usage/tutorial_OAFeat_QGIS_en/">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +129,6 @@
             <li><a href="#web-map-service-wms">Web Map Service (WMS)</a></li>
             <li><a href="#web-coverage-service-wcs">Web Coverage Service (WCS)</a></li>
             <li><a href="#ogc-api-features">OGC API - Features</a></li>
-            <li><a href="#test-embeds">Test Embeds</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -767,12 +802,7 @@ in returning only the number of features found (without the actual features retu
 <p>Any query can be sorted by adding <code>sortby=PROPERTY:X</code>, where <code>PROPERTY</code> is the sort property and <code>X</code> is the sort order (<code>A</code> is ascending, <code>D</code> is descending).  Sort order is optional.  Sorting by multiple properties is supported by providing a comma-separated list to the <code>sortby</code> parameter.</p>
 <h3 id="access-by-identifier">Access by Identifier</h3>
 <p>Fetch a single feature by identifier:</p>
-<p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?f=csv">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?f=csv</a></p>
-<h2 id="test-embeds">Test Embeds</h2>
-<p><iframe height="329" style="width: 100%;" scrolling="no" title="OL Radar Example" src="https://codepen.io/dukestep/embed/WNNVPbL?height=329&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/dukestep/pen/WNNVPbL'>OL Radar Example</a> by Dukestep
-  (<a href='https://codepen.io/dukestep'>@dukestep</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe></p></div>
+<p><a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?f=csv">https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?f=csv</a></p></div>
         </div>
 
         <footer class="col-md-12">

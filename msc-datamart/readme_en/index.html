@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>MSC Datamart / Datamart du SMC - MSC Open Data / Données ouvertes du SMC</title>
+        <title>MSC Datamart /Datamart du SMC - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,18 +47,18 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../msc-data/readme_en/">Available data / <br>Données disponibles</a>
+                                <a href="../../msc-data/readme_en/">Available data /<br>Données disponibles</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access / <br>Accès aux données <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data access /<br>Accès aux données <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li class="active">
-    <a href="./">MSC Datamart / <br>Datamart du SMC</a>
+    <a href="./">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li >
-    <a href="../../msc-geomet/readme_en/">MSC GeoMet / <br>GeoMet du SMC</a>
+    <a href="../../msc-geomet/readme_en/">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li >
@@ -66,11 +66,37 @@
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../usage/readme_en/">Usage overview / <br>Aperçu de l'utilisation</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage and tutorials / br>Utilisation et tutoriels <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../usage/readme_en/">Usage overview /<br>Aperçu de l'utilisation</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_web-maps_en/">Create interactive web maps /<br>Créer des cartes web interactives</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_WMS_QGIS_en/">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_raw-data_QGIS_en/">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../usage/tutorial_OAFeat_QGIS_en/">Use OGC API Features in QGIS /<br>Utiliser OGC API Features dans QGIS</a>
+</li>
+                                    
+<li >
+    <a href="../../msc-geomet/web-services_en/">API technical doc /<br>Doc technique de l'API</a>
+</li>
+                                </ul>
                             </li>
                             <li >
-                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us / <br>Contactez-nous</a>
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">Contact us /<br>Contactez-nous</a>
                             </li>
                         </ul>
 
@@ -100,8 +126,8 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#msc-datamart">MSC Datamart</a></li>
             <li><a href="#access">Access</a></li>
+            <li><a href="#usage-and-tutorials">Usage and tutorials</a></li>
             <li><a href="#data-formats">Data formats</a></li>
-            <li><a href="#usage">Usage</a></li>
             <li><a href="#change-management">Change management</a></li>
             <li><a href="#announcement-mailing-list">Announcement mailing list</a></li>
             <li><a href="#support">Support</a></li>
@@ -130,6 +156,18 @@ The documentation for this service is found on the <a href="../amqp_en/">MSC Dat
 <p>A direct consequence of this date hierarchy is that the data retention period becomes identical for all data sets and is dependent on the available disk space.</p>
 <p>Access to data via the AMQP protocol is of course strongly recommended.</p>
 <p>Finally, it is important to note that unlike the MSC Datamart, there is no 24/7 redundancy of the Internet link ( "best effort" support). In the unlikely event_ that the link breaks, the MSC Datamart would then become the unique source of access to the data. Thus, it is advisable for users wishing to test this alternative server to develop the ability to quickly return to the <a href="https://dd.meteo.gc.ca">https://dd.meteo.gc.ca</a> server in case of problems.</p>
+<h2 id="usage-and-tutorials">Usage and tutorials</h2>
+<p>Overview, examples and tutorials to access and use MSC Datamart data:</p>
+<ul>
+<li><a href="../../usage/readme_en/">Usage overview</a></li>
+<li>Tutorials:<ul>
+<li>Use data in the QGIS desktop software:<ul>
+<li><a href="../../usage/tutorial_raw-data_QGIS_en/">Add raw data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="data-formats">Data formats</h2>
 <p>Data on the MSC Datamart is available in open formats. It includes:</p>
 <ul>
@@ -140,8 +178,6 @@ The documentation for this service is found on the <a href="../amqp_en/">MSC Dat
 <li>CSV</li>
 <li>XML</li>
 </ul>
-<h2 id="usage">Usage</h2>
-<p>Information on using these services and examples are available on the <a href="../../usage/readme_en/">usage overview page</a>.</p>
 <h2 id="change-management">Change management</h2>
 <p>The MSC needs to be flexible in the manner in which it offers specialized data to interested users. Therefore, we need to be able to update or change formats or data offerings in a timely manner, as the technology, standards and innovation do change continuously. However, we will do our best to notify our users in advance of upcoming changes. </p>
 <p>Also, as often as possible, we will use the <strong>MSC testing data repository DD-Alpha</strong>, to deposit samples of the new modified data to help our users adapt their applications. The server DD-Alpha is located at <a href="http://dd.alpha.weather.gc.ca/">http://dd.alpha.weather.gc.ca/</a> . This server, which is not operational, provides also access to experimental or other non-operational data.</p>
