@@ -112,7 +112,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#tutoriel-creer-des-cartes-interactives-sur-le-web-avec-openlayers-et-leaflet" class="nav-link">Tutoriel: créer des cartes interactives sur le web avec OpenLayers et Leaflet</a>
+            <li class="nav-item" data-level="1"><a href="#tutoriel-creer-des-cartes-interactives-sur-le-web-avec-openlayers-et-leaflet" class="nav-link">Tutoriel : créer des cartes interactives sur le web avec OpenLayers et Leaflet</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#afficher-une-couche-wms" class="nav-link">Afficher une couche WMS</a>
               <ul class="nav flex-column">
@@ -136,8 +136,8 @@
 <p><a href="../tutorial_web-maps_en/">In English</a></p>
 <p><img alt="ECCC logo" src="../../img_eccc-logo.png" /></p>
 <p><a href="../../readme_fr/">TdM</a> &gt; <a href="../readme_fr/">Aperçu de l'utilisation</a> &gt; Créer des cartes web interactives</p>
-<h1 id="tutoriel-creer-des-cartes-interactives-sur-le-web-avec-openlayers-et-leaflet">Tutoriel: créer des cartes interactives sur le web avec OpenLayers et Leaflet</h1>
-<p>Les services web géospatiaux de <a href="../../msc-geomet/readme_fr/">GeoMet du SMC</a> peuvent facilement être intégrés dans des bibliothèques de cartographie web libres et gratuites telles que <a href="https://openlayers.org/">OpenLayers</a> et <a href="https://leafletjs.com/">Leaflet</a> pour créer des cartes interactives pour les pages web et les applications mobiles. Ce tutoriel vous montrera comment travailler avec le WMS (Web Map Service) en utilisant ces deux bibliothèques. À la fin, vous serez en mesure d'afficher n'importe quelle couche WMS de GeoMet du SMC sur une carte interactive, d'interroger la couche pour obtenir des données et d'animer des couches selon une dimension temporelle.</p>
+<h1 id="tutoriel-creer-des-cartes-interactives-sur-le-web-avec-openlayers-et-leaflet">Tutoriel : créer des cartes interactives sur le web avec OpenLayers et Leaflet</h1>
+<p>Les services web géospatiaux de <a href="../../msc-geomet/readme_fr/">GeoMet du SMC</a> peuvent facilement être intégrés dans des bibliothèques de cartographie web libres et gratuites telles que <a href="https://openlayers.org/">OpenLayers</a> et <a href="https://leafletjs.com/">Leaflet</a> pour créer des cartes interactives pour pages web et applications mobiles. Ce tutoriel vous montrera comment travailler avec le standard WMS (Web Map Service) en utilisant ces deux bibliothèques. À la fin, vous serez en mesure d'afficher n'importe quelle couche WMS de GeoMet du SMC sur une carte interactive, d'interroger la couche pour obtenir des données et d'animer des couches selon une dimension temporelle.</p>
 <ul>
 <li><a href="#afficher-une-couche-wms">Afficher une couche WMS</a><ul>
 <li><a href="#exemple-avec-openlayers">Exemple avec OpenLayers</a></li>
@@ -148,7 +148,7 @@
 <li><a href="#animation-de-couches-wms-temporelles-avec-openlayers">Animation de couches WMS temporelles avec OpenLayers</a></li>
 </ul>
 <h2 id="afficher-une-couche-wms">Afficher une couche WMS</h2>
-<p>Les étapes suivantes vous montreront comment créer une carte web simple avec OpenLayers et Leaflet. La carte affichera les données de température de surface de l'air du système global de prévision déterministe (SGPD) (<code>GPDS.ETA_TT</code>) sur un fond de carte de <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Un exemple est donné pour les deux librairies : OpenLayers et Leaflet.</p>
+<p>Les étapes suivantes vous montreront comment créer une carte web simple avec OpenLayers et Leaflet. La carte affichera les données de température de surface de l'air du Système global de prévision déterministe (SGPD) (<code>GPDS.ETA_TT</code>) sur un fond de carte de <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Un exemple est disponible pour les librairies OpenLayers et Leaflet.</p>
 <h3 id="exemple-avec-openlayers">Exemple avec OpenLayers</h3>
 <h4 id="html">HTML</h4>
 <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
@@ -176,7 +176,7 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>Afin d'utiliser OpenLayers, nous devons importer les bibliothèques JS et CSS requises. Un élément <code>&lt;div&gt;</code> est ajouté dans le corps de notre document HTML et ass igné d'un attribut <code>id</code> avec une valeur de <code>map</code>. La valeur "id" sera référencée dans le code Javascript afin de spécifier où rendre la carte interactive dans le document HTML.</p>
+<p>Afin d'utiliser OpenLayers, nous devons importer les bibliothèques JS et CSS requises. Un élément <code>&lt;div&gt;</code> est ajouté dans le corps de notre document HTML et assigné d'un attribut <code>id</code> avec une valeur de <code>map</code>. La valeur "id" sera référencée dans le code Javascript afin de spécifier où placer la carte interactive dans le document HTML.</p>
 <p>Un peu de CSS est également ajouté dans la balise <code>&lt;head&gt;</code> afin de définir la largeur et la hauteur du conteneur de la carte.</p>
 <h4 id="javascript">Javascript</h4>
 <p>Le code HTML étant maintenant terminé, tournons notre attention vers l'écriture du code JavaScript nécessaire à la création de notre carte web.</p>
@@ -205,11 +205,11 @@ let map = new ol.Map({
 
 </code></pre>
 
-<p>Pour garder les choses en ordre, nous créons un tableau de "couches à ajouter" qui contient une liste de couches que nous voulons ajouter à notre carte. Chaque élément est une couche qui est liée à une source. Dans ce cas, deux couches sont ajoutées à la carte : (1) la couche OpenStreetMap pour notre carte de base et (2) la couche GeoMet-Weather WMS pour le système global de prévision déterministe (SGPD) de la température de l'air à la surface. La source de la couche de température de l'air à la surface du SGPD a également quelques propriétés supplémentaires :</p>
+<p>Pour garder les choses en ordre, nous créons un tableau de "couches à ajouter" qui contient une liste de couches que nous voulons ajouter à notre carte. Chaque élément est une couche qui est liée à une source. Dans ce cas, deux couches sont ajoutées à la carte : (1) la couche OpenStreetMap pour notre carte de base et (2) la couche WMS de GeoMet-Météo pour le Système global de prévision déterministe (SGPD) de la température de l'air à la surface. La source de la couche de température de l'air à la surface du SGPD a également quelques propriétés supplémentaires :</p>
 <ul>
-<li><code>url</code>: URL du service WMS</li>
-<li><code>params</code>: paramàtres de la requête WMS, le paramètre <code>LAYERS</code> est requis</li>
-<li><code>transition</code>: durée de la transition d'opacité pour le rendu. Nous désactivons cette option ici car nous définissons une opacité et nous voulons qu'elle soit appliquée avant l'affichage de chaque tuile</li>
+<li><code>url</code> : URL du service WMS</li>
+<li><code>params</code> : paramètres de la requête WMS, le paramètre <code>LAYERS</code> est requis</li>
+<li><code>transition</code> : durée de la transition d'opacité pour le rendu. Nous désactivons cette option ici car nous définissons une opacité et nous voulons qu'elle soit appliquée avant l'affichage de chaque tuile</li>
 </ul>
 <p>Ensuite, nous créons une nouvelle variable appelée "map" et utilisons le constructeur "o.Map" pour définir la carte qui sera rendue dans notre document HTML. Dans l'objet passé au constructeur, définissez une "target" pour notre carte (par exemple la valeur "id" du conteneur HTML, dans ce cas "map"). Le tableau <code>layers_to_add</code> est ensuite passé à la propriété <code>layers</code> et le constructeur <code>ol.View</code> est utilisé pour définir la vue initiale de notre carte. Dans notre cas, nous définissons le niveau de zoom initial et nous centrons la vue sur une coordonnée lon/lat spécifique.</p>
 <p>Vous trouverez ci-dessous un exemple du code ci-dessus. Essayez de modifier le code Javascript pour afficher une autre couche, changer l'opacité, et les coordonnées initiales du zoom et du centre de la carte.</p>
@@ -269,7 +269,7 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 }).addTo(map);
 </code></pre>
 
-<p>Le code ci-dessus initialise un [objet de carte] (https://leafletjs.com/reference-1.6.0.html#map) en utilisant l'API de Leaflet et définit la vue initiale de la carte avec la méthode [<code>setView</code>] (https://leafletjs.com/reference-1.6.0.html#map-setview).</p>
+<p>Le code ci-dessus initialise un <a href="https://leafletjs.com/reference-1.6.0.html#map">objet de carte</a> en utilisant l'API de Leaflet et définit la vue initiale de la carte avec la méthode <a href="https://leafletjs.com/reference-1.6.0.html#map-setview"><code>setView</code></a>.</p>
 <p>Après l'instanciation de la carte, deux couches sont définies et ajoutées à la carte. Pour chaque couche, un URL de base est passé ainsi que les paramètres/options utilisés pour définir plus en détail la couche. Par exemple, lors de l'instanciation de la variable <code>wmsLayer</code>, nous définissons l'opacité de la couche <code>GDPS.ETA_TT</code> et la version WMS à utiliser lorsqu'une requête est faite dans les paramètres de l'objet.</p>
 <p>Voir l'exemple ci-dessous :</p>
 <iframe height="300" style="width: 100%;" scrolling="no" title="Exemple simple de couche WMS de GeoMet avec Leaflet" src="https://codepen.io/eccc-msc/embed/GRpragg?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
@@ -278,23 +278,22 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 </iframe>
 
 <h2 id="creer-des-popups-interactifs-avec-openlayers">Créer des popups interactifs avec OpenLayers</h2>
-<p>Interrogeons maintenant une couche WMS pour accéder à la date sous-jacente via un popup. Le WMS permet à un utilisateur de faire une demande <a href="../../msc-geomet/web-services_fr/#wms-getfeatureinfo">GetFeatureInfo</a> pour extraire les données brutes associées à une coordonnée sur la carte. En utilisant l'API OpenLayers, nous allons créer une fenêtre contextuelle lorsqu'un utilisateur clique sur la carte qui affichera les coordonnées du point cliqué ainsi que la valeur de la donnée sous-jacente. Cette implémentation s'inspire fortement des exemples <a href="https://open layers.org/en/latest/examples/popup.html?q=popup">popup</a> et <a href="https://openlayers.org/en/latest/examples/getfeatureinfo-tile.html?q=popup">WMS GetFeatureInfo</a> fournis par OpenLayers.</p>
+<p>Interrogeons maintenant une couche WMS pour accéder à la date sous-jacente via un popup. Le WMS permet à un utilisateur de faire une demande GetFeatureInfo pour extraire les données brutes associées à une coordonnée sur la carte. En utilisant l'API OpenLayers, nous allons créer une fenêtre contextuelle lorsqu'un utilisateur clique sur la carte qui affichera les coordonnées du point cliqué ainsi que la valeur de la donnée sous-jacente. Cette implémentation s'inspire fortement des exemples <a href="https://openlayers.org/en/latest/examples/popup.html?q=popup">popup</a> et <a href="https://openlayers.org/en/latest/examples/getfeatureinfo-tile.html?q=popup">WMS GetFeatureInfo</a> fournis par OpenLayers.</p>
 <h3 id="html_2">HTML</h3>
 <p>Il faudra ajouter quelques lignes de code HTML et CSS supplémentaires à notre document HTML initial.</p>
 <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
-
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;style&gt;
     #map {
       width: 100%;
-      height: 800px;
+      height: 400px;
     }
-
+    /* Ajout du CSS pour la fenêtre contextuelle */
     .ol-popup {
       position: absolute;
       background-color: white;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
       padding: 15px;
       border-radius: 10px;
       border: 1px solid #cccccc;
@@ -302,9 +301,7 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
       left: -50px;
       min-width: 400px;
     }
-
-    .ol-popup:after,
-    .ol-popup:before {
+    .ol-popup:after, .ol-popup:before {
       top: 100%;
       border: solid transparent;
       content: &quot; &quot;;
@@ -313,35 +310,31 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
       position: absolute;
       pointer-events: none;
     }
-
     .ol-popup:after {
       border-top-color: white;
       border-width: 10px;
       left: 48px;
       margin-left: -10px;
     }
-
     .ol-popup:before {
       border-top-color: #cccccc;
       border-width: 11px;
       left: 48px;
       margin-left: -11px;
     }
-
     .ol-popup-closer {
       text-decoration: none;
       position: absolute;
       top: 2px;
       right: 8px;
     }
-
     .ol-popup-closer:after {
       content: &quot;✖&quot;;
     }
   &lt;/style&gt;
 
-  &lt;title&gt;GeoMet OpenLayers Example&lt;/title&gt;
-  &lt;meta name=&quot;description&quot; content=&quot;GeoMet OpenLayers Example&quot;&gt;
+  &lt;title&gt;Exemple de couche WMS de GeoMeet avec OpenLayers&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Exemple de couche WMS de GeoMeet avec OpenLayers&quot;&gt;
   &lt;meta name=&quot;author&quot; content=&quot;CCMEP&quot;&gt;
 
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/css/ol.css&quot; type=&quot;text/css&quot;&gt;
@@ -351,16 +344,16 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 &lt;body&gt;
   &lt;div id=&quot;map&quot;&gt;
   &lt;/div&gt;
+  &lt;!-- Nouveau div pour le HTML de la fenêtre contextuelle --&gt;
   &lt;div id=&quot;popup&quot; class=&quot;ol-popup&quot;&gt;
     &lt;a href=&quot;#&quot; id=&quot;popup-closer&quot; class=&quot;ol-popup-closer&quot;&gt;&lt;/a&gt;
     &lt;div id=&quot;popup-content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
-
 &lt;/html&gt;
 </code></pre>
 
-<p>Pour créer le popup, un nouvel élément "div" est ajouté. Dans ce nouvel élément, une balise d'ancrage est ajoutée pour permettre la fermeture de lla fenêtre contextuelle lorsqu'elle est affichée sur la carte. Un "div" vide contiendra les résultats du GetFeatureInfo et les coordonnées du point cliqué sur la carte. Le CSS supplémentaire est utilisé pour définir l'aspect et la convivialité de la fenêtre contextuelle ainsi que pour afficher/masquer la fenêtre contextuelle lorsque l'utilisateur clique sur la carte.</p>
+<p>Pour créer le popup, un nouvel élément "div" est ajouté. Dans ce nouvel élément, une balise d'ancrage est ajoutée pour permettre la fermeture de la fenêtre contextuelle lorsqu'elle est affichée sur la carte. Un "div" vide contiendra les résultats du GetFeatureInfo et les coordonnées du point cliqué sur la carte. Le CSS supplémentaire est utilisé pour définir l'aspect et la convivialité de la fenêtre contextuelle ainsi que pour afficher/masquer la fenêtre contextuelle lorsque l'utilisateur clique sur la carte.</p>
 <h3 id="javascript_2">Javascript</h3>
 <pre><code class="javascript">/**
  * Éléments de la fenêtre contextuelle
@@ -454,11 +447,11 @@ Value: &lt;/b&gt;&lt;code&gt;${Math.round(json.features[0].properties.value)} °
 <p>Un événement "onclick" est alors ajouté au <code>closer</code> (c'est-à-dire la balise <code>&lt;a&gt;</code> dans le popup), qui fixe la position du recouvrement à <code>undefined</code>, cachant ainsi efficacement le recouvrement lorsque la balise d'ancrage contenue dans la fenêtre contextuelle est cliquée.</p>
 <p>Finalement, notre carte profitera de la méthode <a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html#on"><code>ol.Map.on()</code></a> pour écouter les événements <code>singleclick</code> sur la carte. La fonction de rappel qui est déclenchée par l'événement fait ce qui suit :</p>
 <ul>
-<li>Récupère les coordonnées du point de la carte cliqué, puis reprojette les coordonnées en EPSG:4326 (WSG 84). La méthode <code>ol.coordinate.toStringXY</code> transforme les coordonnées en une chaîne de charactères délimités par des virgules</li>
+<li>Récupère les coordonnées du point de la carte cliqué, puis reprojette les coordonnées en EPSG:4326 (WSG 84). La méthode <code>ol.coordinate.toStringXY</code> transforme les coordonnées en une chaîne de caractères délimités par des virgules</li>
 <li>Récupère la résolution de la vue de la carte</li>
 <li>Récupère la source de la couche <code>GDPS.ETA_TT</code></li>
-<li>Utilise la méthode <code>ol.source.TileWMS.getFeatureInfoUrl()</code> pour créer une requête WMS GetFeatureInfo. Sont passés en argument les coordonnées de l'événement de clic, la résolution de la vue, la projection de la carte, et un objet contenant tout paramètre GetFeatureInfo (<code>INFO_FORMAT</code> doit au moins être fourni)</li>
-<li>Si l'URL GetFeatureInfo est correctement construit, soumet la demande GetFeatureInfo en utilisant l'API Javascript. Dès réception d'une réponse, le JSON est récupéré et le contenu de la fenêtre contextuelle est mis à jour avec du HTML supplémentaire qui inclut les coordonnées et la propriété de valeur du première élément GeoJSON récupéré par la requête GetFeatureInfo</li>
+<li>Utilise la méthode <code>ol.source.TileWMS.getFeatureInfoUrl()</code> pour créer une requête WMS GetFeatureInfo. Sont passés en argument les coordonnées de l'événement de clic, la résolution de la vue, la projection de la carte, et un objet contenant tout paramètre GetFeatureInfo (au moins <code>INFO_FORMAT</code> doit être fourni)</li>
+<li>Si l'URL GetFeatureInfo est correctement construit, la demande GetFeatureInfo est soumise en utilisant l'API Javascript. Dès réception d'une réponse, le JSON est récupéré et le contenu de la fenêtre contextuelle est mis à jour avec du HTML supplémentaire qui inclut les coordonnées et la propriété de valeur du première élément GeoJSON récupéré par la requête GetFeatureInfo</li>
 <li>Fixe la position de la superposition aux coordonnées de l'événement de clic initial</li>
 </ul>
 <p>Voir l'exemple ci-dessous :</p>
@@ -468,8 +461,8 @@ Value: &lt;/b&gt;&lt;code&gt;${Math.round(json.features[0].properties.value)} °
 </iframe>
 
 <h2 id="animation-de-couches-wms-temporelles-avec-openlayers">Animation de couches WMS temporelles avec OpenLayers</h2>
-<p>Une quantité importante de données servies par GeoMet du SMC a une ou plusieurs dimensions temporelles. La section suivante explique comment OpenLayers peut nous aider à visualiser et à animer les différentes tranches de temps de ces couches, dans ce cas-ci, les données des radars météorologiques, servies comme un WMS via GeoMet-Weather.Cet exemple est inspiré du [WMS Time example] (https://openlayers.org/en/latest/examples/wms-time.html) fourni par OpenLayers.</p>
-<p>Deux couches GeoMet-Weather sont utilisées pour créer cette animation : <code>RADAR_1KM_RRAI</code> et <code>RADAR_COVERAGE_RRAI.INV</code>. Ces couches sont disponibles sur une fenêtre mobile de 3 heures, toutes les 10 minutes.</p>
+<p>Une quantité importante de données servies par GeoMet du SMC a une ou plusieurs dimensions temporelles. La section suivante explique comment OpenLayers peut nous aider à visualiser et à animer les différents pas de temps de ces couches, dans ce cas-ci, les données des radars météorologiques, servies comme un WMS via GeoMet-Météo. Cet exemple est inspiré du <a href="https://openlayers.org/en/latest/examples/wms-time.html">WMS Time example</a> fourni par OpenLayers.</p>
+<p>Deux couches GeoMet-Météo sont utilisées pour créer cette animation : <code>RADAR_1KM_RRAI</code> et <code>RADAR_COVERAGE_RRAI.INV</code>. Ces couches sont disponibles sur une fenêtre mobile de 3 heures, toutes les 10 minutes.</p>
 <h3 id="html_3">HTML</h3>
 <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -626,12 +619,12 @@ stopButton.addEventListener(&quot;click&quot;, stop, false);
 <p>Dans le code Javascript, une fonction asynchrone est créée pour récupérer l'heure de début et de fin actuellement disponible pour les données du radar météorologique (<code>RADAR_1KM_RRAI</code>). Lorsqu'une réponse est reçue, le <code>DOMParser()</code> est utilisé pour récupérer le contenu de la balise GetCapabilities <code>&lt;Dimension&gt;</code> et renvoie un tableau contenant deux objets date-heure représentant l'heure de début et de fin des données radar météo disponibles.</p>
 <p>Tout comme les autres exemples d'OpenLayers ci-dessus, un ensemble de couches est défini et transmis au constructeur de l'<code>ol.Map</code>.</p>
 <p>La fonction <code>SetTime()</code> est utilisée pour récupérer la date et l'heure actuelles affichées et définit le pas de temps à afficher. Si aucune heure n'est définie, la carte est paramétrée pour afficher l'heure de début récupérée. Si la date affichée est supérieure ou égale à l'heure de fin, l'heure est réinitialisée à l'heure de début, ce qui permet de boucler l'animation. Sinon, l'heure actuelle est récupérée et 10 minutes y sont ajoutées, afin de récupérer le pas de temps disponible suivant. Le <code>RADAR_1KM_RRAI</code> et le <code>RADAR_COVERAGE_RRAI</code> obtiennent alors leur paramètre <code>TIME</code> mis à jour et OpenLayers crée automatiquement de nouvelles requêtes pour ces images mises à jour.</p>
-<p>La fonction <code>getRadarStartEndTime()</code> est appelée une fois pour définir les variables <code>startTime</code> et <code>EndTime</code> et appelle la fonction `setTime(), définissant l'état initial de la carte.</p>
+<p>La fonction <code>getRadarStartEndTime()</code> est appelée une fois pour définir les variables <code>startTime</code> et <code>EndTime</code> et appelle la fonction <code>setTime()</code>, définissant l'état initial de la carte.</p>
 <p>Enfin, les fonctions <code>stop()</code> et <code>play()</code> sont définies. La fonction <code>play()</code> appellera la fonction <code>setTime()</code> à un intervalle donné, en augmentant le pas de temps du radar météo à chaque intervalle. La fonction <code>stop()</code> efface l'intervalle. Ces fonctions sont ensuite ajoutées comme fonction de rappel pour les auditeurs d'événements de clic assignés à leurs boutons respectifs dans le HTML.</p>
 <p>Voir l'exemple ci-dessous :</p>
 <iframe height="300" style="width: 100%;" scrolling="no" title="Exemple de couche WMS avec composante temporelle et OpenLayers" src="https://codepen.io/eccc-msc/embed/NWGdVRp?height=265&theme-id=light&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
-  Voir le "Pen" <a href='https://codepen.io/eccc-msc/pen/NWGdVRp'>GeoMet WMS Time Openlayers Example</a> par le SMC d'ECCC
-  (<a href='https://codepen.io/eccc-msc'>@eccc-msc</a>) on <a href='https://codepen.io'>CodePen</a>.
+Voir le "Pen" <a href='https://codepen.io/eccc-msc/pen/NWGdVRp'>GeoMet WMS Time Openlayers Example</a> par le SMC d'ECCC 
+(<a href='https://codepen.io/eccc-msc'>@eccc-msc</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe></div>
             </div>
         </div>
