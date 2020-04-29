@@ -278,30 +278,33 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 </iframe>
 
 <h2 id="creer-des-popups-interactifs-avec-openlayers">Créer des popups interactifs avec OpenLayers</h2>
-<p>Maintenant que la couche de température de l'air à la surface du SGPD est correctement affichée sur une carte interactive, essayons d'ajouter quelques fonctionnalités supplémentaires à la carte. Le WMS permet à un utilisateur de faire une demande <a href="../../msc-geomet/web-services_fr/#wms-getfeatureinfo">GetFeatureInfo</a> pour extraire les données brutes associées à une coordonnée sur la carte. En utilisant l'API OpenLayers, nous allons créer une fenêtre contextuelle lorsqu'un utilisateur clique sur la carte qui affichera les coordonnées du point cliqué et la température de l'air à la surface qui lui correspond. Cette implémentation s'inspire fortement des exemples <a href="https://open layers.org/en/latest/examples/popup.html?q=popup">popup</a> et <a href="https://openlayers.org/en/latest/examples/getfeatureinfo-tile.html?q=popup">WMS GetFeatureInfo</a> fournis par OpenLayers.</p>
+<p>Interrogeons maintenant une couche WMS pour accéder à la date sous-jacente via un popup. Le WMS permet à un utilisateur de faire une demande <a href="../../msc-geomet/web-services_fr/#wms-getfeatureinfo">GetFeatureInfo</a> pour extraire les données brutes associées à une coordonnée sur la carte. En utilisant l'API OpenLayers, nous allons créer une fenêtre contextuelle lorsqu'un utilisateur clique sur la carte qui affichera les coordonnées du point cliqué ainsi que la valeur de la donnée sous-jacente. Cette implémentation s'inspire fortement des exemples <a href="https://open layers.org/en/latest/examples/popup.html?q=popup">popup</a> et <a href="https://openlayers.org/en/latest/examples/getfeatureinfo-tile.html?q=popup">WMS GetFeatureInfo</a> fournis par OpenLayers.</p>
 <h3 id="html_2">HTML</h3>
 <p>Il faudra ajouter quelques lignes de code HTML et CSS supplémentaires à notre document HTML initial.</p>
 <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;style&gt;
     #map {
       width: 100%;
-      height: 400px;
+      height: 800px;
     }
-    /* Ajout du CSS pour la fenêtre contextuelle */
+
     .ol-popup {
       position: absolute;
       background-color: white;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
       padding: 15px;
       border-radius: 10px;
       border: 1px solid #cccccc;
       bottom: 12px;
       left: -50px;
-      min-width: 300px;
+      min-width: 400px;
     }
-    .ol-popup:after, .ol-popup:before {
+
+    .ol-popup:after,
+    .ol-popup:before {
       top: 100%;
       border: solid transparent;
       content: &quot; &quot;;
@@ -310,31 +313,35 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
       position: absolute;
       pointer-events: none;
     }
+
     .ol-popup:after {
       border-top-color: white;
       border-width: 10px;
       left: 48px;
       margin-left: -10px;
     }
+
     .ol-popup:before {
       border-top-color: #cccccc;
       border-width: 11px;
       left: 48px;
       margin-left: -11px;
     }
+
     .ol-popup-closer {
       text-decoration: none;
       position: absolute;
       top: 2px;
       right: 8px;
     }
+
     .ol-popup-closer:after {
       content: &quot;✖&quot;;
     }
   &lt;/style&gt;
 
-  &lt;title&gt;Exemple de couche WMS de GeoMeet avec OpenLayers&lt;/title&gt;
-  &lt;meta name=&quot;description&quot; content=&quot;Exemple de couche WMS de GeoMeet avec OpenLayers&quot;&gt;
+  &lt;title&gt;GeoMet OpenLayers Example&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;GeoMet OpenLayers Example&quot;&gt;
   &lt;meta name=&quot;author&quot; content=&quot;CCMEP&quot;&gt;
 
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.0/css/ol.css&quot; type=&quot;text/css&quot;&gt;
@@ -344,12 +351,12 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 &lt;body&gt;
   &lt;div id=&quot;map&quot;&gt;
   &lt;/div&gt;
-  &lt;!-- Nouveau div pour le HTML de la fenêtre contextuelle --&gt;
   &lt;div id=&quot;popup&quot; class=&quot;ol-popup&quot;&gt;
     &lt;a href=&quot;#&quot; id=&quot;popup-closer&quot; class=&quot;ol-popup-closer&quot;&gt;&lt;/a&gt;
     &lt;div id=&quot;popup-content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;
 </code></pre>
 
@@ -358,15 +365,15 @@ let wmsLayer = L.tileLayer.wms('https://geo.weather.gc.ca/geomet?', {
 <pre><code class="javascript">/**
  * Éléments de la fenêtre contextuelle
  */
-var container = document.getElementById('popup');
-var content = document.getElementById('popup-content');
-var closer = document.getElementById('popup-closer');
+let container = document.getElementById(&quot;popup&quot;);
+let content = document.getElementById(&quot;popup-content&quot;);
+let closer = document.getElementById(&quot;popup-closer&quot;);
 
 
 /**
  * Créer un élément &quot;Overlay&quot; pour ancrer la fenêtre contextuelle sur la carte
  */
-var overlay = new ol.Overlay({
+let overlay = new ol.Overlay({
   element: container,
   autoPan: true,
   autoPanAnimation: {
@@ -379,29 +386,29 @@ var overlay = new ol.Overlay({
  * Ajoutez un gestionnaire de clic pour cacher la fenêtre contextuelle
  * @return {boolean} ne pas suivre le href
  */
-closer.onclick = function() {
+closer.onclick = function () {
   overlay.setPosition(undefined);
   closer.blur();
   return false;
 };
 
 let layers = [
-    new ol.layer.Tile({
-      source: new ol.source.OSM()
-    }),
-    new ol.layer.Tile({
-      opacity: 0.4,
-      source: new ol.source.TileWMS({
-        // TODO: Change this to dev environment for JSON response
-        url: 'https://geo.wxod-dev.cmc.ec.gc.ca/geomet',
-        params: {'LAYERS': 'GDPS.ETA_TT', 'TILED': true},
-        transition: 0
-      })
+  new ol.layer.Tile({
+    source: new ol.source.OSM()
+  }),
+  new ol.layer.Tile({
+    opacity: 0.4,
+    source: new ol.source.TileWMS({
+      // TODO: Change this to dev environment for JSON response
+      url: &quot;https://geo.weather.gc.ca/geomet-climate&quot;,
+      params: { LAYERS: &quot;CMIP5.TT.RCP45.YEAR.2081-2100_PCTL50&quot;, TILED: true },
+      transition: 0
     })
-  ]
+  })
+];
 
 let map = new ol.Map({
-  target: 'map',
+  target: &quot;map&quot;,
   layers: layers,
   overlays: [overlay],
   view: new ol.View({
@@ -411,22 +418,33 @@ let map = new ol.Map({
 });
 
 
-map.on('singleclick', function(evt) {
+map.on(&quot;singleclick&quot;, function (evt) {
   var coordinate = evt.coordinate;
-  var xy_coordinates = ol.coordinate.toStringXY(ol.proj.toLonLat(coordinate), 4);
+  var xy_coordinates = ol.coordinate.toStringXY(
+    ol.proj.toLonLat(coordinate),
+    4
+  );
   var viewResolution = map.getView().getResolution();
   var wms_source = map.getLayers().item(1).getSource();
   var url = wms_source.getFeatureInfoUrl(
-    evt.coordinate, viewResolution, 'EPSG:3857',
-    {'INFO_FORMAT': 'application/json'});
+    evt.coordinate,
+    viewResolution,
+    &quot;EPSG:3857&quot;,
+    { INFO_FORMAT: &quot;application/json&quot; }
+  );
   if (url) {
     fetch(url)
-      .then(function (response) { return response.json(); })
+      .then(function (response) {
+        return response.json();
+      })
       .then(function (json) {
-      content.innerHTML = `&lt;b&gt;Coordonnée (Lon/Lat): &lt;/b&gt; &lt;code&gt;${xy_coordinates}&lt;/code&gt;&lt;br&gt;&lt;b&gt; Température: &lt;/b&gt;&lt;code&gt;${Math.round(json.features[0].properties.value)} °C&lt;/code&gt;`;
-      overlay.setPosition(coordinate);
+        content.innerHTML = `
+Avg change in air temperature for 2081-2100 (50th percentile)&lt;br&gt;
+Coordinates (Lon/Lat): &lt;/&gt; &lt;code&gt;${xy_coordinates}&lt;/code&gt;&lt;br&gt;
+Value: &lt;/b&gt;&lt;code&gt;${Math.round(json.features[0].properties.value)} °C&lt;/code&gt;`;
+        overlay.setPosition(coordinate);
       });
-    }
+  }
 });
 </code></pre>
 
