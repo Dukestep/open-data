@@ -89,11 +89,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../readme_en/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i>
@@ -128,6 +123,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#browsing-through-available-wms-layer-styles" class="nav-link">Browsing through available WMS layer styles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#possible-interactions-with-wms-layers-in-qgis" class="nav-link">Possible interactions with WMS layers in QGIS</a>
               <ul class="nav flex-column">
               </ul>
@@ -151,6 +150,7 @@
 <ul>
 <li><a href="#adding-wms-layers-in-qgis">Adding WMS layers in QGIS</a></li>
 <li><a href="#possible-interactions-with-wms-layers-in-qgis">Possible interactions with WMS layers in QGIS</a></li>
+<li><a href="#browsing-through-available-wms-layer-styles">Browsing through available WMS layer styles</a></li>
 <li><a href="#manipulating-the-time-component-of-the-wms-layers">Manipulating the time component of the WMS layers</a></li>
 </ul>
 <h2 id="adding-wms-layers-in-qgis">Adding WMS layers in QGIS</h2>
@@ -176,6 +176,16 @@
 </ol>
 <p>Animated example of the procedure:</p>
 <p><img alt="Adding WMS layers in QGIS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_add-wms_en.gif" /></p>
+<h2 id="browsing-through-available-wms-layer-styles">Browsing through available WMS layer styles</h2>
+<p><a href="../../msc-geomet/readme_en/">MSC GeoMet</a> often provides several different graphical representations for a single layer. The client can choose to display the data using the style most appropriate for their use case. For more information on the WMS styles, visit the <a href="https://eccc-msc.github.io/open-data/msc-geomet/web-services_en/#handling-styles">handling styles</a> page.</p>
+<p>It's possible to use QGIS to browse through available styles for a given WMS layer and the following example will show how to do so:</p>
+<ol>
+<li>In the menu bar, choose: <b>Layer - Add Layer - Add WMS/WMTS layer...</b><br></li>
+<li>Select the desired WMS service and click on <img src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_button-connexion_en.png" width=7%></li>
+<li>Navigate through the tree structure to reach the desired layer, and expand the last level</li>
+<li>Choose amongst the available styles, the one you want to visualize for the selected WMS layer and click on <img src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_button-add_en.png" width=5%> to display the layer</li>
+</ol>
+<p><img alt="Browsing through WMS styles with QGIS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_wms-styles_en.png" /></p>
 <h2 id="possible-interactions-with-wms-layers-in-qgis">Possible interactions with WMS layers in QGIS</h2>
 <p>Here are the basic manipulations of a WMS layer:</p>
 <ul>
@@ -219,34 +229,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                    <br>
-                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -89,11 +89,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -175,12 +170,14 @@
 <li><a href="../nwp_gdps/readme_gdps_fr/">Système global de prévision déterministe (SGPD)</a></li>
 <li><a href="../nwp_rdps/readme_rdps_fr/">Système régional de prévision déterministe (SRPD)</a></li>
 <li><a href="../nwp_hrdps/readme_hrdps_fr/">Système à haute résolution de prévision déterministe (SHRPD)</a></li>
+<li><a href="../nwp_caps/readme_caps_fr/">Système canadien de prévision de l'Arctique (SCPA) expérimental</a></li>
 <li><a href="../nwp_giops/readme_giops_fr/">Système global de prévision océan-glace (SGPOG)</a></li>
+<li><a href="../nwp_riops/readme_riops_fr/">Système régional de prévision océan-glace (SRPOG)</a></li>
 <li><a href="../nwp_rdwps/readme_rdwps_fr/">Système régional de prévision déterministe de vague (SRPDV)</a></li>
 <li><a href="../nwp_gdwps/readme_gdwps_fr/">Système global de prévision déterministe de vague (SGPDV)</a></li>
 <li><a href="../nwp_rdpa/readme_rdpa_fr/">Analyse régionale déterministe de précipitation (ARDP)</a></li>
 <li><a href="../nwp_hrdpa/readme_hrdpa_fr/">Analyse à haute résolution déterministe de précipitation (AHRDP)</a></li>
-<li><a href="../nwp_hrdpa-watershed/readme_hrdpa-watershed_fr/">Précipitations moyennes par bassin-versant de l'Analyse à haute résolution déterministe de précipitation (AHRDP bassin-versant)</a>)</li>
+<li><a href="../nwp_hrdpa-watershed/readme_hrdpa-watershed_fr/">Précipitations moyennes par bassin-versant de l'Analyse à haute résolution déterministe de précipitation (AHRDP bassin-versant)</a></li>
 <li><a href="../nwp_nowcasting/readme_nowcasting_fr/">Matrices Scribe de prévision immédiates</a></li>
 <li><a href="../nwp_rdps-cgsl/readme_rdps-cgsl_fr/">Système régional de prévision déterministe couplé au Golfe du Saint-Laurent (SRPD couplé Golfe du Saint-Laurent)</a></li>
 <li><a href="../nwp_wcps/readme_wcps_fr/">Système de prévision du cycle de l'eau (SPCE)</a></li>
@@ -226,34 +223,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                    <br>
-                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

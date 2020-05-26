@@ -89,11 +89,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -122,6 +117,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#naviguer-dans-les-styles-de-couches-wms-disponibles" class="nav-link">Naviguer dans les styles de couches WMS disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#manipulation-de-la-composante-temporelle-du-wms" class="nav-link">Manipulation de la composante temporelle du WMS</a>
               <ul class="nav flex-column">
               </ul>
@@ -141,6 +140,7 @@
 <ul>
 <li><a href="#ajout-de-couches-wms-dans-qgis">Ajout de couches WMS dans QGIS</a></li>
 <li><a href="#interactions-possibles-avec-les-données-wms-dans-qgis">Interaction possible avec les données WMS dans QGIS</a></li>
+<li><a href="#naviguer-dans-les-styles-de-couches-wms-disponibles">Naviguer dans les styles de couches WMS disponibles</a></li>
 <li><a href="#manipulation-de-la-composante-temporelle-du-wms">Manipulation de la composante de temporelle du WMS</a></li>
 </ul>
 <h2 id="ajout-de-couches-wms-dans-qgis">Ajout de couches WMS dans QGIS</h2>
@@ -176,6 +176,16 @@
 </ul>
 <p>Exemple animé de ces manipulations :</p>
 <p><img alt="Exemple d'intéractions avec les données WMS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_wms-pan-zoom-gfi_fr.gif" /></p>
+<h2 id="naviguer-dans-les-styles-de-couches-wms-disponibles">Naviguer dans les styles de couches WMS disponibles</h2>
+<p><a href="../../msc-geomet/readme_fr/">GeoMet du SMC</a> fournit souvent plusieurs représentations graphiques différentes pour une même couche. Le client peut choisir d'afficher les données en utilisant le style le plus approprié à son cas d'utilisation. Pour plus d'informations sur les styles WMS, visitez la page <a href="https://eccc-msc.github.io/open-data/msc-geomet/web-services_en/#handling-styles">spécification des styles</a>.</p>
+<p>Il est possible d'utiliser QGIS pour parcourir les styles disponibles pour une couche WMS donnée et l'exemple suivant montre comment faire :</p>
+<ol>
+<li>Dans la barre de menu, choisissez : <b>Couche - Ajouter une couche - Ajouter une couche WMS/WMTS...</b><br></li>
+<li>Sélectionnez le service WMS souhaité et cliquez sur <img src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_button-connexion_fr.png" width=7%></li>
+<li>Naviguez dans l'arborescence pour atteindre la couche souhaitée, et développez le dernier niveau</li>
+<li>Choisissez parmi les styles disponibles, celui que vous souhaitez visualiser pour la couche WMS sélectionnée et cliquez sur <img src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_button-add_fr.png" width=5%> pour afficher la couche</li>
+</ol>
+<p><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/images_QGIS/qgis_wms-styles_fr.png">Naviguer dans les styles WMS avec QGIS</a></p>
 <h2 id="manipulation-de-la-composante-temporelle-du-wms">Manipulation de la composante temporelle du WMS</h2>
 <p>Exemple de manipulation de la dimensions temporelle d'une couche WMS :</p>
 <ol>
@@ -209,34 +219,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                    <br>
-                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

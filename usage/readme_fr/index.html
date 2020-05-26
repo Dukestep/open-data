@@ -89,11 +89,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -143,7 +138,7 @@
 <li><a href="#comment-visualiser-les-donnees">Comment visualiser les données</a><ul>
 <li><a href="#logiciel-de-bureau">Logiciel de bureau</a></li>
 <li><a href="#cartes-interactives-en-ligne-et-applications-mobiles">Cartes interactives en-ligne et applications mobiles</a></li>
-<li><a href="#images-a-la-volee">Images à la volée</a></li>
+<li><a href="#images-sur-demande">Images sur demande</a></li>
 </ul>
 </li>
 <li><a href="#comment-acceder-aux-donnees-brutes">Comment accéder aux données brutes</a><ul>
@@ -158,7 +153,8 @@
 <h3 id="logiciel-de-bureau">Logiciel de bureau</h3>
 <p>Les données ouvertes du SMC dans des logiciel de bureau soit (A) en se connectant au service Web Map Service (WMS) de <a href="../../msc-geomet/readme_fr/">GeoMet du SMC</a> ou (B) en téléchargeant les données brutes du <a href="../../msc-datamart/readme_fr/">Datamart du SMC</a> ou via le service Web Coverage Service (WCS) ou OGC API - Features (WFS 3) de GeoMet du SMC et en chargeant les données brutes dans l'application.</p>
 <p>Les données ouvertes du SMC peuvent être visualisées interactivement dans les logiciels qui supportent le standard Web Map Service (WMS) de l'Open Geospatial Consortium (OGC), tel que le logiciel libre <a href="https://qgis.org">QGIS</a> ainsi que ArcGIS d'Esri. Les instructions pour ajouter les couches WMS de GeoMet du SMC dans <a href="https://docs.qgis.org/3.4/en/docs/training_manual/online_resources/wms.html">QGIS</a> et <a href="https://desktop.arcgis.com/en/arcmap/latest/map/web-maps-and-services/adding-wms-services.htm">ArcGIS</a> sont disponibles. Les logiciels de bureau peuvent permettre aux usagers de changer les couleurs des couches (styles WMS) ainsi qu'animer les couches pour les pas de temps disponibles. Les détails techniques sur les paramètres WMS disponibles sont documentés dans la <a href="../../msc-geomet/web-services_fr/">section sur les services web</a>. Pour télécharger des données brutes, veuillez vous référer à la section <a href="#comment-acceder-aux-donnees-brutes">Comment accéder aux données brutes</a>.</p>
-<p>Les tutoriels suivants sont disponibles pour le logiciel de bureau QGIS : <a href="../tutorial_WMS_QGIS_fr/">ajouter, effectuer des requêtes et animer des couches WMS</a>, <a href="../tutorial_OAFeat_QGIS_fr/">ajouter et effectuer des requêtes aux couches OGC API Features</a> et <a href="../tutorial_raw-data_QGIS_fr/">ajouter des données brutes</a>.</p>
+<p>Les tutoriels suivants sont disponibles pour le logiciel de bureau QGIS : <a href="../tutorial_WMS_QGIS_fr/">ajouter, effectuer des requêtes et animer des couches WMS</a>, <a href="../tutorial_OAFeat_QGIS_fr/">ajouter et effectuer des requêtes aux couches OGC API Features</a> et <a href="../tutorial_raw-data_QGIS_fr/">ajouter des données brutes</a>. L'image suivante présente la racine de l'arborescence des couches de GeoMet-Météo dans QGIS :</p>
+<p><img alt="L'arborescence des couches de GeoMet-Météo dans QGIS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/GeoMet-Weather_QGIS_Layer-tree_fr.jpg" /></p>
 <h3 id="cartes-interactives-en-ligne-et-applications-mobiles">Cartes interactives en-ligne et applications mobiles</h3>
 <p>Les données ouvertes du SMC peuvent également être aisément intégrées dans des cartes interactives en-ligne ainsi que dans des applications mobiles.</p>
 <h4 id="dans-un-fureteur-web">Dans un fureteur web</h4>
@@ -177,10 +173,10 @@
 <p>Les services WMS de GeoMet du SMC peuvent également être intégrées dans des applications mobiles. Ceci est démontré dans <a href="https://www.canada.ca/fr/environnement-changement-climatique/services/conditions-meteorologiques-ressources-outils-generaux/meteocan.html">l'application MétéoCAN</a> d'Environnement et Changement climatique Canada, disponible pour iOS et Android, qui utilise GeoMet du SMC pour afficher les données radar météo à haute résolution sur une carte interactive :</p>
 <p><img alt="Exemple de couche radar dans MeteoCAN" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/WeatherCan_MSC-GeoMet_weather-radar_20200207_fr.jpg" /></p>
 <p>Pour de l'information additionnelle sur les capacités et les paramètres des services web WMS, WFS et WCS de GeoMet du SMC, veuillez vous référer à la section sur la <a href="../../msc-geomet/web-services_fr/">documentation technique des services web GeoMet du SMC</a>.</p>
-<h3 id="images-a-la-volee">Images à la volée</h3>
-<p>GeoMet du SMC peut également servir des images à la volée par le biais d'une requête WMS GetMap. Voici des exemples.</p>
+<h3 id="images-sur-demande">Images sur demande</h3>
+<p>GeoMet du SMC peut également servir des images sur demande par le biais d'une requête WMS GetMap. Voici des exemples.</p>
 <h4 id="exemple-1-temperature-de-surface-du-systeme-global-de-prevision-deterministe-sgpd">Exemple 1 - Température de surface du Système global de prévision déterministe (SGPD)</h4>
-<p>La requête WMS GetMap suivante retourne une image de la couche de température de l'air du Système global de prévision déterministe (SGPD). Cette image est générée à la volée au moment de la requête.</p>
+<p>La requête WMS GetMap suivante retourne une image de la couche de température de l'air du Système global de prévision déterministe (SGPD). Cette image est générée sur demande au moment de la requête.</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180
 &amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png
 </code></pre>
@@ -188,7 +184,7 @@
 <p>Retourne :</p>
 <p><img alt="Température de surface du Système global de prévision déterministe (SGPD)" src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180&amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png" /></p>
 <h4 id="exemple-2-salinite-de-leau-de-la-mer-du-systeme-global-de-prevision-ocean-glace-sgpog">Exemple 2 - Salinité de l'eau de la mer du Système Global de Prévision Océan-Glace (SGPOG)</h4>
-<p>La requête WMS GetMap suivante retourne une image de la couche de salinité de l'eau de la mer du Système Global de Prévision Océan-Glace (SGPOG). Cette image est générée à la volée au moment de la requête.</p>
+<p>La requête WMS GetMap suivante retourne une image de la couche de salinité de l'eau de la mer du Système Global de Prévision Océan-Glace (SGPOG). Cette image est générée sur demande au moment de la requête.</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180
 &amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=OCEAN.GIOPS.2D_SALW&amp;FORMAT=image/png
 </code></pre>
@@ -251,34 +247,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                    <br>
-                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

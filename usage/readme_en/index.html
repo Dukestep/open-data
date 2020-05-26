@@ -89,11 +89,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../../cost-recovered/readme_en/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i>
@@ -153,7 +148,7 @@
 <li><a href="#how-to-visualize-the-data">How to visualize the data</a><ul>
 <li><a href="#desktop-software">Desktop software</a></li>
 <li><a href="#interactive-web-maps-and-mobile-apps">Interactive web maps and mobile apps</a></li>
-<li><a href="#on-the-fly-images">On-the-fly images</a></li>
+<li><a href="#on-demand-images">On-demand images</a></li>
 </ul>
 </li>
 <li><a href="#how-to-access-raw-data">How to access raw data</a><ul>
@@ -168,7 +163,8 @@
 <h3 id="desktop-software">Desktop software</h3>
 <p>MSC open data can be visualized in desktop software by either (A) connecting to <a href="../../msc-geomet/readme_en/">MSC GeoMet</a> Web Map Service (WMS) web services or (B) by downloading the raw data from <a href="../../msc-datamart/readme_en/">MSC Datamart</a> or MSC GeoMet Web Coverage Service (WCS) and OGC API- Features (WFS 3) web services and loading the raw data in the application.</p>
 <p>MSC open data can be interactively visualized in software that supports the Open Geospatial Consortium (OGC) Web Map Service (WMS) standard such as the free and open source software <a href="https://qgis.org">QGIS</a> and in Esri ArcGIS software. Instructions for adding MSC GeoMet WMS services to <a href="https://docs.qgis.org/3.4/en/docs/training_manual/online_resources/wms.html">QGIS</a> and <a href="https://desktop.arcgis.com/en/arcmap/latest/map/web-maps-and-services/adding-wms-services.htm">ArcGIS</a> are available. Desktop software may allow users to change the layer colors (WMS styles) and animate the layers amongst the available timesteps. Details on the available WMS parameters are available in the <a href="../../msc-geomet/web-services_en/">web services section</a>. For downloading raw data, refer to the <a href="#how-to-access-raw-data">How to access raw data</a> section.</p>
-<p>The following tutorials are available for the QGIS desktop software: <a href="../tutorial_WMS_QGIS_en/">add, query and animate WMS layers</a>, <a href="../tutorial_OAFeat_QGIS_en/">add and query OGC API Features layers</a> and <a href="../tutorial_raw-data_QGIS_en/">add raw data</a>.</p>
+<p>The following tutorials are available for the QGIS desktop software: <a href="../tutorial_WMS_QGIS_en/">add, query and animate WMS layers</a>, <a href="../tutorial_OAFeat_QGIS_en/">add and query OGC API Features layers</a> and <a href="../tutorial_raw-data_QGIS_en/">add raw data</a>. The following image presents the root of the GeoMet-Weather layer tree in QGIS:</p>
+<p><img alt="GeoMet-Weather layer tree in QGIS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/GeoMet-Weather_QGIS_Layer-tree_en.jpg" /></p>
 <h3 id="interactive-web-maps-and-mobile-apps">Interactive web maps and mobile apps</h3>
 <p>MSC open data can also easily be integrated into interactive maps in browsers and mobile applications. </p>
 <h4 id="in-a-web-browser">In a web browser</h4>
@@ -187,10 +183,10 @@
 <p>MSC Geomet Web Map Services (WMS) can also be integrated into mobile applications. In fact, Environment and Climate Change Canada's <a href="https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weathercan.html">WeatherCAN application</a> (available on iOS and Android) uses MSC GeoMet to display high resolution weather radar data on an interactive map:</p>
 <p><img alt="Example of radar imagery in WeatherCan" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/usage/WeatherCan_MSC-GeoMet_weather-radar_20200207_en.jpg" /></p>
 <p>For additional information regarding the capabilities and parameters for MSC GeoMet web services (ie. WMS, WFS, WCS) refer to the <a href="../../msc-geomet/web-services_en/">technical MSC GeoMet web services documentation</a>.</p>
-<h3 id="on-the-fly-images">On-the-fly images</h3>
-<p>MSC Geomet can also serve images on-the-fly via a WMS GetMap request. See the examples below.</p>
+<h3 id="on-demand-images">On-demand images</h3>
+<p>MSC Geomet can also serve images on-demand via a WMS GetMap request. See the examples below.</p>
 <h4 id="example-1-global-deterministic-prediction-system-gdps-surface-temperature">Example 1 - Global Deterministic Prediction System (GDPS) Surface Temperature</h4>
-<p>The following WMS GetMap request returns an image of the Global Deterministic Prediction System (GDPS) air temperature layer. The image is created "on-the-fly" at the time of the request.</p>
+<p>The following WMS GetMap request returns an image of the Global Deterministic Prediction System (GDPS) air temperature layer. The image is created on-demand at the time of the request.</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180
 &amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png
 </code></pre>
@@ -198,7 +194,7 @@
 <p>Returns:</p>
 <p><img alt="Global Deterministic Prediction System (GDPS) surface temperature" src="https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180&amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=GDPS.ETA_TT&amp;FORMAT=image/png" /> </p>
 <h4 id="example-2-global-ice-ocean-prediction-system-giops-sea-water-salinity">Example 2 - Global Ice Ocean Prediction System (GIOPS) Sea Water Salinity</h4>
-<p>The following WMS GetMap request returns an image of the Global Ice Ocean Prediction System (GIOPS) sea water salinity layer. The image is created "on-the-fly" at the time of the request.</p>
+<p>The following WMS GetMap request returns an image of the Global Ice Ocean Prediction System (GIOPS) sea water salinity layer. The image is created on-demand at the time of the request.</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-90,-180,90,180
 &amp;CRS=EPSG:4326&amp;WIDTH=600&amp;HEIGHT=301&amp;LAYERS=OCEAN.GIOPS.2D_SALW&amp;FORMAT=image/png
 </code></pre>
@@ -261,34 +257,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                    <br>
-                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
