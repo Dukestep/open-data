@@ -42,11 +42,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../../msc-datamart/readme_en/" class="dropdown-item">MSC Datamart /<br>Datamart du SMC</a>
+    <a href="../../../msc-geomet/readme_en/" class="dropdown-item">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li>
-    <a href="../../../msc-geomet/readme_en/" class="dropdown-item">MSC GeoMet /<br>GeoMet du SMC</a>
+    <a href="../../../msc-datamart/readme_en/" class="dropdown-item">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li>
@@ -72,6 +72,10 @@
                                     
 <li>
     <a href="../../../usage/tutorial_raw-data_QGIS_en/" class="dropdown-item">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">API usage from a Python script /<br>Utiliser l'API dans un script Python</a>
 </li>
                                     
 <li>
@@ -122,7 +126,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#balises-schemas-xml-et-icones" class="nav-link">Balises, schémas XML et icônes</a>
+            <li class="nav-item" data-level="2"><a href="#balises-et-schemas-xml" class="nav-link">Balises et schémas XML</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#icones-du-produit-xml" class="nav-link">Icônes du produit XML</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -189,7 +197,7 @@
 <li>s0000001_f.xml - fichier XML de prévisions météorologiques pour Athabasca, en français.</li>
 </ul>
 <p>Une <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/site_list_fr.geojson">liste de noms d'emplacements et de codes de sites</a>, en format GeoJSON est disponible.</p>
-<h2 id="balises-schemas-xml-et-icones">Balises, schémas XML et icônes</h2>
+<h2 id="balises-et-schemas-xml">Balises et schémas XML</h2>
 <ul>
 <li>
 <p>Une <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/citypage_tags_table_f.csv">description des balises et des attributs XML des pages de prévisions météorologiques par ville</a> est disponible.</p>
@@ -199,11 +207,25 @@
 </li>
 </ul>
 <p><a href="https://dd.meteo.gc.ca/citypage_weather/schema/">https://dd.meteo.gc.ca/citypage_weather/schema/</a></p>
+<h2 id="icones-du-produit-xml">Icônes du produit XML</h2>
 <ul>
-<li>Les fichiers XML de prévisions météorologiques par ville contiennent des renseignements <strong>codés</strong> sur les conditions actuelles et prévues. Ces codes définissent l'icône à afficher sur les pages par ville du site Web du bureau des prévisions météorologiques. Vous pouvez consulter la description des conditions météorologiques qui correspond aux codes ici :<ul>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/current_conditions_icon_code_descriptions_f.csv">Conditions météorologiques actuelles</a></li>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/forecast_conditions_icon_code_descriptions_f.csv">Prévisions météorologiques</a></li>
-</ul>
+<li>
+<p>Les fichiers XML de prévisions météorologiques par ville contiennent des renseignements <strong>codés</strong> sur les conditions actuelles et prévues. Ces codes définissent l'icône à afficher sur les pages par ville du site Web du bureau des prévisions météorologiques. Vous pouvez consulter la description des conditions météorologiques qui correspond aux codes ici :</p>
+</li>
+<li>
+<p><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/current_conditions_icon_code_descriptions_f.csv">Conditions météorologiques actuelles</a></p>
+</li>
+<li>
+<p><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/forecast_conditions_icon_code_descriptions_f.csv">Prévisions météorologiques</a></p>
+</li>
+<li>
+<p>Ces icônes sont distribuées sous les <a href="https://www.canada.ca/fr/transparence/avis.html">conditions générales standards d'Environnement et Changement climatique Canada</a>. Pour faire un usage commercial de ces icônes, vous devez obtenir un consentement explicite préalable.</p>
+</li>
+<li>
+<p>Vous pouvez télécharger toutes les icônes météorologiques de ECCC à l'adresse suivante : <a href="https://meteo.gc.ca/weathericons/NN.gif">https://meteo.gc.ca/weathericons/NN.gif</a>, où NN est un nombre compris entre 00 et 45.</p>
+</li>
+<li>
+<p>Vous pouvez également créer vos propres icônes en utilisant les symboles météorologiques mondiaux de l'Organisation météorologique mondiale (OMM). Voir un ensemble complet de symboles météorologiques de l'OMM à cette adresse : <a href="https://github.com/OGCMetOceanDWG/WorldWeatherSymbols">https://github.com/OGCMetOceanDWG/WorldWeatherSymbols</a></p>
 </li>
 </ul>
 <h2 id="support">Support</h2>

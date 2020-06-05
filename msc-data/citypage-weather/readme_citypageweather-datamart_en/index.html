@@ -42,11 +42,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../../msc-datamart/readme_en/" class="dropdown-item">MSC Datamart /<br>Datamart du SMC</a>
+    <a href="../../../msc-geomet/readme_en/" class="dropdown-item">MSC GeoMet /<br>GeoMet du SMC</a>
 </li>
                                     
 <li>
-    <a href="../../../msc-geomet/readme_en/" class="dropdown-item">MSC GeoMet /<br>GeoMet du SMC</a>
+    <a href="../../../msc-datamart/readme_en/" class="dropdown-item">MSC Datamart /<br>Datamart du SMC</a>
 </li>
                                     
 <li>
@@ -72,6 +72,10 @@
                                     
 <li>
     <a href="../../../usage/tutorial_raw-data_QGIS_en/" class="dropdown-item">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">API usage from a Python script /<br>Utiliser l'API dans un script Python</a>
 </li>
                                     
 <li>
@@ -122,7 +126,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#tags-xml-schemas-and-icons" class="nav-link">Tags, XML schemas and icons</a>
+            <li class="nav-item" data-level="2"><a href="#tags-and-xml-schemas" class="nav-link">Tags and XML schemas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#icons-of-the-xml-product" class="nav-link">Icons of the XML product</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -190,7 +198,7 @@
 <li>s0000001_f.xml - French citypage weather XML for Athabasca.</li>
 </ul>
 <p>A <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/site_list_en.geojson">list with location names and SiteNameCodes</a> is available in GeoJSON format.</p>
-<h2 id="tags-xml-schemas-and-icons">Tags, XML schemas and icons</h2>
+<h2 id="tags-and-xml-schemas">Tags and XML schemas</h2>
 <ul>
 <li>
 <p>A table <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/citypage_tags_table_e.csv">describing each of the city page weather XML element tags and their associated attributes</a> is available.</p>
@@ -200,11 +208,25 @@
 </li>
 </ul>
 <p><a href="https://dd.weather.gc.ca/citypage_weather/schema/">https://dd.weather.gc.ca/citypage_weather/schema/</a></p>
+<h2 id="icons-of-the-xml-product">Icons of the XML product</h2>
 <ul>
-<li>City page weather XML files contain <strong>coded</strong> current conditions and forecast conditions. These codes are used to determine the icon displayed on the weather office web site's city pages. Tables describing the meteorological conditions for each code are available at:<ul>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/current_conditions_icon_code_descriptions_e.csv">Current weather conditions</a></li>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/forecast_conditions_icon_code_descriptions_e.csv">Forecast weather conditions</a></li>
-</ul>
+<li>
+<p>City page weather XML files contain <strong>coded</strong> current conditions and forecast conditions. These codes are used to determine the icon displayed on the weather office web site's city pages. Tables describing the meteorological conditions for each code are available at:</p>
+</li>
+<li>
+<p><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/current_conditions_icon_code_descriptions_e.csv">Current weather conditions</a></p>
+</li>
+<li>
+<p><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/forecast_conditions_icon_code_descriptions_e.csv">Forecast weather conditions</a></p>
+</li>
+<li>
+<p>These icons are covered by the standard Environment Canada Terms and Conditions: <a href="https://www.canada.ca/en/transparency/terms.html">ttps://www.canada.ca/en/transparency/terms.html</a>. To make a commercial usage of these icons, you must obtain prior explicit consent.</p>
+</li>
+<li>
+<p>You can download all ECCC weather icons from the following URL: <a href="https://meteo.gc.ca/weathericons/NN.gif">https://meteo.gc.ca/weathericons/NN.gif</a>, where NN is a number between 00 and 45.</p>
+</li>
+<li>
+<p>You can also create your own icons using WMO World Weather Symbols. See <em>A complete set of WMO weather symbols in SVG with full metadata and fallback PNGs</em> at this address: <a href="https://github.com/OGCMetOceanDWG/WorldWeatherSymbols">https://github.com/OGCMetOceanDWG/WorldWeatherSymbols</a></p>
 </li>
 </ul>
 <h2 id="support">Support</h2>
