@@ -354,6 +354,24 @@
 <p><a href="../../readme_en/">TOC</a> &gt;  <a href="../readme_en/">MSC data</a> &gt; CMC Operational System's changelog</p>
 <h1 id="changes-to-the-canadian-meteorological-centre-cmc-operational-system">Changes to the Canadian Meteorological Centre (CMC) Operational System</h1>
 <h2 id="2020">2020</h2>
+<h3 id="june-26-2020">June 26, 2020</h3>
+<ul>
+<li><a href="../nwp_geps/changelog_geps_en#friday-june-26-2020">Addition of GPSRO observations from COSMIC-II satellites in the GEPS</a></li>
+<li><a href="../nwp_gdps/changelog_gdps_en#friday-june-26-2020">Addition of GPSRO observations from COSMIC-II satellites in the GDPS</a></li>
+<li><a href="../nwp_rdps/changelog_rdps_en#friday-june-26-2020">Addition of GPSRO observations from COSMIC-II satellites in the RDPS</a></li>
+</ul>
+<h3 id="april-29-2020">April 29, 2020</h3>
+<ul>
+<li><a href="../nwp_geps/changelog_geps_en#wednesday-april-29-2020">Addition of GPSRO observations from PAZ and KOMPSAT-5 satellites in the GEPS</a></li>
+<li><a href="../nwp_gdps/changelog_gdps_en#wednesday-april-29-2020">Addition of GPSRO observations from PAZ and KOMPSAT-5 satellites in the GDPS</a></li>
+<li><a href="../nwp_rdps/changelog_rdps_en#wednesday-april-29-2020">Addition of GPSRO observations from PAZ and KOMPSAT-5 satellites in the RDPS</a></li>
+</ul>
+<h3 id="april-28-2020">April 28, 2020</h3>
+<ul>
+<li><a href="../nwp_geps/changelog_geps_en#tuesday-april-28-2020">Addition of AMV observations from MetOp-3/C satellite in the GEPS</a></li>
+<li><a href="../nwp_gdps/changelog_gdps_en#tuesday-april-28-2020">Addition of AMV observations from MetOp-3/C satellite in the GDPS</a></li>
+<li><a href="../nwp_rdps/changelog_rdps_en#tuesday-april-28-2020">Addition of AMV observations from MetOp-3/C satellite in the RDPS</a></li>
+</ul>
 <h3 id="april-1-2020">April 1, 2020</h3>
 <ul>
 <li><a href="../nwp_raqdps-fw/changelog_raqdps-fw_en#Wednesday-april-1-2020">FireWork Summer 2020 - Season debut</a></li>
@@ -729,9 +747,9 @@
 <h2 id="wednesday-march-12-2009">Wednesday March 12, 2009</h2>
 <h3 id="improvements-to-the-global-and-regional-data-assimilation-systems-and-to-the-regional-forecast-system-of-the-canadian-meteorological-centre-originally-scheduled-for-march-11-2009">Improvements to the global and regional data assimilation systems and to the regional forecast system of the Canadian Meteorological Centre. (Originally scheduled for March 11 2009).</h3>
 <p>Starting on March 12 at 0600 UTC, the Canadian Meteorological Centre will implement changes to incorporate new data into the global and regional data assimilation systems. Furthermore, the GEM model of regional data assimilation and forecast system will be improved by using a new radiative transfer scheme and by extending its uniform-resolution core grid to better cover the arctic regions.</p>
-<p>Data assimilation changes consist of assimilating GPSRO data from six COSMIC satellites into the global and regional assimilation systems. These data provide refractivity profiles from satellite gps measurements and refractivity can be directly linked to atmospheric temperature and moisture conditions. Changes will be ported on the global 4d-var variational assimilation system and the regional 3d-var assimilation system. It is planned in the near future to incorporate these profiles into the ensemble assimilation and prediction system and to also obtain additional profiles of this type from other satellites including GRACE, CHAMP and METOP.</p>
+<p>Data assimilation changes consist of assimilating GPSRO data from six COSMIC satellites into the global and regional assimilation systems. This data provides refractivity profiles from satellite gps measurements and refractivity can be directly linked to atmospheric temperature and moisture conditions. Changes will be ported on the global 4d-var variational assimilation system and the regional 3d-var assimilation system. It is planned in the near future to incorporate these profiles into the ensemble assimilation and prediction system and to also obtain additional profiles of this type from other satellites including GRACE, CHAMP and METOP.</p>
 <p>The gem model itself used in the global system remains unchanged.</p>
-<p>This is a significant increase in the amount of temperature profile data and its impact is multiple. These data have very little biases and excel at detecting the location of the tropopause. During tests we noted improvements particularly above 300 hpa, both in terms of the first guess fit and analyses fit to radiosonde data. This is particularly true in the southern hemisphere but was noted in all areas. Another significant impact is in reduction of biases in the stratosphere, which has an impact on the assimilation of satellite radiance data such as AMSU and AIRS. We have noted a readjustment of the bias correction needed for these radiance data.</p>
+<p>This is a significant increase in the amount of temperature profile data and its impact is multiple. This data has very little bias and excels at detecting the location of the tropopause. During tests we noted improvements particularly above 300 hpa, both in terms of the first guess fit and analyses fit to radiosonde data. This is particularly true in the southern hemisphere but was noted in all areas. Another significant impact is in reduction of biases in the stratosphere, which has an impact on the assimilation of satellite radiance data such as AMSU and AIRS. We have noted a readjustment of the bias correction needed for these radiance data.</p>
 <p>Changes to the regional data assimilation and forecast systems also include the use of a new radiative transfer scheme. The previous infrared and solar radiative transfer parametrization is now replaced by an accurate and more detailed new scheme that makes use of a correlated k-distribution (ckd) method described in Li and Barker (2005). The new scheme's main impact for short term forecasts is the reduction of a known overall cold bias at the surface. The implied general warming will produce a decrease of the frequency of strong cold errors. This effect will be greater than the increase in frequency of strong warm errors. In winter, warming is expected both at night and during the day. In summer, warming is expected at nighttime.</p>
 <p>Another change in the regional model is the extension into the polar regions of the uniform-resolution core grid. This portion of the variable-resolution grid has been expanded over the arctic regions to include the north pole as well as most of the Arctic ocean. The horizontal resolution of the core grid has not been changed and still uses a 15-km grid spacing. This means weather systems impacting the Arctic regions and adjacent regions will be better analysed and forecast. It should be noted that new and old grid points are not collocated. As a consequence, users who extract data from direct model output may have to revise their procedure, such as the selection of a representative grid point for a given latitude/longitude location.</p>
 <p>Additional information on the performance evaluations and impacts on other components and products resulting from these changes are described in the <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/op_systems/doc_opchanges/genot_20090306_en.pdf">official announcement available here</a>.</p>

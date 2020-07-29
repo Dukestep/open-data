@@ -222,6 +222,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#is-it-possible-to-access-past-observed-air-quality-data-and-pollutant-emission-data-used-to-calculate-the-air-quality-health-index" class="nav-link">Is it possible to access past observed air quality data and pollutant emission data used to calculate the Air Quality Health Index ?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#is-there-a-discussion-platform-for-users" class="nav-link">Is there a discussion platform for users ?</a>
               <ul class="nav flex-column">
               </ul>
@@ -265,6 +269,7 @@
 <li><a href="#can-i-have-csv-minimum-and-maximum-forecast-temperature">Can I have CSV minimum and maximum forecast temperature ?</a></li>
 <li><a href="#can-i-have-rainfall-amount-data">Can I have rainfall amount data ?</a></li>
 <li><a href="#i-do-not-see-a-condition-under-the-corresponding-element-of-the-citypage-xml-file-is-this-normal">I do not see a condition under the corresponding element of the Citypage XML file, is this normal ?</a></li>
+<li><a href="#is-it-possible-to-access-past-observed-air-quality-data-and-pollutant-emission-data-used-to-calculate-the-air-quality-health-index">Is it possible to access past observed air quality data and pollutant emission data used to calculate the Air Quality Health Index ?</a></li>
 <li><a href="#is-there-a-discussion-platform-for-users">Is there a discussion platform for users ?</a></li>
 </ul>
 <h2 id="can-we-have-access-to-the-verification-scores-of-your-numerical-weather-prediction-models-and-how-do-they-compare-with-other-international-centres">Can we have access to the verification scores of your numerical weather prediction models and how do they compare with other international centres ?</h2>
@@ -436,11 +441,11 @@ You can find an <a href="https://dd.meteo.gc.ca/doc/genots/2014/02/18/NOCN03_CWA
 <li>If the thickness is given in "m" and the <code>SDEN</code> in "kg/m3", then <code>SWE = SNOD * SDEN</code>; <code>SWE</code> is in mm (kg/m2)</li>
 </ul>
 <h2 id="in-the-numerical-weather-prediction-systems-changelog-i-see-several-systems-eg-srpeot-not-mentioned-in-the-list-of-systems-with-available-data-where-can-i-find-this-data">In the numerical weather prediction systems changelog, I see several systems (e.g. SRPEOT) not mentioned in the list of systems with available data, where can I find this data ?</h2>
-<p>These data are not yet available on the MSC Datamart. To be informed when new datasets are added, you can subscribe to the <a href="https://lists.ec.gc.ca/mailman/listinfo/dd_info">dd-info</a> and <a href="http://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> mailing lists.</p>
+<p>This data is not yet available on the MSC Datamart. To be informed when new datasets are added, you can subscribe to the <a href="https://lists.ec.gc.ca/mailman/listinfo/dd_info">dd-info</a> and <a href="http://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> mailing lists.</p>
 <h2 id="what-is-the-difference-between-the-two-sets-of-observational-data-available-on-the-msc-datamart">What is the difference between the two sets of observational data available on the MSC Datamart ?</h2>
 <p>We have 2 products that contain observations from the Environment and Climate Change Canada station network.</p>
 <p>One is a one-station-per-file type, consisting of ground and marine weather observations per station, the <a href="../../msc-data/obs_station/readme_obs_insitu_swobdatamart_en/">SWOB data</a>, available in XML format. All Canadian station data are available in this product.</p>
-<p>The second one groups <a href="../../msc-data/obs_station/readme_obs_insitu_xmldatamart_en/">observational data from the same province or territory</a> by file, in XML format. Not all Canadian stations are contained in this product. These data are used in the official forecast web site weather.gc.ca. As a result, they are subject to certain rules (e.g. for winds, use of the average observed over a 2-minute period, if it is not possible to use a 10-minute average).</p>
+<p>The second one groups <a href="../../msc-data/obs_station/readme_obs_insitu_xmldatamart_en/">observational data from the same province or territory</a> by file, in XML format. Not all Canadian stations are contained in this product. This data is used in the official forecast web site weather.gc.ca. As a result, they are subject to certain rules (e.g. for winds, use of the average observed over a 2-minute period, if it is not possible to use a 10-minute average).</p>
 <p>Consequently, it is not really possible to compare these 2 sets of data and it is strongly recommended to use the SWOB data, which are more complete and subject to no rules, for the region of interest.</p>
 <h2 id="how-often-are-the-observational-data-collected-by-province-and-territory-refreshed">How often are the observational data collected by province and territory refreshed ?</h2>
 <p>The <a href="../../msc-data/obs_station/readme_obs_insitu_xmldatamart_en/">provincial summary files</a> are updated 6 times per hour, but the simple fact that we update them does not necessarily mean that any of the stations in the summary file have updated their data since the last run. We update the observations on an hourly (not minute-by-minute) basis for each station at the beginning of the hour, but another update (called a "special obs" or "speci") within the hour is also possible if the observer feels that there has been a change large enough to warrant an update. </p>
@@ -455,7 +460,7 @@ You can find an <a href="https://dd.meteo.gc.ca/doc/genots/2014/02/18/NOCN03_CWA
 <p>You can find information about Environment and Climate Change Canada's warning in several places :</p>
 <ul>
 <li>
-<p>First of all, the <a href="https://dd.meteo.gc.ca/alerts/cap">official warnings are available in CAP-XML format on the MSC Datamart</a>. The <a href="../../msc-data/alerts/readme_alerts-datamart_en/">documentation</a> details these data and also gives information on the alert criteria of the public forecast and geographical information of the forecast locations, for all messages in CAP format.</p>
+<p>First of all, the <a href="https://dd.meteo.gc.ca/alerts/cap">official warnings are available in CAP-XML format on the MSC Datamart</a>. The <a href="../../msc-data/alerts/readme_alerts-datamart_en/">documentation</a> details this data and also gives information on the alert criteria of the public forecast and geographical information of the forecast locations, for all messages in CAP format.</p>
 </li>
 <li>
 <p>Our geospatial web services allow to display the warnings layer only in the <a href="../../msc-geomet/readme_en/">Beta version</a> currently. Please monitor our <a href="http://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> mailing list to be informed when these warnings are available in GeoMet-Weather.</p>
@@ -498,6 +503,10 @@ are available, whereas with AMQP, user is advised without sending any request.</
 <h2 id="i-do-not-see-a-condition-under-the-corresponding-element-of-the-citypage-xml-file-is-this-normal">I do not see a condition under the corresponding element of the Citypage XML file, is this normal ?</h2>
 <p>Some weather stations are automatic (unmanned) and do not report the current condition. If you look to the corresponding page on our web site, for example <a href="https://weather.gc.ca/city/pages/ab-50_metric_e.html">Edmonton</a>, you will see that it is written <em>Not observed</em> for the condition.</p>
 <p>This is why there is no icon or condition reported in the corresponding Citypage XML file.</p>
+<h2 id="is-it-possible-to-access-past-observed-air-quality-data-and-pollutant-emission-data-used-to-calculate-the-air-quality-health-index">Is it possible to access past observed air quality data and pollutant emission data used to calculate the Air Quality Health Index ?</h2>
+<p>In Canada, observed air quality data are generally produced by provinces and municipalities and collected by ECCC. This is true for both real-time and "official" data that are subject to detailed quality control and are usually published the following year. These official data are assembled in the <a href="http://data.ec.gc.ca/data/air/monitor/national-air-pollution-surveillance-naps-program/?lang=en">National Air Pollution Surveillance (NAPS)</a> program, now on the ECCC data catalogue.</p>
+<p>Also, a number of Canadian stations are available in the U.S. <a href="https://www.airnow.gov/aqi-and-health/">AirNow</a> database, and are also downloadable from the Open Project <a href="https://openaq.org/#/map?parameter=o3&amp;_k=6p035e">OpenAQ</a>. On the other hand, ECCC only publishes observations in the form of the Air Quality Health Index, which can be found in the <a href="../../msc-data/aqhi/readme_aqhi_en/">MSC Datamart</a>.</p>
+<p>Finally, the <a href="https://www.canada.ca/en/environment-climate-change/services/national-pollutant-release-inventory/tools-resources-data/exploredata.html">National Pollutant Release Inventory</a> is available. Please note that polluting facilities are given considerable time to report their emissions, therefore the information is published more than one year after the current date, on an annual basis.</p>
 <h2 id="is-there-a-discussion-platform-for-users">Is there a discussion platform for users ?</h2>
 <p>A discussion platform dedicated to MSC open data has been set up by a third party to allow the user community to interact more easily and benefit from each other's experience:</p>
 <p><a href="http://meteocentre.com/help/msc-open-data/">http://meteocentre.com/help/msc-open-data/</a></p>

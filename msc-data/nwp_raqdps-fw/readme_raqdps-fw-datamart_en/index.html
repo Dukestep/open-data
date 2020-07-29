@@ -116,13 +116,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#firework-prediction-system-data-in-grib2-format" class="nav-link">FireWork Prediction System Data in GRIB2 Format</a>
+            <li class="nav-item" data-level="1"><a href="#regional-air-quality-deterministic-prediction-system-firework-raqdps-fw-data-in-grib2-format" class="nav-link">Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) data in GRIB2 Format</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#data-location" class="nav-link">Data location</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#technical-specification-of-the-grid" class="nav-link">Technical specification of the grid</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#file-nomenclature" class="nav-link">File nomenclature</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list-of-variables" class="nav-link">List of variables</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -143,30 +151,86 @@
 
 <p><a href="../readme_raqdps-fw-datamart_fr/">En français</a></p>
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
-<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_raqdps-fw_en/">RAQDPS-FW</a> &gt; FireWork Prediction System on MSC Datamart</p>
-<h1 id="firework-prediction-system-data-in-grib2-format">FireWork Prediction System Data in GRIB2 Format</h1>
-<p>XXXX</p>
+<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_raqdps-fw_en/">RAQDPS-FW</a> &gt; Regional Air Quality Deterministic Prediction System FireWork on MSC Datamart</p>
+<h1 id="regional-air-quality-deterministic-prediction-system-firework-raqdps-fw-data-in-grib2-format">Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) data in GRIB2 Format</h1>
+<p>This page describes data from the FireWork system, an air quality forecasting system incorporating emissions from forest fires. The system is run twice a day, initialized at 00:00 and 12:00 UTC, in conjunction with the Regional Air Quality Deterministic Prediction System (RAQDPS). Forest fire emissions are estimated using data on hot spots and fuel consumed on Canadian and U.S. lands provided by Natural Resources Canada's <a href="http://cwfis.cfs.nrcan.gc.ca/">Canadian Wildland Fire Information System</a>. The hotspot data set is downloaded twice daily, prior to the FireWork system running. This system has the advantage of presenting the complete emissions inventory as well as added intermittent fire sources.</p>
 <h2 id="data-location">Data location</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data can be accessed at the following URLs:</p>
 <ul>
-<li><a href=""></a></li>
+<li><a href="https://dd.weather.gc.ca/model_raqdps-fw/10km/grib2">https://dd.weather.gc.ca/model_raqdps-fw/10km/grib2/{HH}/{hhh}</a> </li>
 </ul>
-<p>A history of XXXX days of forecast is kept in this directory.</p>
+<p>where:</p>
+<ul>
+<li><strong>HH</strong> : Model run start, in UTC [00, 12]</li>
+<li><strong>hhh</strong> : Forecast hour [000, 001, 002, ..., 072] </li>
+</ul>
+<p>A history of 24 days of forecast is kept in this directory.</p>
+<h2 id="technical-specification-of-the-grid">Technical specification of the grid</h2>
+<p><img alt="RAQDPS-FW grid image" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_raqdps-fw/grille_raqdps-fw.png" /></p>
+<p>Table lists the values of various parameters of the rotated lat-lon grid:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ni</td>
+<td>729</td>
+</tr>
+<tr>
+<td>nj</td>
+<td>599</td>
+</tr>
+<tr>
+<td>resolution at 60° N</td>
+<td>10 km</td>
+</tr>
+<tr>
+<td>coordinate of first grid point (with respect to the used grid)</td>
+<td>32 ° S ; 39.5 ° W</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> : The <a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/update_2.0.8.html">most recent versions of wgrib2</a> and <a href="https://gdal.org/">GDAL</a> support these rotated grids.</p>
 <h2 id="file-nomenclature">File nomenclature</h2>
 <p>NOTE: ALL HOURS ARE IN UTC.</p>
 <p>The files have the following nomenclature:</p>
 <ul>
-<li>XXXXXX</li>
+<li>{YYYYMMDD}T{HH}Z_MSC_RAQDPS-FW_VAR_LVL_{Grille}(resolution}_P{hhh}.grib2</li>
 </ul>
-<p>where:</p>
+<p>Where:</p>
 <ul>
-<li><strong>xx</strong> : XXXXXX</li>
+<li><strong>YYYYMMDD</strong>: Year, month and day of the beginning of the forecast</li>
+<li><strong>T</strong> : Time delimiter according to ISO8601 norms</li>
+<li><strong>HH</strong>: UTC run time [00, 12]</li>
+<li><strong>Z</strong> : Time zone (UTC hour)</li>
+<li><strong>MSC</strong> : Constant string indicating the Meteorological Service of Canada, source of data</li>
+<li><strong>RAQDPS-FW</strong> : Constant string indicating that data is from the Regional Air Quality Deterministic Prediction System FireWork</li>
+<li><strong>VAR</strong> : Variable type included in the file (ex. : PM2.5-Diff-RAQDPS)</li>
+<li><strong>LVL</strong> : Vertical level [SFC for the surface, EATM for the column integral]</li>
+<li><strong>Grille</strong> : Horizontal grid rotated lat-lon [RLatLon]</li>
+<li><strong>Resolution</strong> : 0.09x0.09. Indicating resolution in degreee 0.09x0.09 (about 10km) in latitude and longitude directions</li>
+<li><strong>Phhh</strong>: P is a constant character. hhh is the forecast hour [000, 001, 002, ..., 072]</li>
+<li><strong>grib2</strong>: Constant string indicating the GRIB2 format is used</li>
 </ul>
-<p>Example of forecast file name:
-* XXXX</p>
+<p>Example of forecast file name:</p>
+<ul>
+<li>20200521T00Z_MSC_RAQDPS-FW_PM2.5-Diff-RAQDPS_EATM_RLatLon0.09x0.09_P003.grib2</li>
+</ul>
+<h2 id="list-of-variables">List of variables</h2>
+<p>List of 2D variables available in the files:</p>
+<ul>
+<li>PM2.5: PM2.5 concentration (&mu;g.m-3)</li>
+<li>PM2.5-Diff-RAQDPS : PM2.5 concentration (&mu;g.m-3) difference with the RAQDPS model. Indicates the forest fires contribution to the PM2.5 concentration</li>
+<li>PM10: PM10 concentration (&mu;g.m-3)</li>
+<li>PM10-Diff-RAQDPS : PM10 concentration (&mu;g.m-3) difference with the RAQDPS model. Indicates the forest fires contribution to the PM10 concentration</li>
+</ul>
 <h2 id="support">Support</h2>
-<p>If you have any questions about these data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<p>If you have any questions about this data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
 <h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>
 <p>Announcements related to this dataset are available in the <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info list</a>.</p></div>
             </div>
