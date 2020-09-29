@@ -17,7 +17,7 @@ let frameRate = 1.0; // frames per second
 let animationId = null;
 let startTime = null
 let endTime = null
-let defaultTime = null;
+let defaultTime = null
 let current_time = null;
 
 let layers = [
@@ -73,7 +73,6 @@ getRadarStartEndTime().then(data => {
     startTime = data[0]
     endTime = data[1]
     defaultTime = data[2]
-    console.log(defaultTime)
     setTime();
 })
 

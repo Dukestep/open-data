@@ -248,7 +248,7 @@
 </tr>
 <tr>
 <td>LAYERS</td>
-<td>L'identifiant des couches à être affichées sur l'image. Pour de meilleures performances, il est recommandé de demander une couche par requête WMS. L'identifiant des couches est spécifié dans le résultat d'une requête <a href="#wms-getcapabilities">WMS GetCapabilities</a></td>
+<td>L'identifiant des couches à être affichées sur l'image. L'identifiant des couches est spécifié dans le résultat d'une requête <a href="#wms-getcapabilities">WMS GetCapabilities</a>. GeoMet du SMC supporte présentement seulement une seule valeur pour le paramètre GetMap LAYERS. Ceci sera amélioré dans une version à venir afin de supporter les couches multiples du standard WMS 1.3.0.</td>
 </tr>
 <tr>
 <td>STYLES</td>
@@ -371,7 +371,7 @@
 <tbody>
 <tr>
 <td>INFO_FORMAT</td>
-<td>Le format des données retournées par la requête. Les valeurs acceptées pour ce paramètres sont : <code>text/plain</code> (valeur par défaut) ou <code>application/vnd.ogc.gml</code></td>
+<td>Le format des données retournées par la requête. Les valeurs acceptées pour ce paramètres sont : <code>text/plain</code> (valeur par défaut), <code>application/json</code> ou <code>application/vnd.ogc.gml</code></td>
 </tr>
 <tr>
 <td>FEATURE_COUNT</td>
@@ -389,7 +389,7 @@
 </table>
 <p>Une requête GetFeatureInfo pour la même image que l'exemple WMS GetMap ci-dessus :</p>
 <pre><code>https://geo.weather.gc.ca/geomet?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetFeatureInfo&amp;BBOX=45,-75,45.5,-74.5
-&amp;CRS=EPSG:4326&amp;WIDTH=10&amp;HEIGHT=10&amp;LAYERS=GDPS.ETA_TT&amp;INFO_FORMAT=text/plain&amp;QUERY_LAYERS=GDPS.ETA_TT&amp;I=5&amp;J=5
+&amp;CRS=EPSG:4326&amp;WIDTH=10&amp;HEIGHT=10&amp;LAYERS=GDPS.ETA_TT&amp;INFO_FORMAT=application/json&amp;QUERY_LAYERS=GDPS.ETA_TT&amp;I=5&amp;J=5
 </code></pre>
 
 <h3 id="wms-getlegendgraphic">WMS GetLegendGraphic</h3>
@@ -730,7 +730,7 @@ Rule%3E+%3C%2Fse%3AFeatureTypeStyle%3E+%3C%2FUserStyle%3E+%3C%2FNamedLayer%3E+%3
 <p>Dans cet exemple, la valeur <code>field</code> indique à l'usager le nom des bandes disponibles. Pour GeoMet-Climat, les bandes utilisent toujours la nomenclature suivante : <code>B</code> suivi de l'intervalle ISO8601 correspondant, soit <code>YYYY</code> pour un intervalle annuel et <code>YYYY-MM</code> pour un intervalle mensuel.</p>
 <p>Pour GeoMet-Climat, les usagers pour demander un pas de temps unique ou une plage temporelle :</p>
 <ul>
-<li>Pas de temps unique : <code>RANGESUBSET=B20015</code></li>
+<li>Pas de temps unique : <code>RANGESUBSET=B2015</code></li>
 <li>Plage temporelle : <code>RANGESUBSET=B2015:B2019</code></li>
 </ul>
 <p>Notez que la limite pour une seule requête WCS GetCoverage est de 256 bandes à la fois.</p>
