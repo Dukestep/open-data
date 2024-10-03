@@ -128,11 +128,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#directory-and-file-name-nomenclature" class="nav-link">Directory and file name nomenclature</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#file-content" class="nav-link">File content</a>
+            <li class="nav-item" data-level="2"><a href="#file-name-nomenclature" class="nav-link">File name nomenclature</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -155,32 +151,26 @@
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
 <p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_hurricanes_en/">Hurricane trajectories</a> &gt; Hurricane trajectories on MSC Datamart</p>
 <h1 id="data-of-the-hurricane-trajectories">Data of the hurricane trajectories</h1>
-<p>This page describes the data of the <a href="../readme_hurricanes_en/">hurricane trajectories</a>.</p>
-<p>The Canadian Hurricane Centre provides files in shapefile format as part of the regular hurricane season forecast.</p>
-<p>The files will allow users to plot the route of the storms forecast in a map system of their choice. There is four shapefiles (*.shp) formats that are produced and include each a 6-hour forecast bulletin when storms of tropical origin threatens or risks to threaten Canadian territory.</p>
-<p>Hurricane tracks issued by the Canadian Hurricane Centre hurricanes are published on the MSC Datamart. This data is made available in experimental mode in order to offer users an opportunity to ingest and test the data in real-time. The service will be provided to the best of our ability but please note that there is a significant possibility of occasional unannounced interruptions and non-received from this experimental data service, up to new announcement.</p>
+<p>This page describes the data of the <a href="../readme_hurricanes_en/">hurricane trajectories</a> available on the MSC Datamart in shapefile format.</p>
+<p>There is four shapefiles (*.shp) formats that are produced and include each a 6-hour forecast bulletin when storms of tropical origin threatens or risks to threaten Canadian territory.</p>
 <h2 id="data-location">Data location</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
-<p>The data is available via the HTTPS protocol. It is possible to access it with a standard browser. In this case, we obtain a list of links giving access to a  shapefile.</p>
-<p>You can find the shapefiles at:</p>
+<p>The data is available via the HTTPS protocol. It is possible to access it with a standard browser. In this case, we obtain a list of links giving access to shapefile files.</p>
+<p>Data in shapefile format can be found at this address:</p>
 <ul>
-<li><a href="https://dd.weather.gc.ca/trajectoires/hurricane/shapefile">https://dd.weather.gc.ca/trajectoires/hurricane/shapefile/{storm-name}/</a></li>
+<li><a href="https://dd.weather.gc.ca/trajectoires/hurricane/shapefile">https://dd.weather.gc.ca/trajectoires/hurricane/shapefile/{NAME}</a></li>
 </ul>
-<p>where:</p>
-<ul>
-<li><strong>storm-name</strong> : storm name in uppercase (e.g. 'BERTHA' )</li>
-</ul>
-<p>April 30: the history is deleted</p>
-<h2 id="directory-and-file-name-nomenclature">Directory and file name nomenclature</h2>
-<p>NOTE : ALL HOURS ARE IN UTC.</p>
+<p>With {NAME} : hurricane name in uppercase (e.g. 'BERTHA')</p>
+<p>Note: The history is deleted on April 30th for both datasets.</p>
+<h2 id="file-name-nomenclature">File name nomenclature</h2>
 <p>File naming convention is:</p>
-<p>YYYYMMDD_HHMMZ_STORM-NAME.TYPE.shp</p>
+<p><code>{YYYYMMDD}_{HHMM}Z_{NAME}.{TYPE}.shp</code></p>
 <p>where:</p>
 <ul>
 <li><strong>YYYYMMDD</strong> : Forecast issuance date</li>
 <li><strong>HHMM</strong> : Time in UTC </li>
 <li><strong>Z</strong> : Constant string, indicating Zulu time (UTC code name)</li>
-<li><strong>STORM-NAME</strong> : Storm name (e.g. BERTHA - hurricane, post-tropical, etc)</li>
+<li><strong>NAME</strong> : Hurricane name (e.g. BERTHA)</li>
 <li>
 <p><strong>TYPE</strong> : Type of shapefile:</p>
 <ul>
@@ -191,9 +181,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="file-content">File content</h2>
-<p>When querying the points (pts) shapefile, the contents of each column are given
-as follows:</p>
+<p>When querying the points (pts) shapefile, the contents of each column are given as follows:</p>
 <table>
 <thead>
 <tr>
