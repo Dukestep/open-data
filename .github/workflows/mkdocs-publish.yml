@@ -6,7 +6,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checking out release commit
+      uses: actions/checkout@v2
       with:
         ref: ${{ github.event.release.target_commitish }}
     - name: Set up Python
