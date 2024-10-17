@@ -27,4 +27,4 @@ jobs:
         publish_dir: ./site
         user_name: Dukestep
         user_email: etiennepelletier@gmail.com
-        commit_message: update via release ${{ github.event.release.tag_name }}
+        commit_message: updated via release ${{ github.event.release.tag_name }}

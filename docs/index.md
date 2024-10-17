@@ -1,5 +1,5 @@
 ![ECCC logo](img_eccc-logo.png)
-
+<h2>Etienne's version of the Meteorological Service of Canada open data documentation</h2>
 <h2 class="index-banner">Meteorological Service of Canada open data documentation /</h2>
 <h2 class="index-banner">Documentation des données ouvertes du Service météorologique du Canada</h2>
 
