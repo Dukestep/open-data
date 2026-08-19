@@ -1,0 +1,83 @@
+name: zensical deploy
+
+# Builds and publishes the bilingual Zensical documentation to
+# https://dukestep.github.io/open-data/.
+#
+# The documentation sources live in two separate repositories — one per language
+# — and neither publishes on its own; they only run a build check on push. This
+# workflow is the single place the live site is produced: a release published
+# here checks out both language repositories, builds each one, assembles them
+# into one tree alongside the shared landing and 404 pages, and replaces the
+# gh-pages branch in a single commit.
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-documentation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # This repository, for .github/pages/{index,404}.html.
+      - uses: actions/checkout@v4
+
+      # The language sources. Both repositories are public, so the default
+      # token is enough to read them.
+      - name: Checking out the English documentation
+        uses: actions/checkout@v4
+        with:
+          repository: Dukestep/zensical-public-doc-en
+          ref: main
+          path: src-en
+
+      - name: Checking out the French documentation
+        uses: actions/checkout@v4
+        with:
+          repository: Dukestep/zensical-public-doc-fr
+          ref: main
+          path: src-fr
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Zensical
+        run: pip install zensical
+
+      - name: Build the English documentation
+        working-directory: src-en
+        run: zensical build --clean
+
+      - name: Build the French documentation
+        working-directory: src-fr
+        run: zensical build --clean
+
+      # Assembles the published tree: each language under its own prefix, with
+      # the bilingual landing page, the bilingual 404 page and the logo they
+      # both reference at the root.
+      - name: Assemble the site
+        run: |
+          mkdir -p site
+          cp -r src-en/site site/en
+          cp -r src-fr/site site/fr
+          cp .github/pages/index.html site/index.html
+          cp .github/pages/404.html site/404.html
+          cp src-en/docs/img_eccc-logo.png site/img_eccc-logo.png
+
+      # force_orphan replaces gh-pages wholesale, so each release is a clean,
+      # reproducible copy of the site. This also clears the files left behind by
+      # the retired MkDocs build; the 404 page redirects those legacy
+      # "…_en"/"…_fr" URLs to their new "/en/…" and "/fr/…" locations.
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          force_orphan: true
+          user_name: Dukestep
+          user_email: etiennepelletier@gmail.com
+          commit_message: updated via release ${{ github.event.release.tag_name }}
