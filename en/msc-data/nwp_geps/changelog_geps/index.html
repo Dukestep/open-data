@@ -1,0 +1,6017 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Meteorological Service of Canada open data documentation">
+      
+      
+        <meta name="author" content="Meteorological Service of Canada">
+      
+      
+        <link rel="canonical" href="https://dukestep.github.io/open-data/en/msc-data/nwp_geps/changelog_geps/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/open-data/en/" hreflang="en">
+        
+          <link rel="alternate" href="/open-data/fr/" hreflang="fr">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.56">
+    
+    
+      
+        <title>Chronology of changes to the Global Ensemble Prediction System (GEPS) - Meteorological Service of Canada open data documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.20815dad.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chronology-of-changes-to-the-global-ensemble-prediction-system-geps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2025-2026 Zensical and contributors
+
+  SPDX-License-Identifier: MIT
+  Third-party contributions licensed under DCO
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../../.."
+      title="Meteorological Service of Canada open data documentation"
+      class="md-header__button md-logo"
+      aria-label="Meteorological Service of Canada open data documentation"
+      data-md-component="logo"
+    >
+      <!-- Logo — single element; the dark-mode image is swapped in via CSS (content: url(...)) -->
+
+  <img class="md-logo" src="../../../img_eccc-logo.png" alt="Meteorological Service of Canada open data documentation" />
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label
+      class="md-header__button md-icon" for="__drawer"
+      aria-label="Navigation"
+    >
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+
+    <!-- Header title: always shows the site name — the built-in swap to
+         the current page title on scroll is disabled by not marking this
+         div as the "header-topic" component the scroll JS looks for -->
+    <div class="md-header__title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meteorological Service of Canada open data documentation
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette toggle -->
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+
+    <!-- User preference: color palette -->
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+
+    <!-- Site language selector -->
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/open-data/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/open-data/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Button to open search modal -->
+    
+      
+
+      <!-- Check if search is actually enabled - see https://t.ly/DT_0V -->
+      
+        <label
+          class="md-header__button md-icon" for="__search"
+          aria-label="Search"
+        >
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+
+        <!-- Search interface -->
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+
+    <!-- Repository information -->
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  MSC Open Data
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../msc-data-themes/" class="md-tabs__link">
+          
+  
+  Datasets by themes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../access/" class="md-tabs__link">
+          
+  
+  Access
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../usage/" class="md-tabs__link">
+          
+  
+  Usage and tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../faq/" class="md-tabs__link">
+          
+  
+  FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contact/" class="md-tabs__link">
+          
+  
+  Contact us
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Meteorological Service of Canada open data documentation" class="md-nav__button md-logo" aria-label="Meteorological Service of Canada open data documentation" data-md-component="logo">
+      <!-- Logo — single element; the dark-mode image is swapped in via CSS (content: url(...)) -->
+
+  <img class="md-logo" src="../../../img_eccc-logo.png" alt="Meteorological Service of Canada open data documentation" />
+
+    </a>
+    Meteorological Service of Canada open data documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  MSC Open Data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Data
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Weather alerts and public forecasts
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Weather alerts and public forecasts
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alerts/readme_alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Weather and marine alerts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../citypage-weather/readme_citypageweather/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Current weather conditions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../marine-weather/readme_marine-weather/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Current marine conditions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aqhi/readme_aqhi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Air Quality Health Index (AQHI)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thunderstorm-outlooks/readme_thunderstorm-outlooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Thunderstorm outlooks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coastal-flooding/readme_coastal-flooding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coastal flooding risk index
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hurricanes/readme_hurricanes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hurricanes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Observations
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Observations
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../obs_radar/readme_radar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Weather radar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lightning/readme_lightning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lightning density
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../obs_satellite/readme_satellite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Satellite observations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../obs_station/readme_obs_insitu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  In situ observations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../obs_hydrometric/readme_hydrometric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hydrometric observations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertical-profiles/readme_vertical-profiles-obs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vertical profiles observations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Numerical weather and environmental prediction forecasts
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Numerical weather and environmental prediction forecasts
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Atmosphere
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Atmosphere
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1_1" id="__nav_2_4_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Deterministic
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Deterministic
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_gdps/readme_gdps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Deterministic Prediction System (GDPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdps/readme_rdps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Prediction System (RDPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrdps/readme_hrdps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Deterministic Prediction System (HRDPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_caps/readme_caps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Canadian Arctic Prediction System (CAPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_nowcasting/readme_nowcasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scribe nowcasting matrices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1_2" id="__nav_2_4_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ensemble
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Ensemble
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../readme_geps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Ensemble Prediction System (GEPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_naefs/readme_naefs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  North American Ensemble Forecast System (NAEFS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_reps/readme_reps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Ensemble Prediction System (REPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_cansips/readme_cansips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Canadian Seasonal to Inter-annual Prediction System (CanSIPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1_3" id="__nav_2_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Precipitation analysis
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Precipitation analysis
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdpa/readme_rdpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Precipitation Analysis (RDPA)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrdpa/readme_hrdpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Deterministic Precipitation Analysis (HRDPA)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrepa/readme_hrepa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Ensemble Precipitation Analysis (HREPA)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrdpa-watershed/readme_hrdpa-watershed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Deterministic Precipitation Analysis average watershed precipitation (HRDPA watershed)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1_4" id="__nav_2_4_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Air quality
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Air quality
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_raqdps/readme_raqdps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Air Quality Deterministic Prediction System (RAQDPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdaqa/readme_rdaqa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Air Quality Analysis (RDAQA)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Surface
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Surface
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_caldas-nsrps/readme_caldas-nsrps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Canadian Land Data Assimilation System in the National Surface and River Prediction System (CaLDAS-NSRPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrdlps/readme_hrdlps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Deterministic Land Surface Prediction System (HRDLPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Water, ocean and ice
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Water, ocean and ice
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1" id="__nav_2_4_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ice and Ocean
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Ice and Ocean
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_giops/readme_giops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Ice Ocean Prediction System (GIOPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_riops/readme_riops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Ice Ocean Prediction System (RIOPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_ciops/readme_ciops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coastal Ice Ocean Prediction System (CIOPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_2" id="__nav_2_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Wave
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Wave
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_gdwps/readme_gdwps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Deterministic Wave Prediction System (GDWPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_gewps/readme_gewps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Ensemble Wave Prediction System (GEWPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdwps/readme_rdwps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Wave Prediction System (RDWPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rewps/readme_rewps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Ensemble Wave Prediction System (REWPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_3" id="__nav_2_4_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storm
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Storm
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_gdsps/readme_gdsps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Deterministic Storm Surge Prediction System (GDSPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_resps/readme_resps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Ensemble Storm Surge Prediction System (RESPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_4" id="__nav_2_4_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Water
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Water
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_wcps/readme_wcps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Water Cycle Prediction System (WCPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_ohps/readme_ohps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Operational Hydrodynamic Prediction System (OHPS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Climate data
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Climate data
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_ahccd/readme_ahccd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusted and homogenized Canadian Climate Data (AHCCD)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_cangrd/readme_cangrd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Canadian Gridded Data (CANGRD)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_cmip5/readme_cmip5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coupled Model Intercomparison Project Phase 5 (CMIP5)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_cmip6/readme_cmip6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coupled Model Intercomparison Project Phase 6 (CMIP6)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_dcs/readme_dcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Statistically downscaled climate scenarios (DCS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_candcs-u6/readme_candcs-u6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Statistically scaled climate scenario data from CMIP6 global climate models (CanDCS-U6)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_spei/readme_spei/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Standardized Precipitation Evapotranspiration Index (SPEI)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_indices/readme_climateindices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Statistically downscaled climate indices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_obs/readme_climateobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Historical observations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../climate_ltce/readme_climateltce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Long Term Climate Extremes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Other data
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Other data
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bulletins/readme_bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Bulletins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meteocode/readme_meteocode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Meteocode for Canadian forecast public regions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metnotes/readme_metnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  MetNotes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../forecast-regions/readme_forecast-regions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Forecast regions polygons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aviation/iwxxm/readme_aviation-iwxxm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Aviation data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Retired open data
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Retired open data
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdsps/readme_rdsps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Storm Surge Prediction System (RDSPS)
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="Retired data">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_rdps-cgsl/readme_rdps-cgsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Deterministic Prediction System - Coupled to Gulf of St. Lawrence (RDPS-CGSL)
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="Retired data">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_raqdps-fw/readme_raqdps-fw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regional Air Quality Deterministic Prediction System - FireWork (RAQDPS-FW)
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="Retired data">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwp_hrdps-north/readme_hrdps-north/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  High Resolution Deterministic Prediction System North (HRDPS-North)
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="Retired data">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../msc-data-themes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Datasets by themes
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Datasets by themes
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/cold_spells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cold spells
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/drought/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Drought
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/floods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Floods
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/hurricanes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hurricanes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/ice_storms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ice storms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/snowstorms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Snowstorms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/thunderstorms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Thunderstorms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/transportation_logistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ground transportation logistics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-data-themes/wildfires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Wildfires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../access/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Access
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Access
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-geomet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  MSC GeoMet
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-datamart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  MSC Datamart
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-animet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  MSC AniMet
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wmo-wis2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WMO WIS2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cost-recovered/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cost-recovered services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../usage/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Usage and tutorials
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Usage and tutorials
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Tutorials
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1" id="__nav_5_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Python
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/use-case_arthur/use-case_arthur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Anticipated profits based on precipitations probability
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/use-case_oafeat/use-case_oafeat-script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Retrieving and displaying hydrometric data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  QGIS
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  QGIS
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_WMS_QGIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display, interact and animate WMS layers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_OAFeat_QGIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Using OGC API - Features data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_raw-data_QGIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adding raw geospatial files
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Power BI
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Power BI
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_OAFeat_Power-BI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Querying and using data with OGC API - Features using Power BI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  R and Excel
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  R and Excel
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_OAFeat_R-Excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Querying data with OGC API - Features using R and VBA
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GDAL
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  GDAL
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_gdal/tutorial_gdal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GDAL command line tutorial with weather data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Web maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tutorial_web-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building interactive web maps with OpenLayers and Leaflet
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Technical documentation
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Technical documentation
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-geomet/wms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Map Service (WMS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-geomet/wcs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Coverage Service (WCS)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-geomet/ogc_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OGC API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-geomet/stac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  STAC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-datamart/amqp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Advanced Message Queuing Protocol
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../msc-datamart/readme_wget-datamart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data retrieval with wget
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme_grib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Usage of GRIB2 data format
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faq/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  FAQ
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../contact/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contact us
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Contact us
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../licence/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  End-use licence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  End-use licence
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Service usage policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-april-14-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday April 14, 2026
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monday-may-26th-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Monday May 26<sup>th</sup>, 2025
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-april-2-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday April 2, 2025
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-october-23-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday October 23, 2024
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-june-11-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday June 11, 2024
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thursday-september-14-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Thursday September 14, 2023
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-july-5-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday July 5, 2023
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-march-8-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday March 8, 2023
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-february-15-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday February 15, 2023
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-january-4-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday January 4, 2023
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thursday-november-3-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Thursday November 3, 2022
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-june-28-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday June 28, 2022
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-february-16-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday February 16, 2022
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-december-1st-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday December 1<sup>st</sup>, 2021
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-january-26th-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday January 26<sup>th</sup>, 2021
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-december-8th-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday December 8<sup>th</sup>, 2020
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friday-june-26th-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Friday June 26<sup>th</sup>, 2020
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-april-29th-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday April 29<sup>th</sup>, 2020
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-april-28th-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday April 28<sup>th</sup>, 2020
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-january-21-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday January 21, 2020
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-july-23-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday July 23, 2019
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-july-3-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday July 3, 2019
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-september-18-2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday September 18, 2018
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-december-15-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday December 15, 2015
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuesday-november-18th-2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tuesday November 18<sup>th</sup> 2014
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-december-4th-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday December 4<sup>th</sup> 2013
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wednesday-february-13-2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wednesday February 13, 2013
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="chronology-of-changes-to-the-global-ensemble-prediction-system-geps">Chronology of changes to the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>)<a class="headerlink" href="#chronology-of-changes-to-the-global-ensemble-prediction-system-geps" title="Permanent link">&para;</a></h1>
+<h2 id="tuesday-april-14-2026">Tuesday April 14, 2026<a class="headerlink" href="#tuesday-april-14-2026" title="Permanent link">&para;</a></h2>
+<h4 id="upgrade-to-version-810-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure">Upgrade to Version 8.1.0 of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> adapted to the New High Performance Computing Infrastructure.<a class="headerlink" href="#upgrade-to-version-810-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure" title="Permanent link">&para;</a></h4>
+<p>See details <a href="../../changelog_multisystems/">at this link</a></p>
+<h2 id="monday-may-26th-2025">Monday May 26<sup>th</sup>, 2025<a class="headerlink" href="#monday-may-26th-2025" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-atms-and-cris-observations-from-the-noaa-21-satellite-in-the-geps">Addition of ATMS and CrIS observations from the NOAA-21 satellite in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-atms-and-cris-observations-from-the-noaa-21-satellite-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Monday May 26<sup>th</sup>, 2025, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 8.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to add the following satellite observation sources:</p>
+<ul>
+<li>Addition of ATMS and CrIS observations from the NOAA-21 satellite.</li>
+</ul>
+<h2 id="wednesday-april-2-2025">Wednesday April 2, 2025<a class="headerlink" href="#wednesday-april-2-2025" title="Permanent link">&para;</a></h2>
+<h4 id="technical-update-of-atmospheric-data-assimilation-systems">Technical update of atmospheric data assimilation systems<a class="headerlink" href="#technical-update-of-atmospheric-data-assimilation-systems" title="Permanent link">&para;</a></h4>
+<p>On Wednesday April 2<sup>nd</sup>, 2025, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 8.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified:</p>
+<ul>
+<li>Different thinning scheme for SSMIS satellite observations allowing for more data assimilated</li>
+<li>Correction to the azimuth angle for slant-path computation for AMSUA and MHS radiances</li>
+</ul>
+<h2 id="wednesday-october-23-2024">Wednesday October 23, 2024<a class="headerlink" href="#wednesday-october-23-2024" title="Permanent link">&para;</a></h2>
+<h5 id="addition-of-new-satellite-observation-sources-in-the-geps">Addition of new satellite observation sources in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-new-satellite-observation-sources-in-the-geps" title="Permanent link">&para;</a></h5>
+<p>On Wednesday October 23<sup>rd</sup>, 2024, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 8.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to add the following satellite observation sources:</p>
+<ul>
+<li>Addition of sea surface wind observations from the HSCAT scatterometer of the HY-2B and HY-2C satellites.</li>
+</ul>
+<h2 id="tuesday-june-11-2024">Tuesday June 11, 2024<a class="headerlink" href="#tuesday-june-11-2024" title="Permanent link">&para;</a></h2>
+<h5 id="upgrade-to-version-800-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Upgrade to Version 8.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#upgrade-to-version-800-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Tuesday June 11, 2024 starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 8.0.0.</p>
+<p>Significant changes:</p>
+<ul>
+<li>Increase horizontal resolution from 39km to 25km.</li>
+<li>Upgrade to CICE 6</li>
+<li>Usage of Delta Edington radiation scheme</li>
+<li>Extended to 39 days from 32 days the monthly forecast runs at 00Z</li>
+</ul>
+<p>A brief summary of the innovations included in this upgrade and their impact on performance can be found <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/fact_sheets/factsheet_geps-800_e.pdf">in this document</a>.</p>
+<p>A copy of the official note announcing the implementation of these changes is available at <a href="https://dd.meteo.gc.ca/doc/genots/2024/06/10/NOCN03_CWAO_101857___46443">this link</a>.</p>
+<p>A technical note with more details on <abbr title="Global Ensemble Prediction System">GEPS</abbr> v8.0.0 is available <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_geps-800_e.pdf">at this link</a>.</p>
+<p>The technical specifications document for <abbr title="Global Ensemble Prediction System">GEPS</abbr> v8.0.0 is available <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_8.0.0_e.pdf">at this link</a>.</p>
+<h2 id="thursday-september-14-2023">Thursday September 14, 2023<a class="headerlink" href="#thursday-september-14-2023" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-commercial-gnss-ro-observations-from-planetiq-in-the-geps">Addition of commercial GNSS-RO observations from PlanetIQ in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-commercial-gnss-ro-observations-from-planetiq-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Thursday September 14<sup>th</sup>, 2023, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 7.1.1 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of commercial GNSS-RO (Global Navigation Satellite System Radio Occultation) observations from PlanetIQ’s constellation of GNOMES small satellites.</p>
+<h2 id="wednesday-july-5-2023">Wednesday July 5, 2023<a class="headerlink" href="#wednesday-july-5-2023" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-commercial-gnss-ro-observations-from-spire-in-the-geps">Addition of commercial GNSS-RO observations from Spire in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-commercial-gnss-ro-observations-from-spire-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Wednesday July 5<sup>th</sup>, 2023, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 7.1.1 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of commercial GNSS-RO (Global Navigation Satellite System Radio Occultation) observations from Spire’s constellation of LEMUR nanosatellites.</p>
+<h2 id="wednesday-march-8-2023">Wednesday March 8, 2023<a class="headerlink" href="#wednesday-march-8-2023" title="Permanent link">&para;</a></h2>
+<h4 id="correction-to-the-quality-control-of-snow-depth-observations-from-canadian-automatic-stations-in-the-geps">Correction to the quality control of snow depth observations from Canadian automatic stations in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#correction-to-the-quality-control-of-snow-depth-observations-from-canadian-automatic-stations-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Wednesday March 8<sup>th</sup>, 2023, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 7.1.1 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>A modification to the quality control of snow depth observations from Canadian automatic stations used in the snow analysis has been installed in the <abbr title="Global Ensemble Prediction System">GEPS</abbr>.</p>
+<p>Details of the issue, the changes made and the impacts on the snow analysis and system performance are available <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/fact_sheets/snowAnalysis_update_Spring2023_en.pdf">at this link</a>.</p>
+<p>The official note announcing the implementation of these changes is available <a href="https://dd.weather.gc.ca/doc/genots/2023/03/07/NOCN03_CWAO_071547___38426">at this link</a>.</p>
+<h2 id="wednesday-february-15-2023">Wednesday February 15, 2023<a class="headerlink" href="#wednesday-february-15-2023" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-gpsro-observations-from-the-sentinel-6a-satellite-in-the-geps">Addition of GPSRO observations from the Sentinel-6A satellite in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-gpsro-observations-from-the-sentinel-6a-satellite-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Wednesday February 15<sup>th</sup>, 2023, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 7.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of GPSRO (Global Positioning System Radio Occultation) observations from the Sentinel-6A.</p>
+<h2 id="wednesday-january-4-2023">Wednesday January 4, 2023<a class="headerlink" href="#wednesday-january-4-2023" title="Permanent link">&para;</a></h2>
+<h4 id="replacement-of-atmospheric-motion-wind-vectors-from-goes-17-by-those-from-goes-18-in-the-geps">Replacement of Atmospheric Motion wind Vectors from GOES-17 by those from GOES-18 in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#replacement-of-atmospheric-motion-wind-vectors-from-goes-17-by-those-from-goes-18-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Wednesday January 4<sup>th</sup>, 2023, starting with the 1800 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update of version 7.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Replacement of Atmospheric Motion wind Vectors (AMV) from GOES-17 by those from GOES-18.</p>
+<h2 id="thursday-november-3-2022">Thursday November 3, 2022<a class="headerlink" href="#thursday-november-3-2022" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-surface-observations-received-from-ships-in-bufr-format-in-the-geps">Addition of surface observations received from ships in BUFR format in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-surface-observations-received-from-ships-in-bufr-format-in-the-geps" title="Permanent link">&para;</a></h4>
+<p>On Thursday November 3<sup>rd</sup>, 2022, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update of version 7.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of surface observations received from ships in BUFR (Binary Universal Form for the Representation of meteorological data) format. TAC 
+(Traditional Alphanumeric Codes) observations were already being assimilated previously.</p>
+<h2 id="tuesday-june-28-2022">Tuesday June 28, 2022<a class="headerlink" href="#tuesday-june-28-2022" title="Permanent link">&para;</a></h2>
+<h4 id="upgrade-to-version-710-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure">Upgrade to Version 7.1.0 of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> adapted to the New High Performance Computing Infrastructure.<a class="headerlink" href="#upgrade-to-version-710-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure" title="Permanent link">&para;</a></h4>
+<p>See details <a href="../../changelog_multisystems/">at this link</a></p>
+<h2 id="wednesday-february-16-2022">Wednesday February 16, 2022<a class="headerlink" href="#wednesday-february-16-2022" title="Permanent link">&para;</a></h2>
+<h5 id="addition-of-gpsro-observations-from-the-grace-c-and-grace-d-satellites-in-the-geps">Addition of GPSRO observations from the GRACE-C and GRACE-D satellites in the <abbr title="Global Ensemble Prediction System">GEPS</abbr><a class="headerlink" href="#addition-of-gpsro-observations-from-the-grace-c-and-grace-d-satellites-in-the-geps" title="Permanent link">&para;</a></h5>
+<p>On Wednesday February 16<sup>th</sup>, 2022, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 7.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of GPSRO (Global Positioning System Radio Occultation) observations from the GRACE-C and GRACE-D satellites</p>
+<h2 id="wednesday-december-1st-2021">Wednesday December 1<sup>st</sup>, 2021<a class="headerlink" href="#wednesday-december-1st-2021" title="Permanent link">&para;</a></h2>
+<h5 id="upgrade-to-version-700-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Upgrade to Version 7.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#upgrade-to-version-700-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Wednesday December 1<sup>st</sup>, 2021 starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 7.0.0.</p>
+<p>A brief summary of the innovations included in this upgrade and their impact on performance can be found <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/fact_sheets/factsheet_geps-700_e.pdf">in this document</a>.</p>
+<p>The official note announcing the implementation of these changes is available <a href="http://dd.meteo.gc.ca/doc/genots/2021/11/26/NOCN03_CWAO_262118___50159">at this link</a>.</p>
+<p>A technical note with more details on <abbr title="Global Ensemble Prediction System">GEPS</abbr> v7.0.0 is available <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_geps-700_e.pdf">at this link</a>.</p>
+<p>The technical specifications document for <abbr title="Global Ensemble Prediction System">GEPS</abbr> v7.0.0 is available <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_7.0.0_e.pdf">at this link</a>.</p>
+<h2 id="tuesday-january-26th-2021">Tuesday January 26<sup>th</sup>, 2021<a class="headerlink" href="#tuesday-january-26th-2021" title="Permanent link">&para;</a></h2>
+<h4 id="replacement-of-satellite-radiance-observations">Replacement of satellite radiance observations<a class="headerlink" href="#replacement-of-satellite-radiance-observations" title="Permanent link">&para;</a></h4>
+<p>On Tuesday January 26<sup>th</sup>, 2021, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 6.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to substitute the following observations:</p>
+<ul>
+<li>Replacement of infrared radiances from the IASI instrument aboard the MetOp-2/A satellite by those from MetOp-3/C</li>
+</ul>
+<h2 id="tuesday-december-8th-2020">Tuesday December 8<sup>th</sup>, 2020<a class="headerlink" href="#tuesday-december-8th-2020" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-satellite-radiance-observations">Addition of satellite radiance observations<a class="headerlink" href="#addition-of-satellite-radiance-observations" title="Permanent link">&para;</a></h4>
+<p>On Tuesday December 8<sup>th</sup>, 2020, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 6.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations to its 4DEnVar analysis, whereas the EnKF analysis remained unchanged:</p>
+<ul>
+<li>Addition of microwave radiances from the AMSUA and MHS instruments aboard the MetOp-3/C satellite</li>
+<li>Addition of infrared radiances from the CrIS-FSR instrument aboard the NPP satellite</li>
+<li>Addition of CSR (Clear-Sky Radiance) infrared radiances from the GOES-17 satellite</li>
+</ul>
+<h2 id="friday-june-26th-2020">Friday June 26<sup>th</sup>, 2020<a class="headerlink" href="#friday-june-26th-2020" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-gpsro-observations-from-the-cosmic-ii-satellites">Addition of GPSRO observations from the COSMIC-II satellites<a class="headerlink" href="#addition-of-gpsro-observations-from-the-cosmic-ii-satellites" title="Permanent link">&para;</a></h4>
+<p>On Friday June 26<sup>th</sup>, 2020, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 6.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of GPSRO (Global Positioning System Radio Occultation) observations from the COSMIC II satellites.</p>
+<h2 id="wednesday-april-29th-2020">Wednesday April 29<sup>th</sup>, 2020<a class="headerlink" href="#wednesday-april-29th-2020" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-gpsro-observations-from-the-paz-and-the-kompsat-5-satellites">Addition of GPSRO observations from the PAZ and the KOMPSAT-5 satellites<a class="headerlink" href="#addition-of-gpsro-observations-from-the-paz-and-the-kompsat-5-satellites" title="Permanent link">&para;</a></h4>
+<p>On Wednesday April 29<sup>th</sup>, 2020, starting with the 0000 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 6.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of GPSRO (Global Positioning System Radio Occultation) observations from the PAZ and the KOMPSAT-5 satellites.</p>
+<h2 id="tuesday-april-28th-2020">Tuesday April 28<sup>th</sup>, 2020<a class="headerlink" href="#tuesday-april-28th-2020" title="Permanent link">&para;</a></h2>
+<h4 id="addition-of-amv-observations-from-the-metop-3c-satellite">Addition of AMV observations from the MetOp-3/C satellite<a class="headerlink" href="#addition-of-amv-observations-from-the-metop-3c-satellite" title="Permanent link">&para;</a></h4>
+<p>On Tuesday April 28<sup>th</sup>, 2020, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) of the Meteorological Service of Canada (<abbr title="Meteorological Service of Canada">MSC</abbr>) proceeded with an update to version 6.1.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>Only the data assimilation component was modified to include the following observations:</p>
+<p>Addition of AMV (Atmospheric Motion Vector) observations from the MetOp-3/C satellite.</p>
+<h2 id="tuesday-january-21-2020">Tuesday January 21, 2020<a class="headerlink" href="#tuesday-january-21-2020" title="Permanent link">&para;</a></h2>
+<h4 id="upgrade-to-version-610-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure">Upgrade to Version 6.1.0 of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> adapted to the New High Performance Computing Infrastructure.<a class="headerlink" href="#upgrade-to-version-610-of-the-geps-adapted-to-the-new-high-performance-computing-infrastructure" title="Permanent link">&para;</a></h4>
+<p>See details <a href="../../changelog_multisystems/">at this link</a></p>
+<h2 id="tuesday-july-23-2019">Tuesday July 23, 2019<a class="headerlink" href="#tuesday-july-23-2019" title="Permanent link">&para;</a></h2>
+<h4 id="additional-observations-data-in-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Additional observations data in the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#additional-observations-data-in-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h4>
+<p>On Tuesday July 23<sup>rd</sup> 2019, starting with the 0600 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) proceeded with an update of its Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>).</p>
+<p>The data assimilation component of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> system was modified to use additional observations in seven observations families. All these families were already used, this upgrade mainly increase the data assimilation systems robustness.</p>
+<p>The details of these changes can be consulted in the copy of the official note announcing the implementation <a href="http://dd.meteo.gc.ca/doc/genots/2019/07/23/NOCN03_CWAO_231247___30255">at this link</a>.</p>
+<ul>
+<li>The technical specifications document of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> 6.0.0 <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_6.0.0_e.pdf">is available at this link</a>.</li>
+</ul>
+<h2 id="wednesday-july-3-2019">Wednesday July 3, 2019<a class="headerlink" href="#wednesday-july-3-2019" title="Permanent link">&para;</a></h2>
+<h5 id="upgrade-to-version-600-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Upgrade to Version 6.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#upgrade-to-version-600-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Wednesday July 3<sup>rd</sup> 2019, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 6.0.0.</p>
+<p>The changes included in this upgrade are summarized as follows:</p>
+<ul>
+<li>Changes to the forecast model:<ul>
+<li>The atmospheric model is upgraded from GEM v4.8-LTS.13 to v4.8-LTS.16.</li>
+<li>The atmospheric model is now coupled with the NEMO ocean model and the CICE ice model.</li>
+<li>The ocean and sea-ice initial conditions come from the <a href="../../nwp_giops/changelog_giops/"><abbr title="Global Ice Ocean Prediction System">GIOPS</abbr> v3.0.0</a> analysis.</li>
+<li>Land surface initial conditions come from a surface pseudo-analysis using the <abbr title="Global Deterministic Prediction System">GDPS</abbr> 6.0.0 25 km grid and GEM v4.8.</li>
+</ul>
+</li>
+<li>Changes to the assimilation component:<ul>
+<li>An ECMWF-hybrid gain is introduced to recenter all ensemble members around the mean of the EnKF analyses and the 4D-EnVAR analysis.</li>
+<li>The EnKF is now assimilating dew-point depression (T-TD) data from radiosondes up to 100 hPa, instead of 200 hPa.</li>
+<li>New sea-surface temperature and sea-ice analyses at 0.1 deg resolution (from 0.2 deg resolution).</li>
+</ul>
+</li>
+</ul>
+<p>A copy of the official note announcing the implementation of these changes <a href="http://dd.meteo.gc.ca/doc/genots/2019/06/28/NOCN03_CWAO_281708___55818">is available at this link</a>.</p>
+<p>A technical note with more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_geps-600_e.pdf">is available at this link</a>.</p>
+<p>The technical specifications document of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> 6.0.0 <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_6.0.0_e.pdf">is available at this link</a>.</p>
+<h2 id="tuesday-september-18-2018">Tuesday September 18, 2018<a class="headerlink" href="#tuesday-september-18-2018" title="Permanent link">&para;</a></h2>
+<h5 id="upgrade-to-version-500-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Upgrade to Version 5.0.0 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#upgrade-to-version-500-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Tuesday September 18<sup>th</sup> 2018, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 5.0.0.</p>
+<p>The changes included in this upgrade are summarized as follows:</p>
+<ul>
+<li>Changes common to the assimilation and forecast components:<ul>
+<li>The gem model is upgraded from version 4.6.10 to 4.8.lts13</li>
+<li>The 800 X 400 global gaussian grid at 50 km resolution is updated to a Yin-Yang grid at 39 km resolution</li>
+<li>The geophysical fields are now generated using internal genphysX software in place of GENESIS software</li>
+</ul>
+</li>
+<li>Changes to the assimilation component only:<ul>
+<li>The digital filter (DF) initialization is replaced by an incremental analysis update (IAU) procedure</li>
+<li>The model has a higher top (from 2 hpa to 0.1 hpa) with 81 vertical levels instead of 74</li>
+<li>Infrared observations (AIRS, IASI and CrIS) are added</li>
+<li>Further thinning is applied for satellite wind, radiance, aircraft, and scatterometer observations</li>
+<li>The RTTOV operator is upgraded from version 10 to 12</li>
+</ul>
+</li>
+<li>Changes to the forecast component only:<ul>
+<li>The model has a higher top (from 2 hpa to 0.1 hpa) with 45 vertical levels instead of 41</li>
+<li>New method to generate markov chains</li>
+</ul>
+</li>
+<li>Reforecats period updated from 1995-2014 to 1998-2017</li>
+<li>Products now available on a new user grid at a 25-km resolution</li>
+</ul>
+<p>A copy of the official note announcing the implementation of these changes <a href="http://dd.meteo.gc.ca/doc/genots/2018/09/14/NOCN03_CWAO_142038___52733">is available at this link</a>.</p>
+<p>A technical note with more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_geps-500_20180918_e.pdf">is available at this link</a>.</p>
+<p>The technical specifications document of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> 5.0.0 <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_5.0.0_e.pdf">is available at this link</a>.</p>
+<h2 id="tuesday-december-15-2015">Tuesday December 15, 2015<a class="headerlink" href="#tuesday-december-15-2015" title="Permanent link">&para;</a></h2>
+<h5 id="upgrade-to-version-411-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre">Upgrade to Version 4.1.1 of the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) at the Canadian Meteorological Centre<a class="headerlink" href="#upgrade-to-version-411-of-the-global-ensemble-prediction-system-geps-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Tuesday December 15<sup>th</sup> 2015, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run, the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 4.1.1.</p>
+<p>The changes included in this upgrade are summarized as follows:</p>
+<ul>
+<li>Numerical diffusion of the potential temperature field is now applied for all ensemble members (rather than only half the members).</li>
+<li>A damping gradient is applied to limit the diffusion of potential temperature near the poles.</li>
+<li>New observation errors for radiance data and GPS Radio-Occultation (GPS-RO) observations</li>
+<li>Addition of radiance observations from the Advanced Microwave Sounding Unit (ATMS)</li>
+<li>Addition of GPS-RO observations from the TanDEM and GRACE-B satellites</li>
+<li>The reforecast period is extended from 18 to 20 years</li>
+</ul>
+<p>A copy of the official note announcing the implementation of these changes <a href="http://dd.meteo.gc.ca/doc/genots/2015/12/14/NOCN03_CWAO_142212___00073">is available at this link</a>.</p>
+<p>A technical note with more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/technote_geps-411_20151215_e.pdf">is available at this link</a>.</p>
+<p>The technical specifications document of the <abbr title="Global Ensemble Prediction System">GEPS</abbr> 4.1.1 <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_GEPS_4.1.1_e.pdf">is available at this link</a>.</p>
+<h2 id="tuesday-november-18th-2014">Tuesday November 18<sup>th</sup> 2014<a class="headerlink" href="#tuesday-november-18th-2014" title="Permanent link">&para;</a></h2>
+<h5 id="major-upgrade-to-the-global-ensemble-prediction-system-geps-version-400-at-the-canadian-meteorological-centre">Major Upgrade to the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) version 4.0.0 at the Canadian Meteorological Centre<a class="headerlink" href="#major-upgrade-to-the-global-ensemble-prediction-system-geps-version-400-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Tuesday November 18<sup>th</sup> 2014, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 4.0.0.</p>
+<p>Summary of the major changes included in this upgrade:</p>
+<ul>
+<li>Coupling with 4D-EnVAR to provide background error covariances</li>
+<li>Ensemble size of the EnKF increased from 192 to 256 members</li>
+<li>Reduction of the GEM model time step from 20 minutes to 15 minutes</li>
+<li>Model top raised from 1.78 hPa to 1.45 hPa</li>
+<li>Changes to observation bias correction and RTTOV operator</li>
+</ul>
+<p>A copy of the official note announcing the implementation of these changes <a href="http://dd.meteo.gc.ca/doc/genots/2014/11/14/NOCN03_CWAO_141745___01237">is available at this link</a>.</p>
+<p>A technical note with more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/technote_geps-400_20141118_e.pdf">is available at this link</a>.</p>
+<p>A technical note on the improvements made to the reforecast system <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/Tech_Note_GEPS400_reforecast_v1.1_E.pdf">is available at this link</a>.</p>
+<h2 id="wednesday-december-4th-2013">Wednesday December 4<sup>th</sup> 2013<a class="headerlink" href="#wednesday-december-4th-2013" title="Permanent link">&para;</a></h2>
+<h5 id="major-upgrade-to-the-global-ensemble-prediction-system-geps-version-310-at-the-canadian-meteorological-centre">Major Upgrade to the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) version 3.1.0 at the Canadian Meteorological Centre<a class="headerlink" href="#major-upgrade-to-the-global-ensemble-prediction-system-geps-version-310-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Wednesday December 4<sup>th</sup> 2013, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 3.1.0.</p>
+<p>This new version of <abbr title="Global Ensemble Prediction System">GEPS</abbr> will use a newer version of the GEM model (from 4.4.1 to 4.4.5). This change purely technical resulting in no difference in the forecasts in <abbr title="Global Ensemble Prediction System">GEPS</abbr> but allows easier system maintenance and greater consistency with other prediction systems at <abbr title="Canadian Meteorological Centre">CMC</abbr>.</p>
+<p>On the assimilation part of the <abbr title="Global Ensemble Prediction System">GEPS</abbr>, we can say that radiance data ATOVS and AVHRR polar winds from an additional satellite, the METOP-B, are now assimilated. Also, there was an update of the spectroscopic coefficient used by the RTTOV radiative transfer model for computing the simulated observations of the AMSUB and MHS instruments onboard all satellites. Although the impacts of these changes on the forecasts are neutral, they can improve the robustness of the assimilation component of the system.</p>
+<p>For the forecast component of the <abbr title="Global Ensemble Prediction System">GEPS</abbr>, the most important change is in the treatment of the surface temperature of the sea (SST). In the new <abbr title="Global Ensemble Prediction System">GEPS</abbr>, the SST value evolves with the forecast time using the persistence of the anomaly (deviation from the climatology) method. The SST value will change linearly with time (daily interpolation) from the initial value of the analysis of <abbr title="Canadian Meteorological Centre">CMC</abbr> toward the next mid-month value of the SST climatology, plus the initial SST anomaly.</p>
+<p>Also, monthly forecasts (32 days) will be produced once a week on every Thursday at 00Z. Although the extended forecasts data will be available with this implementation, the introduction of specific monthly forecasts products is planned for later in 2014.</p>
+<p>Another new element in <abbr title="Global Ensemble Prediction System">GEPS</abbr> 3.1.0 is the addition of historical ensemble forecasts for the last 18 years. These historical forecasts will be produced each week with a reduced set of 4 members (instead of 20). The outputs of this reforecast database will be used to generate statistics of climate model forecasts for monthly and eventually to calculate the Extreme Forecast Index (EFI) and to calibrate probabilistic forecasts.</p>
+<p>A copy of the official note announcing the implementation of these changes along with information on verification work leading up to this implementation <a href="http://dd.meteo.gc.ca/doc/genots/2013/12/03/NOCN03_CWAO_032258___00953">is available at this link</a>.</p>
+<p>A technical note with many more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/technote_geps310_20131204_e.pdf">is also available at this link</a>.</p>
+<h2 id="wednesday-february-13-2013">Wednesday February 13, 2013<a class="headerlink" href="#wednesday-february-13-2013" title="Permanent link">&para;</a></h2>
+<h5 id="major-upgrade-to-the-global-ensemble-prediction-system-geps-version-300-at-the-canadian-meteorological-centre">Major upgrade to the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) version 3.0.0 at the Canadian Meteorological Centre<a class="headerlink" href="#major-upgrade-to-the-global-ensemble-prediction-system-geps-version-300-at-the-canadian-meteorological-centre" title="Permanent link">&para;</a></h5>
+<p>On Wednesday February 13<sup>th</sup> 2013, starting with the 1200 <abbr title="Coordinated Universal Time">UTC</abbr> run the Meteorological Service of Canada's Canadian Meteorological Centre (<abbr title="Canadian Meteorological Centre">CMC</abbr>) will upgrade the Global Ensemble Prediction System (<abbr title="Global Ensemble Prediction System">GEPS</abbr>) to version 3.0.0.</p>
+<p>In this upgrade, major changes are brought to both the assimilation (Ensemble Kalman Filter or ENKF) and forecast components of the system. The ENKF is used to supply initial conditions to the <abbr title="Global Ensemble Prediction System">GEPS</abbr>, while the forecast component provides forecasts out to 16 days using the Canadian Global Environmental Multi-scale model (GEM). Those forecasts are shared with North American Ensemble Forecast System (NAEFS) partners, hence changes to our system will have an impact on the NAEFS forecasts.</p>
+<p>Changes common to both the assimilation and forecast components include: a newer version 4.4.1 of the GEM model with improved physics; reduction of the model time step from 30 minutes to 20 minutes; use of a filtered topography; and the use now of only one surface scheme (ISBA) (the previous scheme Force-Restore is no longer used).</p>
+<p>Changes installed uniquely into the data assimilation component ENKF include: horizontal localization length scale now increasing with height; higher horizontal resolution (now ~66km); higher vertical resolution increased from 58 to 74 levels with the model top remaining at 2 hPa; an increased volume of AMSU radiance observations; and improved observation bias correction coming from the <a href="../../nwp_gdps/changelog_gdps/">newer version 3.0.0 of the <abbr title="Global Deterministic Prediction System">GDPS</abbr></a>.</p>
+<p>Changes installed uniquely into the forecast component include: adjustments to how physics tendencies are perturbed for convective precipitation; the physics tendencies perturbations are applied at every level except the very last one; addition of diffusion into the advection procedure; perturbation of the bulk drag coefficient in the orographic blocking scheme; and fine tuning of the adjustment factor alpha of the stochastic kinetic energy backscattering scheme.</p>
+<p>ENKF version 3.0.0 results in overall significant positive impacts on the analyses and trial fields of winds and temperature for almost the entire atmospheric column with some degradation in the bias of the zonal wind component at high levels. The geopotential heights error standard deviations are lowered in the troposphere. The biases of geopotential heights and temperature are reduced significantly.</p>
+<p>The forecast component of <abbr title="Global Ensemble Prediction System">GEPS</abbr>-3.0.0 brings a major improvement in upper air 16â¬day forecasts in the extra-tropics. There is less spread in the forecast of the new system while the forecasts are better.</p>
+<p>The upper air forecast from the Regional Ensemble Prediction System (<abbr title="Regional Ensemble Prediction System">REPS</abbr>) will benefit significantly from having better initial and lateral boundary conditions from the <abbr title="Global Ensemble Prediction System">GEPS</abbr>-3.0.0.</p>
+<p>The North American Ensemble Forecast System (NAEFS) upper air forecasts will also improve significantly for day 1 to day 10 lead times with the contribution of <abbr title="Global Ensemble Prediction System">GEPS</abbr>-3.0.0.</p>
+<p>Hardware improvements coinciding with this implementation will result in some products being ready between 10 to 120 minutes sooner than their present time of production.</p>
+<p>A copy of the official note announcing the implementation of these changes along with information on verification work leading up to this implementation <a href="http://dd.weatheroffice.ec.gc.ca/doc/genots/2013/02/08/NOCN03_CWAO_081500___00884">is available at this link</a>.</p>
+<p>A technical note with many more details on this change <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/lib/op_systems/doc_opchanges/technote_geps300_20130213_e.pdf">is also available at this link</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Meteorological Service of Canada
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.expand","navigation.indexes","navigation.sections","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.tracking","search.highlight"],"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e886cdf1.min.js"></script>
+      
+        <script src="../../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

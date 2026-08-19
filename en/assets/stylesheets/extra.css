@@ -1,0 +1,630 @@
+/* ============================================================
+   Palette carried over from the previous MkDocs site
+   ------------------------------------------------------------
+   The old site used a muted indigo (#4e64a6) for its navbar and
+   links on a pale grey-blue canvas (#eaecef). Restoring those
+   three colours keeps the migrated documentation recognizable.
+
+   These selectors have the same specificity as Material's own
+   [data-md-color-primary=blue] rules (both target <body>), so
+   they win purely on source order — extra.css is loaded after
+   palette.css. Keep the attribute selectors as-is.
+   ============================================================ */
+
+/* Light mode */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #4e64a6;  /* old navbar indigo   */
+  --md-primary-fg-color--light: #6b7fbb;
+  --md-primary-fg-color--dark:  #3a4a7d;
+
+  --md-default-bg-color: #eaecef;         /* old page canvas     */
+
+  --md-typeset-a-color: #4e64a6;          /* old link colour     */
+  --md-accent-fg-color: #3363d6;          /* link hover          */
+}
+
+/* Dark mode — the raw indigo only reaches 2.8:1 on Material's
+   slate background, so links use a lightened tint instead. */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #4e64a6;
+  --md-primary-fg-color--light: #6b7fbb;
+  --md-primary-fg-color--dark:  #3a4a7d;
+
+  --md-typeset-a-color: #9aa8d8;
+  --md-accent-fg-color: #7f97f5;
+}
+
+/* ============================================================
+   Header — plum bar with lilac highlights
+   ------------------------------------------------------------
+   Zensical's modern theme ships a frosted, near-white header
+   (background: --md-default-bg-color--light) and a light tabs
+   band; it does NOT colour the header from --md-primary-fg-color
+   the way classic Material does. Recreating the old site's solid
+   coloured navbar therefore means overriding these pieces
+   explicitly rather than swapping a palette variable.
+
+   Everything here is scoped to .md-header / .md-tabs so the page
+   body keeps the indigo palette above. The search *dialog* is
+   rendered outside <header>, so it is unaffected.
+   ============================================================ */
+
+[data-md-color-scheme="default"] {
+  --msc-plum:      #5b4b8a;  /* header bar   */
+  --msc-plum-dark: #4e4177;  /* tabs band    */
+  --msc-lilac:     #cdbaf0;  /* highlights   */
+
+  /* The theme's own surface colours, captured here so popups that
+     open out of the header can restore them (see .md-select__inner
+     below) after the header re-points the foreground tokens. */
+  --msc-surface-fg: #000000de;
+  --msc-surface-bg: #eaecef;
+}
+
+[data-md-color-scheme="slate"] {
+  --msc-plum:      #453a6b;
+  --msc-plum-dark: #3a3059;
+  --msc-lilac:     #cdbaf0;
+
+  --msc-surface-fg: hsla(var(--md-hue), 15%, 90%, 0.82);
+  --msc-surface-bg: hsla(var(--md-hue), 15%, 5%, 1);
+}
+
+/* Re-point the foreground tokens inside the header so descendants
+   that build on them — search trigger, icon masks, the Ctrl+K
+   hint — become light-on-plum without needing individual rules. */
+.md-header {
+  --md-default-fg-color:          #fff;
+  --md-default-fg-color--light:   #ffffffd9;
+  --md-default-fg-color--lighter: #ffffff59;
+  --md-default-fg-color--lightest:#ffffff2e;
+  --md-default-bg-color--light:   #ffffff26;
+
+  background-color: var(--msc-plum);
+  color: #fff;
+}
+
+/* The theme's lifted-header shadow is drawn with the (now white)
+   lightest foreground token; pin it so the edge stays visible. */
+.md-header--shadow {
+  box-shadow: 0 0.05rem 0 rgba(0, 0, 0, 0.2);
+}
+
+/* The language switcher's dropdown is a light surface that happens to
+   live inside <header>, so it inherited the white-on-plum foreground
+   above and its labels became unreadable. Restore the theme's real
+   surface colours for the panel and its little pointer arrow. */
+.md-header .md-select__inner {
+  --md-default-fg-color: var(--msc-surface-fg);
+  --md-default-bg-color: var(--msc-surface-bg);
+
+  color: var(--msc-surface-fg);
+  background-color: var(--msc-surface-bg);
+}
+
+/* Tabs sit inside <header>, so they inherit the tokens above and
+   only need their own slightly deeper band. */
+.md-tabs {
+  background-color: var(--msc-plum-dark);
+  box-shadow: none;
+}
+
+/* Active tab: lilac underline, a little heavier than the theme's
+   hairline so it reads as the highlight it is (5.06:1 on the band,
+   where the stock near-black underline would be invisible). */
+.md-tabs__item--active {
+  border-bottom: 0.1rem solid var(--msc-lilac);
+}
+
+.md-tabs__link {
+  opacity: 0.8;
+  transition: opacity 0.25s;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+  opacity: 1;
+}
+
+/* The header is now dark in both schemes, so the reversed logo
+   applies in light mode too. Scoped to the header: the drawer
+   logo still sits on a light background on small screens. */
+.md-header img.md-logo {
+  content: url("../../eccc-logo-reversed.png");
+}
+
+/* Deliberately not carried over from the old stylesheet: links
+   were bold at 0.93em, which is noisy in Material's typography,
+   and the #cdd8e3 bars behind h1/h2, which fight its heading
+   hierarchy. */
+
+/* Card top rule matches the header band rather than the link indigo, so
+   the same plum reads as the site's accent everywhere it appears (header,
+   table headings, cards, the root landing page).
+
+   Scoped under .md-typeset to beat the theme's own card border, which
+   is what this rule was silently losing to before. */
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border-top: 3px solid var(--msc-plum);
+}
+
+/* The theme clears the whole border on hover/focus and leans on its
+   shadow instead, which took the plum rule with it. Hold the top edge. */
+.md-typeset .grid.cards > ol > li:focus-within,
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid.cards > ul > li:focus-within,
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:focus-within,
+.md-typeset .grid > .card:hover {
+  border-top-color: var(--msc-plum);
+}
+
+/* Header logo: swapped to the reversed/light */
+.md-header img.md-logo {
+  height: 1.0rem;
+  width: auto;
+}
+
+[data-md-color-scheme="slate"] img.md-logo {
+  content: url("../../eccc-logo-reversed.png");
+}
+
+/* Breathing room between the site title and the palette/language/search
+   controls that follow it in the header */
+.md-header__title {
+  margin-right: 1.25rem;
+}
+
+/* Makes the header full-width */
+.md-header__inner.md-grid {
+  max-width: 100%;
+}
+
+/* Minimal Bootstrap-button lookalike for embedded map widgets from the old
+   MkDocs site — scoped to just .btn/.btn-primary/.btn-outline-primary/.btn-sm */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn-sm {
+  padding: 0.15rem 0.35rem;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+#controller .btn i {
+  padding: 0 0.35rem !important;
+}
+
+/* Bootstrap's #0d6efd is a much brighter blue than anything else on the
+   site. These use the site indigo instead; the values are hard-coded
+   rather than taken from --md-primary-fg-color because the buttons sit
+   on the controller bar's fixed light-grey (#ececec) in both schemes. */
+.btn-primary {
+  color: #fff;
+  background-color: #4e64a6;
+  border-color: #4e64a6;
+}
+
+.btn-primary:hover {
+  background-color: #3a4a7d;
+  border-color: #3a4a7d;
+}
+
+.btn-outline-primary {
+  color: #4e64a6;
+  background-color: transparent;
+  border-color: #4e64a6;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #4e64a6;
+  border-color: #4e64a6;
+}
+
+/* Embedded map controller bars used to carry a fixed light-grey
+   background (#ececec) inline on every page, which stayed light in dark
+   mode. The inline style is gone from the markdown; the bar is themed
+   here instead so it follows the active colour scheme. */
+#controller {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-typeset-color);
+  padding: 0.5rem;
+}
+
+/* Plum variant of Material's filled button (.md-button--primary defaults
+   to --md-primary-fg-color, the indigo body accent). Used for the Jupyter
+   notebook download buttons so they match the header bar instead. */
+.md-button--plum {
+  background-color: var(--msc-plum);
+  color: #fff;
+}
+
+.md-button--plum:focus,
+.md-typeset .md-button--plum:hover {
+  background-color: var(--msc-plum-dark);
+  color: #fff;
+  opacity: 1;
+}
+
+#controller #info {
+  color: var(--md-typeset-color);
+}
+
+/* Embedded map layer-switch boxes (datasets-by-theme pages) had the same
+   problem with a fixed white surface, set in each page's <style> block.
+   They float over the map, so they keep a border to separate them from
+   the tiles underneath. */
+#switch-content {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+#switch-content label {
+  color: var(--md-typeset-color);
+}
+
+.md-announce svg {
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* Home tab is redundant with the header logo — hide it from the tabs bar
+   while keeping the nav entry so breadcrumbs use the short label */
+.md-tabs__item:first-child {
+  display: none;
+}
+
+/* "Collapse all / Expand all" control injected above the "Data" and
+   "Usage and tutorials" nav trees by assets/javascripts/nav-toggle.js.
+   A chevron icon plus a label in a quiet chip: enough of an affordance
+   to read as a button (an underlined link would be mistaken for one more
+   nav entry) without competing with the tree itself. */
+.md-nav-collapse-toggle__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.6rem;
+}
+
+/* The class sets display:flex, which would otherwise beat the user-agent
+   [hidden] rule when nav-toggle.js hides the control on shallow trees. */
+.md-nav-collapse-toggle__wrapper[hidden] {
+  display: none;
+}
+
+.md-nav-collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.2rem 0 0.3rem;
+  padding: 0.15rem 0.35rem;
+  border: none;
+  border-radius: 0.1rem;
+  background: none;
+  color: var(--msc-plum);
+  font-size: 0.65rem;
+  font-weight: 400;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background-color 125ms, color 125ms;
+}
+
+.md-nav-collapse-toggle svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-md-color-scheme="slate"] .md-nav-collapse-toggle {
+  color: var(--msc-lilac);
+}
+
+.md-nav-collapse-toggle:hover,
+.md-nav-collapse-toggle:focus-visible {
+  color: var(--msc-plum-dark);
+  background-color: color-mix(in srgb, var(--msc-plum) 12%, transparent);
+}
+
+[data-md-color-scheme="slate"] .md-nav-collapse-toggle:hover,
+[data-md-color-scheme="slate"] .md-nav-collapse-toggle:focus-visible {
+  color: var(--msc-lilac);
+  background-color: color-mix(in srgb, var(--msc-lilac) 18%, transparent);
+}
+
+.md-nav-collapse-toggle:focus-visible {
+  outline: 1px solid currentcolor;
+  outline-offset: 1px;
+}
+
+/* Bold navigation sections/collapsible group titles in the sidebar so
+   they're visually distinct from plain leaf page links */
+.md-nav__item--nested > .md-nav__link,
+.md-nav__item--nested > .md-nav__container > .md-nav__link {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+/* Consistent image height for theme cards */
+.theme-cards img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.1rem;
+}
+
+/* ============================================================
+   simple-datatables — themed styling (class names: .datatable-*)
+   ============================================================ */
+
+/* Horizontal scroll for wide tables */
+.datatable-wrapper .datatable-container {
+  overflow-x: auto;
+}
+
+/* Table base — the wrapper must never grow past the content column,
+   whatever the table or the pager below it happen to measure. */
+.datatable-wrapper {
+  font-size: 0.85rem;
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
+/* Header — same plum band as the site header, so the table reads as
+   part of the documentation rather than as a leftover widget. */
+.datatable-table > thead > tr > th {
+  background-color: var(--msc-plum);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.datatable-table > thead > tr > th:last-child {
+  border-right: none;
+}
+
+/* Sort button/arrow colour fix on coloured header */
+.datatable-table th a,
+.datatable-table th button,
+.datatable-sorter {
+  color: #fff !important;
+}
+
+/* The sort arrows are CSS triangles drawn in black by the vendor
+   stylesheet, which all but disappear on the plum band. */
+.datatable-table > thead .datatable-sorter::before {
+  border-top-color: #fff;
+}
+
+.datatable-table > thead .datatable-sorter::after {
+  border-bottom-color: #fff;
+}
+
+/* Body cells */
+.datatable-table > tbody > tr > td {
+  padding: 0.45rem 0.75rem;
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+  vertical-align: top;
+}
+
+.datatable-table > tbody > tr > td:last-child {
+  border-right: none;
+}
+
+/* Zebra striping */
+.datatable-table > tbody > tr:nth-child(odd) {
+  background-color: var(--md-code-bg-color);
+}
+
+/* Row hover */
+.datatable-table > tbody > tr:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Top bar: search + per-page */
+.datatable-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+}
+
+.datatable-input,
+.datatable-selector {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.82rem;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+}
+
+/* Bottom bar: info + pagination */
+.datatable-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  max-width: 100%;
+}
+
+.datatable-bottom > * {
+  min-width: 0;
+}
+
+/* Pagination — override Material nav ul li resets.
+   The theme gives every list item in typeset content a 1.25em left
+   margin; on an eleven-button pager that is ~250px of dead space,
+   which pushed the row past the content column and under the table
+   of contents. Zero the inherited spacing, use the flex gap instead,
+   and let the buttons wrap rather than overflow. */
+.datatable-pagination {
+  max-width: 100%;
+}
+
+.datatable-pagination ul {
+  display: flex !important;
+  flex-wrap: wrap;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 0.2rem;
+}
+
+.datatable-pagination li {
+  display: inline-flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Scoped under .md-typeset so these win over the vendor stylesheet,
+   which the pages load from a CDN *after* this file. */
+.md-typeset .datatable-pagination a,
+.md-typeset .datatable-pagination button,
+.datatable-pagination a,
+.datatable-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0 0.4rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.2rem;
+  color: var(--md-typeset-a-color) !important;
+  text-decoration: none !important;
+  font-size: 0.8rem;
+  line-height: 1;
+  background: none;
+  cursor: pointer;
+}
+
+.md-typeset .datatable-pagination .datatable-active a,
+.md-typeset .datatable-pagination .datatable-active button,
+.datatable-pagination .datatable-active a,
+.datatable-pagination .datatable-active button {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color) !important;
+  border-color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+.md-typeset .datatable-pagination a:hover,
+.md-typeset .datatable-pagination button:hover,
+.datatable-pagination a:hover,
+.datatable-pagination button:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.datatable-pagination .datatable-hidden {
+  display: none !important;
+}
+
+/* Make every navigation section collapsible above the 1220px breakpoint,
+   instead of being permanently expanded. */
+@media screen and (min-width: 76.25em) {
+
+  /* 1 — section labels respond to clicks again */
+  .md-nav__item--section > .md-nav__link:not(.md-nav__container) {
+    pointer-events: auto;
+  }
+
+  /* 2 — restore the chevron on section items */
+  .md-nav__item--nested.md-nav__item--section > .md-nav__link .md-nav__icon::after {
+    display: block;
+  }
+
+  /* 3 — restore the expand toggle on sections that have an index page
+         (navigation.indexes); must be flex, not revert */
+  .md-nav__item--section > .md-nav__container > :nth-child(2) {
+    display: flex;
+  }
+
+  /* 4 — put the accordion back: collapsed unless the toggle is checked */
+  .md-nav__item--section > .md-nav__toggle ~ .md-nav {
+    display: grid;
+    grid-template-rows: minmax(.005rem, 0fr);
+    opacity: 0;
+    visibility: collapse;
+    transition:
+      grid-template-rows .25s cubic-bezier(.86, 0, .07, 1),
+      opacity .25s,
+      visibility 0ms .25s;
+  }
+
+  .md-nav__item--section > .md-nav__toggle:checked ~ .md-nav,
+  .md-nav__item--section > .md-nav__toggle.md-toggle--indeterminate ~ .md-nav {
+    grid-template-rows: minmax(.4rem, 1fr);
+    opacity: 1;
+    visibility: visible;
+    transition:
+      grid-template-rows .25s cubic-bezier(.86, 0, .07, 1),
+      opacity .15s .1s,
+      visibility 0ms;
+  }
+
+}
+
+/* Collapse-all/expand-all force override, set by nav-toggle.js as a data
+   attribute rather than via each item's own checkbox — this guarantees
+   the visual result regardless of whether that particular item was
+   already manually expanded/collapsed by hand. Outside the media query
+   above: below the breakpoint the drawer lists every nav tree and the
+   control acts on all of them, so the override has to reach them too.
+   Not scoped to .md-nav__item--section either — only the active
+   top-level item carries that class, while nav-toggle.js sets
+   data-nav-force at every depth. !important because rules 3 and 4 above
+   target the same element; cleared (see nav-toggle.js) the moment the
+   visitor clicks that item directly. */
+[data-nav-force="open"] > .md-nav__toggle ~ .md-nav {
+  grid-template-rows: minmax(.4rem, 1fr) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[data-nav-force="closed"] > .md-nav__toggle ~ .md-nav {
+  grid-template-rows: minmax(.005rem, 0fr) !important;
+  opacity: 0 !important;
+  visibility: collapse !important;
+}
+
+/* The chevron rotates off :checked / .md-toggle--indeterminate, neither of
+   which survives the theme resetting its own toggles after page load — so
+   a forced-open item kept a chevron pointing the collapsed way. Rotate it
+   from the same attribute that opens the item, so the arrow and the tree
+   never disagree. */
+[data-nav-force="open"] > .md-nav__toggle ~ .md-nav__link .md-nav__icon::after {
+  transform: rotate(90deg) !important;
+}
+
+[data-nav-force="closed"] > .md-nav__toggle ~ .md-nav__link .md-nav__icon::after {
+  transform: none !important;
+}
