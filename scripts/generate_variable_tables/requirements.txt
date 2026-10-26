@@ -1,2 +1,0 @@
-GDAL 3.5.2 (https://pypi.org/project/GDAL/)
-yaml (https://pypi.org/project/PyYAML/)
