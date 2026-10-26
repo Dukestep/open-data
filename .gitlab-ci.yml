@@ -16,6 +16,9 @@ build_language:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "pipeline" && $LANGUAGE =~ /^(en|fr)$/'
   script:
+    # GCCode's certificate is signed by a CA the image doesn't trust; the
+    # runner provides it so git can clone, fetch and push over HTTPS.
+    - export GIT_SSL_CAINFO="$CI_SERVER_TLS_CA_FILE"
     - git clone --depth 1 --branch main "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/ec-msc/public-doc-${LANGUAGE}.git" "/tmp/public-doc-${LANGUAGE}"
     - pip install -r "/tmp/public-doc-${LANGUAGE}/requirements.txt"
     - (cd "/tmp/public-doc-${LANGUAGE}" && zensical build --clean)
