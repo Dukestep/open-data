@@ -1,12 +1,48 @@
-mkdocs_build:
-  image: python:3.10
-  stage: build
+# public-doc holds the built bilingual site: en/ and fr/ are the Zensical
+# builds of public-doc-en and public-doc-fr, next to the landing and 404 pages.
+#
+# Required CI/CD variables (masked, protected):
+#   GITLAB_PUSH_TOKEN  project access token, write_repository, allowed to push to main
+#   GITHUB_PUSH_TOKEN  GitHub fine-grained token, contents: write on ECCC-MSC/open-data
+
+# Triggered by public-doc-en or public-doc-fr after a merge to their main
+# branch, with LANGUAGE set to en or fr: rebuilds that language and commits the
+# result to main.
+build_language:
+  image: python:3.12
   tags:
-    - mkdocs
-  script:
-    - pip install mkdocs==1.3.0 mkdocs-jupyter==0.20.1 mkdocs-mermaid2-plugin lxml_html_clean
-    - mkdocs build --strict
-  # run job when PR is created, but only in the original project (not forks)
+    - zensical
+  resource_group: build_language
   rules:
-    - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "merge_request_event") && $CI_PROJECT_NAMESPACE == "ec-msc"'
-      when: always
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $LANGUAGE =~ /^(en|fr)$/'
+  script:
+    - git clone --depth 1 --branch main "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/ec-msc/public-doc-${LANGUAGE}.git" "/tmp/public-doc-${LANGUAGE}"
+    - pip install -r "/tmp/public-doc-${LANGUAGE}/requirements.txt"
+    - (cd "/tmp/public-doc-${LANGUAGE}" && zensical build --clean)
+    - source_commit=$(git -C "/tmp/public-doc-${LANGUAGE}" rev-parse --short HEAD)
+    # Commit on top of the latest main, which may have moved since this pipeline started.
+    - git fetch --quiet origin main
+    - git checkout --quiet -B main FETCH_HEAD
+    - rm -rf "$LANGUAGE"
+    - cp -r "/tmp/public-doc-${LANGUAGE}/site" "$LANGUAGE"
+    - git add -A "$LANGUAGE"
+    - |
+      if git diff --cached --quiet; then
+        echo "$LANGUAGE/ is already up to date"
+      else
+        git -c user.name="MSC Open Data" -c user.email="DPS-Client@ec.gc.ca" commit --quiet -m "Build $LANGUAGE from public-doc-$LANGUAGE $source_commit"
+        git push -o ci.skip "https://oauth2:${GITLAB_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" main
+      fi
+
+# Run from Build > Pipelines > Run pipeline on main: pushes main to GitHub,
+# where publishing a release deploys it.
+push_to_github:
+  image: python:3.12
+  tags:
+    - zensical
+  variables:
+    GIT_DEPTH: 0
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == "main"'
+  script:
+    - git push "https://x-access-token:${GITHUB_PUSH_TOKEN}@github.com/ECCC-MSC/open-data.git" "HEAD:refs/heads/main"

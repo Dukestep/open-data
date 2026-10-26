@@ -1,0 +1,42 @@
+name: publish
+
+# Publishes https://eccc-msc.github.io/open-data/ when a release is published.
+# The site is already built: GCCode's public-doc commits each language's
+# Zensical build to en/ and fr/, so this only copies the release's files to the
+# gh-pages branch.
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Collect the site
+        run: |
+          mkdir site
+          cp index.html 404.html img_eccc-logo.png site/
+          for lang in en fr; do
+            if [ -d "$lang" ]; then cp -r "$lang" site/; fi
+          done
+
+      # force_orphan replaces gh-pages wholesale, which also clears the retired
+      # MkDocs build; the 404 page redirects its "…_en"/"…_fr" URLs.
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          force_orphan: true
+          user_name: DPS Client
+          user_email: DPS-Client@ec.gc.ca
+          commit_message: updated via release ${{ github.event.release.tag_name }}
