@@ -5490,17 +5490,18 @@
 
 <h1 id="storm-track-data-generated-from-the-regional-deterministic-prediction-system">Storm track data generated from the Regional Deterministic Prediction System<a class="headerlink" href="#storm-track-data-generated-from-the-regional-deterministic-prediction-system" title="Permanent link">&para;</a></h1>
 <p>The Storm track product is an automated system that detects, identifies, tracks and characterizes low-pressure systems based on the outputs of numerical weather prediction models (deterministic and ensemble) or analyses.  It makes it possible to produce maps and animations describing the evolution of extratropical and tropical cyclones throughout their lifetime.</p>
-<p>Once determined at each forecast of the model, the storm centres are linked together using the method developed by <a href="https://journals.ametsoc.org/view/journals/wefo/12/3/1520-0434_1997_012_0595_oiocat_2_0_co_2.xml">Mark R. Sinclair</a>, which seeks the best possible extension of a trajectory, taking into account the previous position, the speed of movement, the direction of movement and temporal continuity. Only systems with a lifespan of at least 24 hours are retained as valid storms.</p>
+<p>Once determined at each forecast timestep of the model, the storm centres are linked together using the method developed by <a href="https://journals.ametsoc.org/view/journals/wefo/12/3/1520-0434_1997_012_0595_oiocat_2_0_co_2.xml">Mark R. Sinclair</a>, which seeks the best possible extension of a trajectory, taking into account the previous position, the speed of movement, the direction of movement and temporal continuity. Only systems with a lifespan of at least 24 hours are retained as valid storms.</p>
 <h2 id="data-location">Data location<a class="headerlink" href="#data-location" title="Permanent link">&para;</a></h2>
 <p><abbr title="Meteorological Service of Canada">MSC</abbr> Datamart data can be <a href="../../../msc-datamart/amqp/">automatically retrieved with the Advanced Message Queuing Protocol (<abbr title="Advanced Message Queuing Protocol">AMQP</abbr>)</a> as soon as they become available. An <a href="../../../usage/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data is available using the <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable GeoJSON file.</p>
 <p>The data can be accessed at the following adress : </p>
 <ul>
-<li><a href="https://dd.weather.gc.ca/today/model_rdps/storm-tracks">https://dd.weather.gc.ca/today/model_rdps/storm-tracks/{HH}/</a></li>
+<li><a href="https://dd.weather.gc.ca/today/model_rdps/storm-tracks">https://dd.weather.gc.ca/today/model_rdps/storm-tracks/{HH}/{hhh}</a></li>
 </ul>
 <p>where :</p>
 <ul>
 <li><strong>HH</strong>: Model run start, in <abbr title="Coordinated Universal Time">UTC</abbr> [00, 06, 12, 18]</li>
+<li><strong>hhh</strong>: Forecast time [000, 006, ..., 084]</li>
 </ul>
 <h2 id="technical-specifications">Technical specifications<a class="headerlink" href="#technical-specifications" title="Permanent link">&para;</a></h2>
 <p>The following information is available for each storm centre:</p>
