@@ -5496,16 +5496,17 @@
 <p>Les données sont disponibles via le protocole <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier GeoJSON.</p>
 <p>Les données sont accessibles à l’adresse suivante : </p>
 <ul>
-<li><a href="https://dd.meteo.gc.ca/today/model_gdps/storm-tracks">https://dd.meteo.gc.ca/today/model_gdps/storm-tracks/{HH}/</a></li>
+<li><a href="https://dd.meteo.gc.ca/today/model_gdps/storm-tracks">https://dd.meteo.gc.ca/today/model_gdps/storm-tracks/{HH}/{hhh}</a></li>
 </ul>
 <p>où :</p>
 <ul>
 <li><strong>HH</strong> : Heure <abbr title="Temps universel coordonné">UTC</abbr> du début de la passe du modèle [00, 06, 12, 18]</li>
+<li><strong>hh</strong> : Heure de prévision [000, 003, 006, ..., 240]  </li>
 </ul>
-<p>Note:</p>
+<p>Notes:</p>
 <ul>
-<li>Les prévisions sont disponibles à 00 et 12Z</li>
-<li>Les analyses sont disponibles à 00, 06, 12 et 18Z</li>
+<li>Les prévisions sont disponibles à 00 et 12Z, de 00h à 240h, sauf pour les trajectoires des cyclones tropicaux qui sont disponibles de 00h à 168h </li>
+<li>Les analyses sont disponibles à 00, 06, 12 et 18Z, de 00h à 48h pour les analyses 48h et de 00h à 96h pour les analyses 96h</li>
 </ul>
 <h2 id="specifications-techniques">Spécifications techniques<a class="headerlink" href="#specifications-techniques" title="Permanent link">&para;</a></h2>
 <p>Les informations suivantes sont disponibles pour chaque centre de tempête:</p>
