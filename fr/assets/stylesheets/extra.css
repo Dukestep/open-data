@@ -379,6 +379,12 @@
   color: var(--md-default-fg-color);
 }
 
+/* The chevron is a flex item beside the label; without this, labels long
+   enough to wrap squeeze it narrower than the others. */
+.md-nav__icon {
+  flex-shrink: 0;
+}
+
 /* Consistent image height for theme cards */
 .theme-cards img {
   width: 100%;
