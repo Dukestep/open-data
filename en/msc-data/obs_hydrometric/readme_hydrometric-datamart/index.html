@@ -5384,6 +5384,11 @@
                       
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -5395,6 +5400,97 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data location
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-name-nomenclature" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        File name nomenclature
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data description
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data File
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#station-list-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Station List File
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#announcements-from-the-dd_info-mailing-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Announcements from the dd_info mailing list
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5421,7 +5517,7 @@
 
 <h1 id="hydrometric-data-in-csv-format">Hydrometric data in <abbr title="Comma-Separated Values">CSV</abbr> format<a class="headerlink" href="#hydrometric-data-in-csv-format" title="Permanent link">&para;</a></h1>
 <p>This page describes the <a href="../readme_hydrometric/">real time hydrometric</a> data available in <abbr title="Comma-Separated Values">CSV</abbr> format.</p>
-<h1 id="data-location">Data location<a class="headerlink" href="#data-location" title="Permanent link">&para;</a></h1>
+<h2 id="data-location">Data location<a class="headerlink" href="#data-location" title="Permanent link">&para;</a></h2>
 <p><abbr title="Meteorological Service of Canada">MSC</abbr> Datamart data can be <a href="../../../msc-datamart/amqp/">automatically retrieved with the Advanced Message Queuing Protocol (<abbr title="Advanced Message Queuing Protocol">AMQP</abbr>)</a> as soon as they become available. An <a href="../../../usage/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data is available using the <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable <abbr title="Comma-Separated Values">CSV</abbr> file.</p>
 <p>The data is available at the following address:</p>
