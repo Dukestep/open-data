@@ -403,11 +403,32 @@
 }
 
 /* Table base — the wrapper must never grow past the content column,
-   whatever the table or the pager below it happen to measure. */
+   whatever the table or the pager below it happen to measure. Font size
+   matches the theme's regular tables, which only size class-less ones. */
 .datatable-wrapper {
-  font-size: 0.85rem;
+  font-size: 0.64rem;
   margin: 1rem 0;
   max-width: 100%;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+/* Top and bottom bars share a faint plum tint, so the controls read as
+   part of the table instead of floating on the page. Not the zebra grey,
+   or they'd pass for one more row. Mixed into the page background, so it
+   holds in both colour schemes. */
+.datatable-top,
+.datatable-bottom {
+  background-color: color-mix(in srgb, var(--msc-plum) 8%, var(--md-default-bg-color));
+}
+
+.datatable-top {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.datatable-bottom {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
 /* Header — same plum band as the site header, so the table reads as
@@ -470,7 +491,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.4rem 0;
+  padding: 0.4rem 0.6rem;
 }
 
 .datatable-input,
@@ -478,7 +499,7 @@
   border: 1px solid var(--md-default-fg-color--lighter);
   border-radius: 0.2rem;
   padding: 0.3rem 0.5rem;
-  font-size: 0.82rem;
+  font-size: inherit;
   background-color: var(--md-default-bg-color);
   color: var(--md-typeset-color);
 }
@@ -490,7 +511,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.4rem 0;
+  padding: 0.4rem 0.6rem;
   max-width: 100%;
 }
 
@@ -540,14 +561,21 @@
   border-radius: 0.2rem;
   color: var(--md-typeset-a-color) !important;
   text-decoration: none !important;
-  font-size: 0.8rem;
+  font-size: inherit;
   line-height: 1;
   background: none;
   cursor: pointer;
 }
 
+/* The :hover/:focus variants outrank the vendor's grey active-page
+   background and our own hover tint below, which would otherwise leave
+   white text on a pale button while hovered or after a click. */
 .md-typeset .datatable-pagination .datatable-active a,
+.md-typeset .datatable-pagination .datatable-active a:hover,
+.md-typeset .datatable-pagination .datatable-active a:focus,
 .md-typeset .datatable-pagination .datatable-active button,
+.md-typeset .datatable-pagination .datatable-active button:hover,
+.md-typeset .datatable-pagination .datatable-active button:focus,
 .datatable-pagination .datatable-active a,
 .datatable-pagination .datatable-active button {
   background-color: var(--md-primary-fg-color);
