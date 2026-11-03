@@ -609,6 +609,17 @@
       visibility 0ms;
   }
 
+  /* 5 — indent the children of nested sections like any other level; the
+         theme flattens them, which only suits sections as fixed headers.
+         The tab's root section stays flush so the whole tree doesn't shift. */
+  [dir=ltr] .md-nav__item--section .md-nav__item--section > .md-nav > .md-nav__list {
+    margin-left: .6rem;
+  }
+
+  [dir=rtl] .md-nav__item--section .md-nav__item--section > .md-nav > .md-nav__list {
+    margin-right: .6rem;
+  }
+
 }
 
 /* Collapse-all/expand-all force override, set by nav-toggle.js as a data
