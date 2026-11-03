@@ -545,7 +545,10 @@
 }
 
 /* Scoped under .md-typeset so these win over the vendor stylesheet,
-   which the pages load from a CDN *after* this file. */
+   which the pages load from a CDN *after* this file. Sized to the
+   table's text: the pager grows from 6 buttons on page 1 to as many as
+   11 further in, and at 2rem the wider form wrapped below the info line,
+   so the bar jumped between one and two lines when paging. */
 .md-typeset .datatable-pagination a,
 .md-typeset .datatable-pagination button,
 .datatable-pagination a,
@@ -553,10 +556,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2rem;
-  height: 2rem;
+  min-width: 1.4rem;
+  height: 1.4rem;
   margin: 0;
-  padding: 0 0.4rem;
+  padding: 0 0.3rem;
   border: 1px solid var(--md-default-fg-color--lighter);
   border-radius: 0.2rem;
   color: var(--md-typeset-a-color) !important;
