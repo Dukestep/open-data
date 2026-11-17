@@ -136,7 +136,7 @@ Relative vorticity,RELV,200 mb,1/s
 Relative vorticity,RELV,250 mb,1/s
 Relative vorticity,RELV,500 mb,1/s
 Relative vorticity,RELV,700 mb,1/s
-Relative vorticity,RELV,800 mb,1/s
+Relative vorticity,RELV,850 mb,1/s
 Sea ice area fraction,ICEC,Surface,Fraction
 Sensible heat net flux,SHTFL,Surface,W/m<sup>2</sup>
 Showalter Index,SHWINX,500 mb,K

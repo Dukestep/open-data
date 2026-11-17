@@ -5488,7 +5488,7 @@
 
 
 <h1 id="products-derived-from-the-canadian-surface-reanalysis-land-casr-land">Products derived from the Canadian Surface Reanalysis - Land (CaSR-Land)<a class="headerlink" href="#products-derived-from-the-canadian-surface-reanalysis-land-casr-land" title="Permanent link">&para;</a></h1>
-<p>This page describes the gridded statistical products in NetCDF format as well as the aggregate statistical products by watershed in GeoJSON format, derived from the <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/overview_subproducts.html">Canadian Surface Reanalysis-Land (CaSR-Land)</a> available on the <abbr title="Meteorological Service of Canada">MSC</abbr> Datamart.</p>
+<p>This page describes the gridded statistical products in NetCDF format as well as the aggregated statistical products by watershed in GeoJSON format, derived from the <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/overview_subproducts.html">Canadian Surface Reanalysis-Land (CaSR-Land)</a> available on the <abbr title="Meteorological Service of Canada">MSC</abbr> Datamart.</p>
 <h2 id="data-location">Data location<a class="headerlink" href="#data-location" title="Permanent link">&para;</a></h2>
 <p><abbr title="Meteorological Service of Canada">MSC</abbr> Datamart data can be <a href="../../../msc-datamart/amqp/">automatically retrieved with the Advanced Message Queuing Protocol (<abbr title="Advanced Message Queuing Protocol">AMQP</abbr>)</a> as soon as they become available. An <a href="../../../usage/">overview and examples for accessing and using the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data is available via the <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> protocol. It is possible to access ir with a standard browser. In this case, you obtain a list of links to a NetCDF or GeoJON file, depending on the product.</p>
@@ -5496,13 +5496,13 @@
 <ul>
 <li><a href="https://dd.version.gc.ca/today/reanalysis_casr/casr-land/">https://dd.weather.gc.ca/today/reanalysis_casr/casr-land/{Version}/post-processing/grid</a></li>
 </ul>
-<p><strong>Aggregate statistical products by watershed</strong>, derived from the Canadian Surface Reanalysis - Land (CaSR-Land), can be found at:</p>
+<p><strong>Aggregated statistical products by watershed</strong>, derived from the Canadian Surface Reanalysis - Land (CaSR-Land), can be found at:</p>
 <ul>
 <li><a href="https://dd.weather.gc.ca/today/reanalysis_casr/casr-land/">https://dd.weather.gc.ca/today/reanalysis_casr/casr-land/{Version}/post-processing/watersheds/{polygon_dataset}/area{nb}</a></li>
 </ul>
 <p>where:</p>
 <ul>
-<li><strong>Version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">CaSR version</a> of the Canadian Surface Reanalysis (v2.1)</li>
+<li><strong>Version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">CaSR version</a> of the Canadian Surface Reanalysis (v2.1, v3.2)</li>
 <li><strong>polygon_dataset</strong>: Name of the watershed polygon set (<code>nhn</code> for "National Hydro Network", <code>nhs</code> for "National Hydrological Service")</li>
 <li><strong>nb</strong>: Main drainage basins according to:<ul>
 <li>01: Maritime Provinces </li>
@@ -5525,10 +5525,10 @@
 <p><code>{YYY1-YYY2}_MSC_CaSR-Land-{version}_{Var}_{Level}_{Grid}{resolution}_{TimeStep}.nc</code></p>
 <p>where:</p>
 <ul>
-<li><strong>YYY1-YYY2</strong>: Period covered by the reanalysis according to the version [1980-2017]</li>
+<li><strong>YYY1-YYY2</strong>: Period covered by the reanalysis according to the version [1980-2017 for version 2.1, 1968-2024 for version 3.2]</li>
 <li><strong><abbr title="Meteorological Service of Canada">MSC</abbr></strong>: Constant string for Meteorological Service of Canada, the data source</li>
 <li><strong>CaSR-Land</strong>: A string indicating that the data is derived from Canadian Surface Reanalysis-Land</li>
-<li><strong>version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">Version</a> of the retest [v2.1]</li>
+<li><strong>version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">Version</a> of the reanalysis [v2.1, v3.2]</li>
 <li><strong>Var</strong>: Variable name and associated statistics (see section below)</li>
 <li><strong>Level</strong>: A string indicating the vertical level [<code>Sfc</code> for the surface, <code>AGL</code> for "Above Ground Level", <code>DBS</code> for "Depth Below Surface"]</li>
 <li><strong>Grille</strong> : Horizontal rotated lat-lon grid [Rlatlon]</li>
@@ -5539,17 +5539,17 @@
 <p>Examples:</p>
 <ul>
 <li>1980-2017_MSC_CaSR-Land-v2.1_DewPoint-MMax_AGL-1.5m_RLatLon0.09_P1M.nc</li>
-<li>1980-2017_MSC_CaSR-Land-v2.1_SoilLiquidWaterContent-YMin_DBS-200to300cm_RLatLon0.09_P1Y.nc</li>
+<li>1968-2024_MSC_CaSR-Land-v3.2_SoilLiquidWaterContent-YMin_DBS-200to300cm_RLatLon0.09_P1Y.nc</li>
 </ul>
-<p><strong>Aggregate products by watershed in GeoJSON format</strong></p>
+<p><strong>Aggregated products by watershed in GeoJSON format</strong></p>
 <p>The forecast files follow the nomenclature below:</p>
 <p><code>{YYY1-YYY2}_MSC_CaSR-Land-{version}_DrainageArea{nb}_{Var}_{Level}_{TimeStep}.json</code></p>
 <p>where:</p>
 <ul>
-<li><strong>YYY1-YYY2</strong>: Period covered by the reanalysis according to the version [1980-2017]</li>
+<li><strong>YYY1-YYY2</strong>: Period covered by the reanalysis according to the version [1980-2017 for version 2.1, 1968-2024 for version 3.2]</li>
 <li><strong><abbr title="Meteorological Service of Canada">MSC</abbr></strong>: Constant string for Meteorological Service of Canada, the data source</li>
 <li><strong>CaSR-Land</strong>: A string indicating that the data is derived from Canadian Surface Reanalysis-Land </li>
-<li><strong>version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">Version</a> of the retest [v2.1]</li>
+<li><strong>version</strong>: <a href="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/dataset_specifics.html#diff_casr_versions">Version</a> of the reanalysis [v2.1, v3.2]</li>
 <li><strong>DrainageArea</strong>: Constant string of characters to specify the watershed  </li>
 <li><strong>nb</strong>: Drainage basin number [01, 02, .., 11]</li>
 <li><strong>Var</strong>: Variable name and associated statistics (see section below)</li>
@@ -5560,7 +5560,7 @@
 <p>Examples:</p>
 <ul>
 <li>1980-2017_MSC_CaSR-Land-v2.1_DrainageArea03_Drainage-Accum1h-YMax_DBS_P1Y.json</li>
-<li>1980-2017_MSC_CaSR-Land-v2.1_DrainageArea10_SoilLiquidWaterContent-MMin_DBS-040to100cm_P1M.json</li>
+<li>1968-2024_MSC_CaSR-Land-v3.2_DrainageArea10_SoilLiquidWaterContent-MMin_DBS-040to100cm_P1M.json</li>
 </ul>
 <h2 id="list-of-variables">List of variables<a class="headerlink" href="#list-of-variables" title="Permanent link">&para;</a></h2>
 <ul>
