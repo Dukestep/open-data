@@ -207,7 +207,18 @@
 
     <!-- Site language selector -->
     
-      <div class="md-header__option">
+      <!--
+  Language selector, overriding Zensical's partials/alternate.html (MIT).
+
+  The stock template links each language to its root (alt.link). The en and fr
+  sites share the same page paths, so append the current page's path to keep
+  the reader on the same page when switching. The 404 page has no counterpart
+  path, so it still links to the root.
+-->
+
+  
+
+<div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Select language">
