@@ -688,3 +688,20 @@
 [data-nav-force="closed"] > .md-nav__toggle ~ .md-nav__link .md-nav__icon::after {
   transform: none !important;
 }
+
+/* Footer: put the copyright notice and "Made with Zensical" on one line,
+   copyright on the left and the credit on the right, instead of stacking
+   them. The theme renders both inside .md-copyright, with the notice in a
+   block-level highlight div. The gap stands in for the space between
+   "Made with" and the link, which flex layout collapses. */
+.md-copyright {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: .25em;
+}
+
+.md-copyright__highlight {
+  margin-right: auto;
+}
